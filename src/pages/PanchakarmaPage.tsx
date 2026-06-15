@@ -20,7 +20,7 @@ export default function PanchakarmaPage() {
         <div ref={ref} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-accent/20">
-              <img src="/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg" alt="Panchakarma Ayurvedic treatment" className="w-full h-[400px] sm:h-[480px] object-cover" loading="lazy" />
+              <img src="/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.webp" alt="Panchakarma Ayurvedic treatment" className="w-full h-[400px] sm:h-[480px] object-cover" loading="lazy" />
             </div>
             <div className="space-y-6">
               <span className="section-label">28 Days Program</span>

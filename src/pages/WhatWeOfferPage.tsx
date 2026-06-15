@@ -4,20 +4,40 @@ import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Check } from 'lucide-react';
 
-const inclusions = [
-  'Comfortable ensuite rooms at the Ayurvedic Treatment Centre',
-  'All meals — vegetarian & freshly cooked, made from organically grown vegetables and spices',
-  'During treatments, Ayurvedic diet is ensured',
-  'A detailed Ayurvedic consultation with our resident doctor upon arrival',
-  'Our doctor is always available, attentive to every concern, during your whole stay',
-  'Ayurvedic treatments, twice a day, as prescribed by the doctor',
-  'Ayurvedic medicines prescribed by the doctor as part of your treatment plan',
-  'Abdominal cleansing every 8th day of treatment, or as recommended by doctor',
-  'On the last day of your stay, Doctor will give you a specific diet chart to follow',
-  'Daily morning and evening Yoga sessions, 6 days a week, free for all guests',
-  'Spice tours within the Centre',
-  'Airport pick up and drop (free one way for min 1 week, free both ways for min 2 weeks)',
-  'Assistance with your travel needs before/after your stay in the centre',
+const offerCategories = [
+  {
+    title: 'Ayurvedic Care',
+    items: [
+      'During treatments, Ayurvedic diet is ensured',
+      'A detailed Ayurvedic consultation with our resident doctor upon arrival',
+      'Our doctor is always available, attentive to every concern, during your whole stay',
+      'Ayurvedic treatments, twice a day, as prescribed by the doctor',
+      'Ayurvedic medicines prescribed by the doctor as part of your treatment plan',
+      'Abdominal cleansing every 8th day of treatment, or as recommended by doctor',
+      'On the last day of your stay, Doctor will give you a specific diet chart to follow',
+    ],
+  },
+  {
+    title: 'Accommodation',
+    items: [
+      'Comfortable ensuite rooms at the Ayurvedic Treatment Centre',
+      'Airport pick up and drop (free one way for min 1 week, free both ways for min 2 weeks)',
+      'Assistance with your travel needs before/after your stay in the centre',
+    ],
+  },
+  {
+    title: 'Yoga & Wellness',
+    items: [
+      'Daily morning and evening Yoga sessions, 6 days a week, free for all guests',
+    ],
+  },
+  {
+    title: 'Meals & Diet',
+    items: [
+      'All meals — vegetarian & freshly cooked, made from organically grown vegetables and spices',
+      'During treatments, Ayurvedic diet is ensured',
+    ],
+  },
 ];
 
 export default function WhatWeOfferPage() {
@@ -47,19 +67,33 @@ export default function WhatWeOfferPage() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {inclusions.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 border border-border hover:shadow-md hover:border-primary/20 transition-all duration-300"
-              >
-                <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <Check size={14} className="text-primary" />
-                </div>
-                <p className="font-body text-sm sm:text-base text-text/80 leading-relaxed">{item}</p>
-              </div>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-8">
+  {offerCategories.map((category, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+    >
+      <h3 className="font-heading text-2xl font-semibold text-dark mb-6">
+        {category.title}
+      </h3>
+
+      <div className="space-y-4">
+        {category.items.map((item, itemIndex) => (
+          <div key={itemIndex} className="flex gap-3 items-start">
+            <Check
+              size={16}
+              className="text-primary mt-1 shrink-0"
+            />
+
+            <p className="text-text/80 leading-relaxed">
+              {item}
+            </p>
           </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 

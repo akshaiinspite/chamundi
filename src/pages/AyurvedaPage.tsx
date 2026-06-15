@@ -87,11 +87,17 @@ function TreatmentCard({
             }`}
           >
             <img
-              src={treatment.image}
-              alt={treatment.title}
-              className="w-full h-[450px] lg:h-[600px] object-cover"
-              loading="lazy"
-            />
+  src={treatment.image}
+  srcSet={`
+    ${treatment.image}?w=400 400w,
+    ${treatment.image}?w=800 800w,
+    ${treatment.image}?w=1200 1200w
+  `}
+  sizes="(max-width: 768px) 100vw, 50vw"
+  alt={treatment.title}
+  className="w-full h-[450px] lg:h-[600px] object-cover"
+  loading="lazy"
+/>
           </div>
         </div>
 
