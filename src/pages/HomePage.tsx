@@ -1,0 +1,32 @@
+import { Helmet } from 'react-helmet-async';
+import HeroSection from '../components/HeroSection';
+import TrustBadges from '../components/TrustBadges';
+import AboutSection from '../components/AboutSection';
+import OfferingsGrid from '../components/OfferingsGrid';
+import TreatmentBlocks from '../components/TreatmentBlocks';
+import StatsSection from '../components/StatsSection';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import GalleryGrid from '../components/GalleryGrid';
+import CTABanner from '../components/CTABanner';
+import ContactSection from '../components/ContactSection';
+
+export default function HomePage() {
+  return (
+    <>
+      <Helmet>
+        <title>Chamundi Hill Palace | Heritage Ayurveda Resort in Kerala</title>
+        <meta name="description" content="Reconnect with nature and balance at Chamundi Hill Palace, Kerala's heritage Ayurvedic retreat specializing in Panchakarma and holistic healing." />
+      </Helmet>
+      <HeroSection />
+      <TrustBadges />
+      <AboutSection />
+      <OfferingsGrid />
+      <TreatmentBlocks />
+      <StatsSection />
+      <TestimonialsCarousel />
+      <GalleryGrid />
+      <CTABanner />
+      <ContactSection />
+    </>
+  );
+}
