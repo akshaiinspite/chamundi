@@ -64,18 +64,17 @@ export default function FeedbackPage() {
             <span className="section-label">Reviews</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Feedback</h2>
           </div>
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {feedbacks.map((f, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 sm:p-10 border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div key={i}  className="h-full min-h-[420px] bg-white rounded-3xl p-8 border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                    <Quote size={18} className="text-accent" />
-                  </div>
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                <Quote size={22} className="text-accent" /></div>
                   <div>
                     <h3 className="font-heading text-xl font-semibold text-dark">{f.title}</h3>
                     <div className="flex items-center gap-1 mt-1">
                       {[...Array(5)].map((_, s) => (
-                        <Star key={s} size={12} className="fill-accent text-accent" />
+                        <Star key={s} size={14} className="fill-accent text-accent"/>
                       ))}
                     </div>
                   </div>

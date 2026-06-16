@@ -34,12 +34,12 @@ export default function Footer() {
   return (
     <footer className="bg-dark border-t-2 border-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Col 1 — Brand */}
-          <div className="space-y-5">
-            <img src="/img/logo.png" alt="Chamundi Hill Palace Logo" className="h-14 w-auto" loading="lazy" />
+          <div className="space-y-5 text-center md:text-left">
+            <img src="/img/logo.png" alt="Chamundi Hill Palace Logo" className="h-14 w-auto mx-auto md:mx-0" loading="lazy" />
             <p className="font-body text-sm text-muted leading-relaxed">Authentic Ayurveda in the Hills of Kerala</p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center md:justify-start gap-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-muted/30 flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors" aria-label="Facebook">
                 <FacebookIcon />
               </a>
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-heading text-lg font-semibold text-white mb-5">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Treatments */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-heading text-lg font-semibold text-white mb-5">Treatments</h4>
             <ul className="space-y-2.5">
               {treatmentLinks.map((link) => (
@@ -77,19 +77,35 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — Contact */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-heading text-lg font-semibold text-white mb-5">Contact</h4>
-            <div className="space-y-3">
+            <div className="space-y-3 text-center md:text-left">
               <p className="font-body text-sm text-muted leading-relaxed">Nadukani Hills, Kanjirapally,<br />Kottayam, Kerala – 686512</p>
-              <a href="tel:+919447870346" className="flex items-center gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
-                <Phone size={14} /> +91 94478 70346
-              </a>
-              <a href="mailto:info@chamundihillpalace.org" className="flex items-center gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
-                <Mail size={14} /> info@chamundihillpalace.org
-              </a>
-              <a href="https://wa.me/9447870346" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
-                <MessageCircle size={14} /> WhatsApp
-              </a>
+             <a
+  href="tel:+919447870346"
+  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
+>
+  <Phone size={14} />
+  +91 94478 70346
+</a>
+
+<a
+  href="mailto:info@chamundihillpalace.org"
+  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
+>
+  <Mail size={14} />
+  info@chamundihillpalace.org
+</a>
+
+<a
+  href="https://wa.me/9447870346"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
+>
+  <MessageCircle size={14} />
+  WhatsApp
+</a>
             </div>
           </div>
         </div>
@@ -99,7 +115,7 @@ export default function Footer() {
       <div className="border-t border-[#2A2118]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <p className="font-body text-xs text-muted/60 text-center">
-            © 2025 Chamundi Hill Palace Ayurveda Treatment Centre · All Rights Reserved
+            &copy; 2025 Chamundi Hill Palace Ayurveda Treatment Centre · All Rights Reserved
           </p>
         </div>
       </div>

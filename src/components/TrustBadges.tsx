@@ -1,10 +1,11 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import {  Award, Star, Leaf, HeartPulse,} from 'lucide-react';
 
 const badges = [
-  { icon: '🏆', label: 'TripAdvisor Certificate of Excellence' },
-  { icon: '⭐', label: "Travellers' Choice Award 2024" },
-  { icon: '🌿', label: 'Green Leaf Certified Resort' },
-  { icon: '🩺', label: '25+ Years of Authentic Ayurveda' },
+  { icon: Award, label: 'TripAdvisor Certificate of Excellence' },
+  { icon: Star, label: "Travellers' Choice Award 2024" },
+  { icon: Leaf, label: 'Green Leaf Certified Resort' },
+  { icon: HeartPulse, label: '25+ Years of Authentic Ayurveda' },
 ];
 
 export default function TrustBadges() {
@@ -19,19 +20,21 @@ export default function TrustBadges() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-start sm:justify-center gap-6 sm:gap-8 overflow-x-auto scrollbar-hide pb-2 sm:pb-0">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">          
           {badges.map((badge, i) => (
-            <div key={i} className="flex items-center gap-4 shrink-0">
-              {i > 0 && (
-                <div className="w-px h-10 bg-accent/40 hidden sm:block" />
-              )}
-              <div className="flex items-center gap-2.5">
-                <span className="text-xl">{badge.icon}</span>
-                <span className="font-body text-xs sm:text-sm font-semibold text-text whitespace-nowrap">
-                  {badge.label}
-                </span>
-              </div>
-            </div>
+            <div
+  key={i}
+  className="bg-white rounded-xl border border-border shadow-sm p-4 flex flex-col items-center text-center hover:shadow-md transition-all duration-300"
+>
+  <span className="text-2xl mb-2"><badge.icon
+  className="w-8 h-8 text-accent mb-2"
+  strokeWidth={1.75}
+/></span>
+
+  <span className="font-body text-xs sm:text-sm font-semibold text-text leading-relaxed">
+    {badge.label}
+  </span>
+</div>
           ))}
         </div>
       </div>
