@@ -2,8 +2,7 @@ import PageHero from '../components/PageHero';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { HeartPulse, BedDouble, Dumbbell, UtensilsCrossed,Check, ChevronLeft, ChevronRight  } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { HeartPulse, BedDouble, Dumbbell, UtensilsCrossed,Check} from 'lucide-react';
 
 const heroStats = [
   {
