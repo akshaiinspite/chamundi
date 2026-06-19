@@ -20,7 +20,7 @@ export default function PanchakarmaPage() {
         <div ref={ref} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-accent/20">
-              <img src="/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg" alt="Panchakarma Ayurvedic treatment" className="w-full h-[400px] sm:h-[480px] object-cover" loading="lazy" />
+              <img src="/img/ayurvedapage/weight-loss.jpg" alt="Panchakarma Ayurvedic treatment" className="w-full h-[400px] sm:h-[480px] object-cover" loading="lazy" />
             </div>
             <div className="space-y-6">
               <span className="section-label">28 Days Program</span>
@@ -43,31 +43,81 @@ export default function PanchakarmaPage() {
       </section>
 
       {/* Five Therapies */}
-      <section className="py-20 bg-surface">
-        <div ref={ref2} className={`max-w-5xl mx-auto px-4 sm:px-6 transition-all duration-700 ${vis2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="text-center mb-14">
-            <span className="section-label">The Five Actions</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Five Purification Therapies</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: 'Vamana', desc: 'Therapeutic emesis for upper body cleansing and Kapha balancing' },
-              { name: 'Virechana', desc: 'Purgation therapy for detoxifying the liver, spleen and lower GI tract' },
-              { name: 'Nasya', desc: 'Nasal administration of herbal oils for head and sinus purification' },
-              { name: 'Basti', desc: 'Medicated enema therapy — considered the most powerful of the five actions' },
-              { name: 'Raktamokshana', desc: 'Blood purification therapy to address skin, blood and Pitta disorders' },
-            ].map((t, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 border border-border hover:shadow-lg hover:border-t-3 hover:border-t-primary transition-all duration-300">
-                <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                  <span className="font-heading text-sm font-bold text-accent">{i + 1}</span>
-                </div>
-                <h3 className="font-heading text-lg font-bold text-dark mb-2">{t.name}</h3>
-                <p className="font-body text-sm text-text/70 leading-relaxed">{t.desc}</p>
+     <section className="py-20 bg-surface">
+  <div
+    ref={ref2}
+    className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${
+      vis2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}
+  >
+    <div className="text-center mb-14">
+      <span className="section-label">The Five Actions</span>
+      <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">
+        Five Purification Therapies
+      </h2>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+      {/* Left Image */}
+      <div>
+        <img
+          src="/img/ayurvedapage/rejuvenation.jpg"
+          alt="Panchakarma Treatment"
+          className="w-full  h-[450px] lg:h-[700px] object-cover rounded-3xl shadow-lg"
+        />
+      </div>
+
+      {/* Right Therapies */}
+      <div className="space-y-5">
+        {[
+          {
+            name: 'Vamana',
+            desc: 'Therapeutic emesis for upper body cleansing and Kapha balancing',
+          },
+          {
+            name: 'Virechana',
+            desc: 'Purgation therapy for detoxifying the liver, spleen and lower GI tract',
+          },
+          {
+            name: 'Nasya',
+            desc: 'Nasal administration of herbal oils for head and sinus purification',
+          },
+          {
+            name: 'Basti',
+            desc: 'Medicated enema therapy — considered the most powerful of the five actions',
+          },
+          {
+            name: 'Raktamokshana',
+            desc: 'Blood purification therapy to address skin, blood and Pitta disorders',
+          },
+        ].map((t, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-all duration-300"
+          >
+            <div className="flex gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold shrink-0">
+                {i + 1}
               </div>
-            ))}
+
+              <div>
+                <h3 className="font-heading text-xl font-semibold text-dark mb-2">
+                  {t.name}
+                </h3>
+
+                <p className="text-text/70 leading-relaxed">
+                  {t.desc}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <VideoTestimonials />
       <CTABanner />

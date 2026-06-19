@@ -17,7 +17,7 @@ export default function AboutSection() {
           {/* Image only — stacked on top below lg */}
           <div className="rounded-[28px] lg:rounded-[40px] overflow-hidden shadow-2xl">
             <img
-              src="/img/banner-3.jpg"
+              src="/img/banner-2.jpg"
               alt="Chamundi Hill Palace heritage building surrounded by lush Kerala greenery"
               className="w-full h-[360px] sm:h-[480px] lg:h-[830px] object-cover object-[center_30%]"
               loading="lazy"
@@ -46,17 +46,44 @@ export default function AboutSection() {
                 </p>
               </blockquote>
 
-              <a
-                href="#treatments"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#treatments')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
-              >
-                Learn About Us
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-6 border-t border-[#E8E1D4]">
+  {/* Experience */}
+  <div className="flex items-center gap-4">
+    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+      <span className="font-heading text-xl text-white font-semibold">
+        25+
+      </span>
+    </div>
+
+    <div>
+      <p className="text-xs uppercase tracking-[0.25em] text-text/50">
+        Experience
+      </p>
+
+      <p className="font-heading text-xl text-primary">
+        Years of Healing
+      </p>
+    </div>
+  </div>
+
+  {/* CTA */}
+  <a
+    href="#treatments"
+    onClick={(e) => {
+      e.preventDefault();
+      document
+        .querySelector('#treatments')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }}
+    className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-white font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-1 group">
+    Learn About Us
+
+    <ArrowRight
+      size={16}
+      className="group-hover:translate-x-1 transition-transform"
+    />
+  </a>
+</div>
             </div>
           </div>
         </div>

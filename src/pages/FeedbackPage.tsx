@@ -1,8 +1,31 @@
 import PageHero from '../components/PageHero';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Leaf, Users, BadgeCheck } from 'lucide-react';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
+const heroStats = [
+  {
+    icon: Star,
+    value: '4.9',
+    label: 'Rated',
+  },
+  {
+    icon: Users,
+    value: '15+',
+    label: 'Repeat Guests',
+  },
+  {
+    icon: BadgeCheck,
+    value: '100%',
+    label: 'Certified Doctors',
+  },
+  {
+    icon: Leaf,
+    value: '28',
+    label: 'Day Panchakarma',
+  },
+];
 const feedbacks = [
   {
     name: 'Wander23307748133',
@@ -54,11 +77,41 @@ export default function FeedbackPage() {
         backgroundImage="/img/banner-2.jpg"
         breadcrumb="Feedback"
       />
+           <section className="bg-primary py-12 md:py-20 px-4 sm:px-6 lg:px-20">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+      {heroStats.map((stat, index) => {
+        const Icon = stat.icon;
 
+        return (
+          <div
+            key={index}
+            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl md:rounded-3xl px-3 py-3 md:px-5 md:py-5 text-white shadow-xl hover:bg-white/15 hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="flex items-center gap-2 md:gap-3">
+              <Icon className="w-4 h-4 md:w-6 md:h-6 text-accent shrink-0" />
+
+              <div>
+                <div className="font-heading text-lg md:text-3xl leading-none">
+                  {stat.value}
+                </div>
+
+                <div className="text-[10px] md:text-sm uppercase tracking-wide text-white/80">
+                  {stat.label}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+<TestimonialsCarousel/>
       <section className="py-20 sm:py-28 bg-background">
         <div
           ref={ref}
-          className={`max-w-5xl mx-auto px-4 sm:px-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`mx-5 lg:mx-20 px-4 sm:px-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           <div className="text-center mb-16">
             <span className="section-label">Reviews</span>

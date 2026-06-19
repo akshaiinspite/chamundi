@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageHero from '../components/PageHero';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { X, Plus, Play } from 'lucide-react';
+import { X, Plus, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
   { src: '/img/banner-1.jpg', alt: 'Panoramic view of Chamundi Hill Palace' },
@@ -26,11 +26,40 @@ const videos = [
   { title: 'Mrs. Pilar — Guest Testimonial', url: 'https://www.youtube.com/watch?v=B-5vcic6zl8&t=55s', thumb: '/img/banner-3.jpg' },
   { title: 'Guest Review (German)', url: 'https://youtube.com/shorts/tQDnXW9aqXw?si=NMLxn9Z-vaeKU61n', thumb: '/img/banner-4.jpg' },
 ];
+const facilityGallery = [
+  '/img/banner-1.jpg',
+  '/img/banner-2.jpg',
+  '/img/rejuvenation.jpg',
+  '/img/rooms.jpg',
+  '/img/accomodation-facilities.jpg',
+  '/img/kerala-ayurveda-2.jpg',
+  '/img/excursion.jpg',
+  '/img/yoga.jpg',
+  '/img/organic.jpg',
+];
 
 export default function GalleryPage() {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const { ref: photoRef, isVisible: photoVis } = useScrollReveal(0.1);
   const { ref: videoRef, isVisible: videoVis } = useScrollReveal(0.1);
+     const [currentSlide, setCurrentSlide] = useState(0);
+    
+    const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
+    };
+    
+    const prevSlide = () => {
+      setCurrentSlide(
+        (prev) => (prev - 1 + facilityGallery.length) % facilityGallery.length
+      );
+    };
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
+      }, 4000); // changes every 4 seconds
+    
+      return () => clearInterval(interval);
+    }, []);
 
   return (
     <>
@@ -48,6 +77,28 @@ export default function GalleryPage() {
             <span className="section-label">Photos</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Our Resort Views</h2>
           </div>
+                 {/* carousel */}
+                <div className="relative mb-16 w-full  max-w-6xl mx-auto px-4 sm:px-6">
+                  <div className="overflow-hidden rounded-[32px] shadow-[0_25px_70px_rgba(0,0,0,0.15)]">
+                    <img src={facilityGallery[currentSlide]} alt="Accommodation Gallery" className="w-full h-[250px] sm:h-[350px] lg:h-[550px] object-cover"/>
+                  </div>
+                 
+                   {/* Left Arrow */}
+                   <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center hover:bg-white transition">
+                   <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
+                   </button>
+                   {/* Right Arrow */}
+                   <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center hover:bg-white transition">
+                   <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
+                   </button>
+                
+                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
+                  {facilityGallery.map((_, index) => (
+                    <button key={index} onClick={() => setCurrentSlide(index)} className={`w-3 h-3 rounded-full transition-all ${ currentSlide === index ? 'bg-white w-8' : 'bg-white/60'}`}
+                />
+              ))}
+            </div>
+              </div>
           <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
             {photos.map((img, i) => (
               <div

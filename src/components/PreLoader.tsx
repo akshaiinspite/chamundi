@@ -34,18 +34,16 @@ export default function Preloader() {
 
       {/* 🌿 Floating Glow Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-40 h-40 bg-green-100/20 rounded-full blur-[120px] top-10 left-10 animate-pulse" />
-        <div className="absolute w-48 h-48 bg-amber-100/20 rounded-full blur-[140px] bottom-20 right-20 animate-pulse" />
+        <div className="absolute w-40 h-40 bg-green-300/25 rounded-full blur-[120px] top-10 left-10 animate-pulse" />
+        <div className="absolute w-48 h-48 bg-emerald-300/25 rounded-full blur-[140px] bottom-20 right-20 animate-pulse" />
       </div>
 
       {/* 🌿 CONTENT */}
       <div className="relative">
         {/* Main Smoke Layer */}
-      <div className="absolute inset-0 scale-[1.6] bg-stone-200/40 blur-[180px] rounded-full" />
-
-<div className="absolute -top-20 -left-20 w-72 h-72 bg-amber-100/35 blur-[180px] rounded-full" />
-
-<div className="absolute -bottom-20 -right-20 w-72 h-72 bg-green-100/35 blur-[180px] rounded-full" />
+      <div className="absolute inset-0 scale-[1.6] bg-green-200/40 blur-[180px] rounded-full" />
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-300/30 blur-[180px] rounded-full" />
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-emerald-300/30 blur-[180px] rounded-full" />
 
         {/* Main Card */}
         <div className="relative text-center px-10 py-10 rounded-[32px] bg-white/80 backdrop-blur-3xl border border-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">

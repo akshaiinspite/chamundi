@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Clock3, Globe2, Star, MapPin} from 'lucide-react';
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
@@ -55,6 +56,62 @@ export default function HeroSection() {
         >
           Where Ancient Wisdom Meets Modern Wellness
         </p>
+        {/* Stats */}
+<div
+  className={`grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 transition-all duration-700 delay-[400ms] ${
+    loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+>
+  {[
+    {
+      icon: Clock3,
+      value: '25+',
+      label: 'Years',
+    },
+    {
+      icon: Globe2,
+      value: '40+',
+      label: 'Countries',
+    },
+    {
+      icon: Star,
+      value: '4.9',
+      label: 'Rated',
+    },
+    {
+      icon: MapPin,
+      value: 'Kerala',
+      label: 'Hills',
+    },
+  ].map((item) => {
+    const Icon = item.icon;
+
+    return (
+     <div
+  key={item.label}
+  className="group bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-4 flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 hover:border-accent/40 hover:shadow-xl hover:shadow-black/20"
+>
+  <div className="flex-shrink-0">
+    <Icon
+      size={22}
+      strokeWidth={1.8}
+      className="text-accent transition-transform duration-300 group-hover:scale-110"
+    />
+  </div>
+
+  <div className="text-left">
+    <div className="text-white font-heading text-xl font-semibold leading-none">
+      {item.value}
+    </div>
+
+    <div className="text-white/80 text-xs uppercase tracking-wider mt-1">
+      {item.label}
+    </div>
+  </div>
+</div>
+    );
+  })}
+</div>
 
         {/* CTAs */}
         <div

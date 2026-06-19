@@ -45,7 +45,7 @@ export default function YogaCoursePage() {
       />
 
       {/* Intro */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-surface">
         <div ref={introRef} className={`max-w-4xl mx-auto px-4 sm:px-6 text-center transition-all duration-700 ${introVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-body text-base sm:text-lg text-text/80 leading-relaxed mb-6">
             Join us for an Intense Hatha Yoga Training Course in Kerala at Chamundi Hill Palace, where the true essence
@@ -60,12 +60,12 @@ export default function YogaCoursePage() {
       </section>
 
       {/* Course Details */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-primary">
         <div ref={detailRef} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${detailVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-14">
             <span className="section-label">Course Details</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">4-Week Immersive Experience</h2>
-            <p className="font-body text-base text-text/70 mt-4 max-w-2xl mx-auto">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">4-Week Immersive Experience</h2>
+            <p className="font-body text-base text-white mt-4 max-w-2xl mx-auto">
               6 hours of lessons daily (Mon–Fri) and 2 hours on Saturdays. Sundays are free for rest and integration.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function YogaCoursePage() {
               return (
                 <div key={i} className="bg-white rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-accent" />
+                    <Icon size={22} className="text-primary" />
                   </div>
                   <h3 className="font-heading text-lg font-bold text-dark mb-3">{item.title}</h3>
                   <p className="font-body text-sm text-text/70 leading-relaxed">{item.desc}</p>
@@ -100,19 +100,28 @@ export default function YogaCoursePage() {
             <span className="section-label">Curriculum</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Yoga Course Syllabus</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {syllabusItems.map((s, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 border border-border">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="font-heading text-sm font-bold text-primary">{i + 1}</span>
+          <div className="grid lg:grid-cols-2 gap-10 items-start mb-20">
+            {/* Left Image */}
+            <div className="h-full">
+              <img src="/img/yoga.jpg" alt="Yoga Course" className="w-full h-full min-h-[450px] lg:min-h-[900px] object-cover rounded-3xl"/>
+            </div>
+            {/* Right Syllabus */}
+            <div className="space-y-5">
+              {syllabusItems.map((s, i) => (
+                <div key={i} className="bg-white rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-all duration-300">
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold shrink-0">{i + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-xl font-semibold text-dark mb-2">{s.title}</h3>
+                      <p className="text-text/70 leading-relaxed">{s.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-dark">{s.title}</h3>
                 </div>
-                <p className="font-body text-sm text-text/70 leading-relaxed ml-11">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+
+</div>
 
           {/* Pranayama & Meditation Lists */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

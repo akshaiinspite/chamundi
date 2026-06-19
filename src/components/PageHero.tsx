@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { ArrowRight } from 'lucide-react';
+import {ArrowRight } from 'lucide-react';
 
 interface PageHeroProps {
   title: string;
@@ -40,6 +40,7 @@ export default function PageHero({ title, subtitle, backgroundImage, breadcrumb 
             <p className="font-heading text-lg sm:text-xl italic text-white/80">{subtitle}</p>
           )}
         </div>
+
       </section>
     </>
   );

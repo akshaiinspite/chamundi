@@ -10,6 +10,8 @@ interface TreatmentBlock {
   cta: string;
   ctaHref: string;
   imageRight: boolean;
+  number: string;
+  subtitle: string;
 }
 
 const treatments: TreatmentBlock[] = [
@@ -20,6 +22,8 @@ const treatments: TreatmentBlock[] = [
     title: 'Panchakarma Treatment in Kerala',
     body: 'A transformative detox therapy that purifies the body, clears the mind, and renews energy. Using herbal oils, traditional massages, and cleansing techniques, Panchakarma helps manage stress, joint pain, sleep disorders, and overall imbalance.',
     cta: 'Explore Panchakarma',
+    number:'15+',
+    subtitle:'Signature Therapies',
     ctaHref: '#contact',
     imageRight: true,
   },
@@ -30,6 +34,8 @@ const treatments: TreatmentBlock[] = [
     title: 'Yoga Retreat in Kerala',
     body: 'Yoga is integral to every wellness program at Chamundi. Each day begins and ends with guided yoga sessions tailored by experienced instructors. Guests can join our immersive Yoga Course covering asanas, pranayama, and meditation.',
     cta: 'View Yoga Courses',
+     number:'40+',
+    subtitle:'Countries Welcomed',
     ctaHref: '#contact',
     imageRight: false,
   },
@@ -40,6 +46,8 @@ const treatments: TreatmentBlock[] = [
     title: 'Stay at Chamundi Hill Palace',
     body: 'Spacious ensuite rooms offer fresh air, natural light, and stunning hillside views. Choose the heritage palace or garden cottages — each blending traditional Kerala architecture with modern amenities. Every detail supports deep rest and rejuvenation.',
     cta: 'View Accommodation',
+     number:'98%',
+    subtitle:'Guests Who Return',
     ctaHref: '#contact',
     imageRight: true,
   },
@@ -101,8 +109,25 @@ function TreatmentRow({
             <p className="font-body text-[15px] lg:text-base text-text/80 leading-8 mb-8">
               {treatment.body}
             </p>
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-6 border-t border-[#E8E1D4]">
+  {/* Experience */}
+  <div className="flex items-center gap-4">
+    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+      <span className="font-heading text-xl text-white font-semibold">
+        {treatment.number}
+      </span>
+    </div>
 
-            <a
+    <div>
+
+      <p className="font-heading text-xl text-primary">
+        {treatment.subtitle}
+      </p>
+    </div>
+  </div>
+
+  {/* CTA */}
+   <a
               href={treatment.ctaHref}
               onClick={(e) => {
                 e.preventDefault();
@@ -118,6 +143,8 @@ function TreatmentRow({
                 className="group-hover:translate-x-1 transition-transform"
               />
             </a>
+</div>
+           
           </div>
         </div>
       </div>
