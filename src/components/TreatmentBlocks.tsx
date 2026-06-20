@@ -66,7 +66,7 @@ function TreatmentRow({
     <section
       ref={ref}
       id={index === 2 ? "accommodation" : index === 1 ? "yoga" : undefined}
-      className={`px-4 relative lg:min-h-[700px] mb-11 transition-all duration-700 ${
+      className={`px-4 relative lg:min-h-[700px] mb-11 mt-20 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
