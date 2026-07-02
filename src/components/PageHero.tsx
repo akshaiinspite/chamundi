@@ -6,10 +6,11 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   backgroundImage: string;
+  backgroundVideo?: string;
   breadcrumb: string;
 }
 
-export default function PageHero({ title, subtitle, backgroundImage, breadcrumb }: PageHeroProps) {
+export default function PageHero({ title, subtitle, backgroundImage, backgroundVideo, breadcrumb }: PageHeroProps) {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
@@ -19,7 +20,20 @@ export default function PageHero({ title, subtitle, backgroundImage, breadcrumb 
       </Helmet>
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={backgroundImage} alt={title} className="w-full h-full object-cover" loading="eager" />
+          {backgroundVideo ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              poster={backgroundImage}
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+            </video>
+          ) : (
+            <img src={backgroundImage} alt={title} className="w-full h-full object-cover" loading="eager" />
+          )}
           <div className="absolute inset-0 bg-dark/55" />
         </div>
         <div

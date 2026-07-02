@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
 import TrustBadges from '../components/TrustBadges';
 import AboutSection from '../components/AboutSection';
+import HistoryTimeline from '../components/HistoryTimeline';
 import OfferingsGrid from '../components/OfferingsGrid';
 import TreatmentBlocks from '../components/TreatmentBlocks';
 import StatsSection from '../components/StatsSection';
@@ -9,6 +10,7 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import GalleryGrid from '../components/GalleryGrid';
 import CTABanner from '../components/CTABanner';
 import ContactSection from '../components/ContactSection';
+import HeritageDivider from '../components/HeritageDivider';
 
 export default function HomePage() {
   return (
@@ -20,8 +22,12 @@ export default function HomePage() {
       <HeroSection />
       <TrustBadges />
       <AboutSection />
+      <HeritageDivider />
+      <HistoryTimeline />
       <OfferingsGrid />
+      <HeritageDivider />
       <TreatmentBlocks />
+      <HeritageDivider />
       <StatsSection />
       <TestimonialsCarousel />
       <GalleryGrid />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowRight } from 'lucide-react';
 
@@ -24,7 +25,7 @@ const treatments: TreatmentBlock[] = [
     cta: 'Explore Panchakarma',
     number:'15+',
     subtitle:'Signature Therapies',
-    ctaHref: '#contact',
+    ctaHref: '/panchakarma',
     imageRight: true,
   },
   {
@@ -34,9 +35,9 @@ const treatments: TreatmentBlock[] = [
     title: 'Yoga Retreat in Kerala',
     body: 'Yoga is integral to every wellness program at Chamundi. Each day begins and ends with guided yoga sessions tailored by experienced instructors. Guests can join our immersive Yoga Course covering asanas, pranayama, and meditation.',
     cta: 'View Yoga Courses',
-     number:'40+',
+    number:'40+',
     subtitle:'Countries Welcomed',
-    ctaHref: '#contact',
+    ctaHref: '/yoga-course',
     imageRight: false,
   },
   {
@@ -46,9 +47,9 @@ const treatments: TreatmentBlock[] = [
     title: 'Stay at Chamundi Hill Palace',
     body: 'Spacious ensuite rooms offer fresh air, natural light, and stunning hillside views. Choose the heritage palace or garden cottages — each blending traditional Kerala architecture with modern amenities. Every detail supports deep rest and rejuvenation.',
     cta: 'View Accommodation',
-     number:'98%',
+    number:'98%',
     subtitle:'Guests Who Return',
-    ctaHref: '#contact',
+    ctaHref: '/accommodation',
     imageRight: true,
   },
 ];
@@ -127,22 +128,35 @@ function TreatmentRow({
   </div>
 
   {/* CTA */}
-   <a
-              href={treatment.ctaHref}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .querySelector(treatment.ctaHref)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
-            >
-              {treatment.cta}
-              <ArrowRight
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </a>
+  {treatment.ctaHref.startsWith('#') ? (
+    <a
+      href={treatment.ctaHref}
+      onClick={(e) => {
+        e.preventDefault();
+        document
+          .querySelector(treatment.ctaHref)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}
+      className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+    >
+      {treatment.cta}
+      <ArrowRight
+        size={16}
+        className="group-hover:translate-x-1 transition-transform"
+      />
+    </a>
+  ) : (
+    <Link
+      to={treatment.ctaHref}
+      className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+    >
+      {treatment.cta}
+      <ArrowRight
+        size={16}
+        className="group-hover:translate-x-1 transition-transform"
+      />
+    </Link>
+  )}
 </div>
            
           </div>

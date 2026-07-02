@@ -43,7 +43,7 @@ export default function PanchakarmaPage() {
       </section>
 
       {/* Five Therapies */}
-     <section className="py-20 bg-surface">
+      <section className="py-20 bg-dark text-white">
   <div
     ref={ref2}
     className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${
@@ -51,20 +51,24 @@ export default function PanchakarmaPage() {
     }`}
   >
     <div className="text-center mb-14">
-      <span className="section-label">The Five Actions</span>
-      <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">
+      <span className="section-label text-accent font-semibold tracking-wider">The Five Actions</span>
+      <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">
         Five Purification Therapies
       </h2>
     </div>
 
     <div className="grid lg:grid-cols-2 gap-10 items-start">
 
-      {/* Left Image */}
+      {/* Left Video */}
       <div>
-        <img
-          src="/img/ayurvedapage/rejuvenation.jpg"
-          alt="Panchakarma Treatment"
-          className="w-full  h-[450px] lg:h-[700px] object-cover rounded-3xl shadow-lg"
+        <video
+          src="/img/videos/ayurveda.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-[450px] lg:h-[700px] object-cover rounded-3xl shadow-lg border border-white/5"
+          poster="/img/ayurvedapage/rejuvenation.jpg"
         />
       </div>
 
@@ -94,19 +98,19 @@ export default function PanchakarmaPage() {
         ].map((t, i) => (
           <div
             key={i}
-            className="bg-white rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-all duration-300"
+            className="group bg-white/5 border border-white/10 hover:border-accent/40 rounded-2xl p-6 shadow-md hover:shadow-xl hover:bg-white/10 transition-all duration-300"
           >
             <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold shrink-0">
+              <div className="w-12 h-12 rounded-full bg-accent text-dark flex items-center justify-center font-heading font-bold shrink-0 shadow-inner">
                 {i + 1}
               </div>
 
               <div>
-                <h3 className="font-heading text-xl font-semibold text-dark mb-2">
+                <h3 className="font-heading text-xl font-semibold text-white group-hover:text-accent transition-colors duration-300 mb-2">
                   {t.name}
                 </h3>
 
-                <p className="text-text/70 leading-relaxed">
+                <p className="text-white/80 leading-relaxed font-body text-sm sm:text-base">
                   {t.desc}
                 </p>
               </div>

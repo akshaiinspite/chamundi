@@ -130,3 +130,44 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Reference Inspired Premium Animations ──────────────────────── */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-gentle-float-1 {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+.animate-gentle-float-2 {
+  animation: gentle-float 6s ease-in-out 1.5s infinite;
+}
+.animate-gentle-float-3 {
+  animation: gentle-float 6s ease-in-out 3s infinite;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-scroll {
+  animation: marquee-scroll 35s linear infinite;
+}
+
+@keyframes particle-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+  50% { transform: translate(40px, -30px) scale(1.15); opacity: 0.35; }
+}
+@keyframes particle-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+  50% { transform: translate(-50px, 40px) scale(1.2); opacity: 0.45; }
+}
+
+.animate-particle-drift-1 {
+  animation: particle-drift-1 14s ease-in-out infinite;
+}
+.animate-particle-drift-2 {
+  animation: particle-drift-2 18s ease-in-out infinite;
+}

@@ -2,16 +2,16 @@ import PageHero from '../components/PageHero';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Bed, UtensilsCrossed, Wifi, TreePine, MapPin, Sprout, Clock3, Star, BadgeCheck, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Bed, UtensilsCrossed, Wifi, TreePine, MapPin, Sprout, Clock3, Star, BadgeCheck, Users, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const facilityGallery = [
-  '/img/rooms.jpg',
-  '/img/accomodation-facilities.jpg',
-  '/img/excursion.jpg',
-  '/img/meals.jpg',
-  '/img/yoga.jpg',
-  '/img/organic.jpg',
+  '/img/videos/accomadation.mp4',
+  '/img/videos/ayurveda.mp4',
+  '/img/videos/organicfarm.mp4',
+  '/img/videos/meals.mp4',
+  '/img/videos/yoga.mp4',
+  '/img/videos/calmness.mp4',
 ];
 
 const heroStats = [
@@ -51,6 +51,8 @@ export default function AccommodationPage() {
   const { ref: gridRef, isVisible: gridVis } = useScrollReveal(0.1);
   const { ref: yogaRef, isVisible: yogaVis } = useScrollReveal(0.1);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState('/img/videos/accomadation.mp4');
 
 const nextSlide = () => {
   setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
@@ -61,16 +63,48 @@ const prevSlide = () => {
     (prev) => (prev - 1 + facilityGallery.length) % facilityGallery.length
   );
 };
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
-  }, 4000); // changes every 4 seconds
+  useEffect(() => {
+    const isVideo = facilityGallery[currentSlide].endsWith('.mp4');
+    if (isVideo) return;
 
-  return () => clearInterval(interval);
-}, []);
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000); // changes every 4 seconds if it is a static image
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
+  useEffect(() => {
+    if (isVideoModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsVideoModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isVideoModalOpen]);
 
   return (
     <>
+      {/* Styles Block */}
+      <style>{`
+        @keyframes pulseRing {
+          0% { transform: scale(0.95); opacity: 0.8; }
+          50% { transform: scale(1.15); opacity: 0.4; }
+          100% { transform: scale(1.3); opacity: 0; }
+        }
+        .animate-pulse-ring {
+          animation: pulseRing 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+      `}</style>
       <PageHero
         title="Accommodation & Facilities"
         subtitle="Heritage Rooms Designed for Peace, Comfort & Recovery"
@@ -109,83 +143,115 @@ useEffect(() => {
 </section>
 
       {/* Intro */}
-     <section className="py-24 bg-background overflow-hidden">
-  <div
-    ref={introRef}
-    className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${
-      introVis
-        ? 'opacity-100 translate-y-0'
-        : 'opacity-0 translate-y-8'
-    }`}
-  >
-    <div className="relative flex flex-col lg:block lg:min-h-[650px]">
-
-      {/* IMAGE */}
-      <div className="w-full lg:w-[58%]">
-        <div className="relative overflow-hidden rounded-tl-[80px] rounded-bl-[80px] rounded-tr-[30px] rounded-br-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.15)]">
-          <img
-            src="/img/accomodation-facilities.jpg"
-            alt="Heritage accommodation rooms at Chamundi Hill Palace"
-            className="w-full h-[420px] lg:h-[650px] object-cover transition-transform duration-700 hover:scale-105"
-            loading="lazy"
-          />
-<div className="absolute left-10 bottom-3 md:left-6  md:bottom-6 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl px-2 py-2 md:px-4 md:py-3 shadow-xl border border-[#E8E0D1] z-10">
-  <div className="flex items-center gap-2 md:gap-3">
-    <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center">
-      <Star className="w-3 h-3 md:w-5 md:h-5 text-accent fill-accent" />
-    </div>
-
-    <div>
-      <div className="flex items-center gap-1">
-        <span className="font-heading text-lg md:text-2xl text-dark">
-          4.9
-        </span>
-        <span className="text-[10px] md:text-sm text-text/60">
-          /5
-        </span>
-      </div>
-
-      <p className="text-[8px] md:text-xs uppercase tracking-[0.12em] md:tracking-[0.15em] text-text/60">
-        Guest Rating
-      </p>
-    </div>
-  </div>
-</div>
+      <section className="py-24 bg-background overflow-hidden relative">
+        {/* Ambient background glows for rich aesthetics */}
+        <div className="absolute inset-0 pointer-events-none opacity-40 z-0">
+          <div className="absolute -top-20 -left-20 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '6s' }} />
+          <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
         </div>
-      </div>
 
-      {/* CONTENT CARD */}
-      <div className="w-full mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[48%]">
-        <div className="bg-white p-8 sm:p-10 lg:p-14 rounded-tr-[80px] rounded-br-[80px] rounded-tl-[30px] rounded-bl-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.12)] border border-[#E8E0D1]">
+        <div
+          ref={introRef}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
+          <div className="relative flex flex-col lg:block lg:min-h-[650px]">
 
-          <span className="section-label">
-            Your Stay
-          </span>
+            {/* IMAGE (Slides in from Left) */}
+            <div 
+              className={`w-full lg:w-[58%] transition-all duration-1000 ease-out ${
+                introVis ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+              }`}
+            >
+              <div 
+                onClick={() => {
+                  setVideoUrl('/img/videos/accomadation.mp4');
+                  setIsVideoModalOpen(true);
+                }}
+                className="relative overflow-hidden rounded-tl-[80px] rounded-bl-[80px] rounded-tr-[30px] rounded-br-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.15)] cursor-pointer group"
+              >
+                <img
+                  src="/img/accomodation-facilities.jpg"
+                  alt="Heritage accommodation rooms at Chamundi Hill Palace"
+                  className="w-full h-[420px] lg:h-[650px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                
+                {/* Play Button Overlay with Pulsing Rings */}
+                <div className="absolute inset-0 bg-black/25 group-hover:bg-black/45 transition-colors duration-500 flex items-center justify-center">
+                  <div className="relative flex items-center justify-center">
+                    {/* Pulsing ring 1 */}
+                    <div className="absolute w-28 h-28 rounded-full bg-accent/30 animate-pulse-ring" />
+                    {/* Pulsing ring 2 (delayed) */}
+                    <div className="absolute w-28 h-28 rounded-full bg-accent/20 animate-pulse-ring" style={{ animationDelay: '0.6s' }} />
+                    
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 backdrop-blur-sm flex items-center justify-center text-white shadow-2xl group-hover:scale-110 group-hover:bg-accent transition-all duration-300 relative z-10">
+                      <Play className="w-6 h-6 md:w-8 md:h-8 ml-1 fill-white text-white" />
+                    </div>
+                  </div>
+                </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark leading-tight mt-4 mb-6">
-            Comfortable Living in a Heritage Setting
-          </h2>
+                {/* Rating Badge (Pops up with delay) */}
+                <div className={`absolute left-10 bottom-3 md:left-6 md:bottom-6 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl px-2 py-2 md:px-4 md:py-3 shadow-xl border border-[#E8E0D1] z-10 transition-all duration-700 delay-500 ${
+                  introVis ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-4'
+                }`}>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                      <Star className="w-3 h-3 md:w-5 md:h-5 text-accent fill-accent" />
+                    </div>
 
-          <p className="font-body text-base text-text/80 leading-relaxed mb-5">
-            All rooms are spacious and comfortable, with private bathrooms.
-            Some rooms are within the main building and some are even more
-            quietly located with beautiful views.
-          </p>
+                    <div>
+                      <div className="flex items-center gap-1">
+                        <span className="font-heading text-lg md:text-2xl text-dark">
+                          4.9
+                        </span>
+                        <span className="text-[10px] md:text-sm text-text/60">
+                          /5
+                        </span>
+                      </div>
 
-          <p className="font-body text-base text-text/80 leading-relaxed">
-            Nourishment is a vital part of healing, and our cuisine is
-            thoughtfully crafted to support your wellness journey. Food is
-            served in a common dining table so that you have a good
-            opportunity to mingle with guests and experience the warm,
-            community atmosphere of Chamundi Hill Palace.
-          </p>
+                      <p className="text-[8px] md:text-xs uppercase tracking-[0.12em] md:tracking-[0.15em] text-text/60">
+                        Guest Rating
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            {/* CONTENT CARD (Slides in from Right) */}
+            <div className="w-full mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[48%] overflow-visible z-20 pointer-events-none">
+              <div className={`bg-white p-8 sm:p-10 lg:p-14 rounded-tr-[80px] rounded-br-[80px] rounded-tl-[30px] rounded-bl-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.12)] border border-[#E8E0D1] pointer-events-auto transition-all duration-1000 ease-out delay-200 ${
+                introVis ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'
+              }`}>
+
+                <span className="section-label">
+                  Your Stay
+                </span>
+
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark leading-tight mt-4 mb-6">
+                  Comfortable Living in a Heritage Setting
+                </h2>
+
+                <p className="font-body text-base text-text/80 leading-relaxed mb-5">
+                  All rooms are spacious and comfortable, with private bathrooms.
+                  Some rooms are within the main building and some are even more
+                  quietly located with beautiful views.
+                </p>
+
+                <p className="font-body text-base text-text/80 leading-relaxed">
+                  Nourishment is a vital part of healing, and our cuisine is
+                  thoughtfully crafted to support your wellness journey. Food is
+                  served in a common dining table so that you have a good
+                  opportunity to mingle with guests and experience the warm,
+                  community atmosphere of Chamundi Hill Palace.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Facilities Grid */}
       <section className="py-20 bg-dark">
@@ -196,12 +262,24 @@ useEffect(() => {
           </div>
           {/* carousel */}
           <div className="relative mb-16">
-  <div className="overflow-hidden rounded-[32px] shadow-[0_25px_70px_rgba(0,0,0,0.15)]">
-    <img
-      src={facilityGallery[currentSlide]}
-      alt="Accommodation Gallery"
-      className="w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover transition-all duration-500"
-    />
+  <div className="overflow-hidden rounded-[32px] shadow-[0_25px_70px_rgba(0,0,0,0.15)] h-[250px] sm:h-[350px] lg:h-[500px] relative bg-black/10">
+    {facilityGallery[currentSlide].endsWith('.mp4') ? (
+      <video
+        key={facilityGallery[currentSlide]}
+        src={facilityGallery[currentSlide]}
+        autoPlay
+        muted
+        playsInline
+        onEnded={nextSlide}
+        className="w-full h-full object-cover transition-all duration-500"
+      />
+    ) : (
+      <img
+        src={facilityGallery[currentSlide]}
+        alt="Accommodation Gallery"
+        className="w-full h-full object-cover transition-all duration-500"
+      />
+    )}
   </div>
 
   {/* Left Arrow */}
@@ -253,89 +331,148 @@ useEffect(() => {
       </section>
 
       {/* Yoga Hall */}
-   <section className="py-24 bg-background overflow-hidden">
-  <div
-    ref={yogaRef}
-    className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${
-      yogaVis
-        ? 'opacity-100 translate-y-0'
-        : 'opacity-0 translate-y-8'
-    }`}
-  >
-    <div className="relative flex flex-col lg:block lg:min-h-[650px]">
+    <section className="py-24 bg-background overflow-hidden relative">
+      <div
+        ref={yogaRef}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
+        <div className="relative flex flex-col lg:block lg:min-h-[650px]">
 
-      {/* IMAGE */}
-      <div className="w-full lg:w-[58%] lg:ml-auto">
-        <div className="relative overflow-hidden rounded-tr-[80px] rounded-br-[80px] rounded-tl-[30px] rounded-bl-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.15)]">
-          <img
-            src="/img/yoga.jpg"
-            alt="Yoga hall at Chamundi Hill Palace"
-            className="w-full h-[420px] lg:h-[650px] object-cover transition-transform duration-700 hover:scale-105"
-            loading="lazy"
-          />
-          <div className="absolute right-10 bottom-3 md:right-6  md:bottom-6 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl px-2 py-2 md:px-4 md:py-3 shadow-xl border border-[#E8E0D1] z-10">
-  <div className="flex items-center gap-2 md:gap-3">
-    <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center">
-      <Star className="w-3 h-3 md:w-5 md:h-5 text-accent fill-accent" />
-    </div>
+          {/* IMAGE/VIDEO (Slides in from Right) */}
+          <div 
+            className={`w-full lg:w-[58%] lg:ml-auto transition-all duration-1000 ease-out ${
+              yogaVis ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'
+            }`}
+          >
+            <div 
+              onClick={() => {
+                setVideoUrl('/img/videos/yoga.mp4');
+                setIsVideoModalOpen(true);
+              }}
+              className="relative overflow-hidden rounded-tr-[80px] rounded-br-[80px] rounded-tl-[30px] rounded-bl-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.15)] cursor-pointer group"
+            >
+              <img
+                src="/img/yoga.jpg"
+                alt="Yoga hall at Chamundi Hill Palace"
+                className="w-full h-[420px] lg:h-[650px] object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              
+              {/* Play Button Overlay with Pulsing Rings */}
+              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/45 transition-colors duration-500 flex items-center justify-center">
+                <div className="relative flex items-center justify-center">
+                  {/* Pulsing ring 1 */}
+                  <div className="absolute w-28 h-28 rounded-full bg-accent/30 animate-pulse-ring" />
+                  {/* Pulsing ring 2 (delayed) */}
+                  <div className="absolute w-28 h-28 rounded-full bg-accent/20 animate-pulse-ring" style={{ animationDelay: '0.6s' }} />
+                  
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 backdrop-blur-sm flex items-center justify-center text-white shadow-2xl group-hover:scale-110 group-hover:bg-accent transition-all duration-300 relative z-10">
+                    <Play className="w-6 h-6 md:w-8 md:h-8 ml-1 fill-white text-white" />
+                  </div>
+                </div>
+              </div>
 
-    <div>
-      <div className="flex items-center gap-1">
-        <span className="font-heading text-base md:text-2xl text-dark">
-          4.9
-        </span>
+              {/* Rating Badge (Pops up with delay) */}
+              <div className={`absolute right-10 bottom-3 md:right-6 md:bottom-6 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl px-2 py-2 md:px-4 md:py-3 shadow-xl border border-[#E8E0D1] z-10 transition-all duration-700 delay-500 ${
+                yogaVis ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-4'
+              }`}>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                    <Star className="w-3 h-3 md:w-5 md:h-5 text-accent fill-accent" />
+                  </div>
 
-        <span className="text-[10px] md:text-sm text-text/60">
-          /5
-        </span>
-      </div>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      <span className="font-heading text-base md:text-2xl text-dark">
+                        4.9
+                      </span>
+                      <span className="text-[10px] md:text-sm text-text/60">
+                        /5
+                      </span>
+                    </div>
 
-      <p className="text-[7px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.15em] text-text/60">
-        Guest Rating
-      </p>
-    </div>
-  </div>
-</div>
+                    <p className="text-[7px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.15em] text-text/60">
+                      Guest Rating
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CONTENT CARD (Slides in from Left) */}
+          <div className="w-full mt-8 lg:mt-0 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[48%] overflow-visible z-20 pointer-events-none">
+            <div className={`bg-white p-8 sm:p-10 lg:p-14 rounded-tl-[80px] rounded-bl-[80px] rounded-tr-[30px] rounded-br-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.12)] border border-[#E8E0D1] pointer-events-auto transition-all duration-1000 ease-out delay-200 ${
+              yogaVis ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+            }`}>
+
+              <span className="section-label">
+                Yoga Hall
+              </span>
+
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark leading-tight mt-4 mb-6">
+                Practice in a Peaceful Setting
+              </h2>
+
+              <p className="font-body text-base text-text/80 leading-relaxed mb-5">
+                Yoga is a major element of our treatment programs. During the
+                treatment period, our yoga teacher will set up personalized
+                sessions based on your fitness level and the doctor's
+                recommendation.
+              </p>
+
+              <p className="font-body text-base text-text/80 leading-relaxed">
+                Daily yoga helps improve flexibility, reduce stress, and support
+                the body's natural detoxification process. Breathing techniques
+                and guided meditation are also included to enhance mental clarity
+                and emotional calm. Whether you're a beginner or an advanced
+                practitioner, our yoga retreats are tailored to elevate your
+                overall wellness.
+              </p>
+
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* CONTENT CARD */}
-      <div className="w-full mt-8 lg:mt-0 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[48%]">
-        <div className="bg-white p-8 sm:p-10 lg:p-14 rounded-tl-[80px] rounded-bl-[80px] rounded-tr-[30px] rounded-br-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.12)] border border-[#E8E0D1]">
-
-          <span className="section-label">
-            Yoga Hall
-          </span>
-
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark leading-tight mt-4 mb-6">
-            Practice in a Peaceful Setting
-          </h2>
-
-          <p className="font-body text-base text-text/80 leading-relaxed mb-5">
-            Yoga is a major element of our treatment programs. During the
-            treatment period, our yoga teacher will set up personalized
-            sessions based on your fitness level and the doctor's
-            recommendation.
-          </p>
-
-          <p className="font-body text-base text-text/80 leading-relaxed">
-            Daily yoga helps improve flexibility, reduce stress, and support
-            the body's natural detoxification process. Breathing techniques
-            and guided meditation are also included to enhance mental clarity
-            and emotional calm. Whether you're a beginner or an advanced
-            practitioner, our yoga retreats are tailored to elevate your
-            overall wellness.
-          </p>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
       <VideoTestimonials />
       <CTABanner />
+
+      {/* Video Modal Overlay */}
+      {isVideoModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div 
+            className="bg-[#1A150E] max-w-4xl w-full rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button 
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 backdrop-blur-md transition-all duration-200 z-10 cursor-pointer"
+              aria-label="Close video"
+            >
+              <X size={20} />
+            </button>
+            
+            {/* 16:9 Video Player */}
+            <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+              <video
+                key={videoUrl}
+                src={videoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
