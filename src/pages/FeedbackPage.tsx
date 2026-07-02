@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Star, Quote, Leaf, Users, BadgeCheck } from 'lucide-react';
+import { Star, Quote, Leaf, Users, BadgeCheck, Play, X } from 'lucide-react';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 const heroStats = [
@@ -67,8 +68,34 @@ const feedbacks = [
   },
 ];
 
+const videoTestimonials = [
+  {
+    title: "Guest Experience Review",
+    url: "https://www.youtube.com/embed/pfIWKk6vBTQ",
+    isYoutube: true,
+    poster: "/img/banner-4.jpg",
+    description: "An in-depth guest testimonial sharing their transformative healing journey and experience.",
+  },
+  {
+    title: "Ayurveda Wellness Journey",
+    url: "/img/videos/videotestimonal2.mp4",
+    isYoutube: false,
+    poster: "/img/kerala-ayurveda-2.jpg",
+    description: "A guest reflecting on their authentic Panchakarma and rejuvenation treatments.",
+  },
+  {
+    title: "Guest Review",
+    url: "/img/videos/videotestimonialgerman.mp4",
+    isYoutube: false,
+    poster: "/img/banner-2.jpg",
+    description: "An authentic video testimonial from our German-speaking guest describing their stay.",
+  },
+];
+
 export default function FeedbackPage() {
   const { ref, isVisible } = useScrollReveal(0.1);
+  const { ref: videoRef, isVisible: videoVisible } = useScrollReveal(0.1);
+  const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; isYoutube: boolean } | null>(null);
 
   return (
     <>
@@ -87,6 +114,20 @@ export default function FeedbackPage() {
         }
         .animate-float-delayed {
           animation: floatLeafOpposite 6s ease-in-out infinite 1.2s;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        .animate-slide-up {
+          animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
       `}</style>
 
@@ -134,7 +175,54 @@ export default function FeedbackPage() {
         </div>
       </section>
 
-      <TestimonialsCarousel showGermanVideo={true} />
+      <TestimonialsCarousel />
+
+      {/* Video Reviews Grid Section */}
+      <section className="py-20 bg-surface relative overflow-hidden">
+        <div 
+          ref={videoRef}
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700 ${
+            videoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="text-center mb-16">
+            <span className="section-label">Video Reviews</span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark mt-3">
+              Watch Guest Testimonials
+            </h2>
+            <div className="w-24 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
+            <p className="max-w-2xl mx-auto text-text/80 leading-relaxed font-body mt-4 text-sm sm:text-base">
+              Listen directly to our guests share their transformational experiences, wellness outcomes, and highlights of their stay at Chamundi Hill Palace.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {videoTestimonials.map((video, idx) => (
+              <div 
+                key={idx} 
+                onClick={() => setActiveVideo({ url: video.url, title: video.title, isYoutube: video.isYoutube })}
+                className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-border/40 group cursor-pointer"
+              >
+                {/* Thumbnail Container */}
+                <div className="relative aspect-video w-full bg-dark overflow-hidden">
+                  <img
+                    src={video.poster}
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-accent/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Play className="fill-current text-dark ml-1 w-6 h-6" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials cards section */}
       <section className="py-20 sm:py-28 bg-dark relative overflow-hidden">
@@ -204,6 +292,53 @@ export default function FeedbackPage() {
         </div>
       </section>
       <CTABanner />
+
+      {/* Video Modal Overlay */}
+      {activeVideo && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div 
+            className="bg-dark max-w-4xl w-full rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative flex flex-col max-h-[90vh] animate-slide-up"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-5 border-b border-white/10 flex justify-between items-center shrink-0">
+              <h3 className="font-heading text-xl font-bold text-white font-semibold">{activeVideo.title}</h3>
+              <button 
+                onClick={() => setActiveVideo(null)}
+                className="bg-white/10 hover:bg-white/20 text-white rounded-full p-2 backdrop-blur-sm transition-all duration-200 cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Video Player */}
+            <div className={`w-full bg-black relative flex items-center justify-center overflow-hidden ${
+              activeVideo.isYoutube ? 'aspect-video' : 'flex-1 min-h-[300px] p-2'
+            }`}>
+              {activeVideo.isYoutube ? (
+                <iframe
+                  src={`${activeVideo.url}?autoplay=1`}
+                  title={activeVideo.title}
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video
+                  src={activeVideo.url}
+                  autoPlay
+                  controls
+                  playsInline
+                  className="max-w-full max-h-[65vh] rounded-lg object-contain shadow-inner"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

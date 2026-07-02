@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Sparkles, Heart, Leaf, Flame, Clock3, Users, BadgeCheck, Soup } from 'lucide-react';
+import { Sparkles, Heart, Leaf, Flame, Clock3, Users, BadgeCheck, Soup, Play, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const heroStats = [
@@ -278,6 +279,7 @@ function PackageInclusions() {
 
 export default function AyurvedaPage() {
   const { ref: introRef, isVisible: introVisible } = useScrollReveal(0.1);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <>
@@ -291,11 +293,25 @@ export default function AyurvedaPage() {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-10px) rotate(-4deg); }
         }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
         .animate-float-slow {
           animation: floatLeaf 7s ease-in-out infinite;
         }
         .animate-float-delayed {
           animation: floatLeafOpposite 6s ease-in-out infinite 1.2s;
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        .animate-slide-up {
+          animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
       `}</style>
 
@@ -337,6 +353,17 @@ export default function AyurvedaPage() {
             carefully studies your body constitution (Dosha), health history, and lifestyle. Based on this,
             a personalized treatment plan is crafted — ensuring every guest receives care suited to their unique needs.
           </p>
+
+          {/* Watch Guest Testimonials Button */}
+          <button
+            onClick={() => setIsVideoModalOpen(true)}
+            className="mt-8 px-8 py-3.5 bg-accent hover:bg-accent/95 text-dark font-semibold rounded-full shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-105 transition-all duration-300 flex items-center gap-3 mx-auto cursor-pointer group relative z-20"
+          >
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300">
+              <Play className="fill-current w-4 h-4" />
+            </div>
+            <span>Watch Guest Testimonials</span>
+          </button>
           
           <div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 pt-20">
@@ -409,6 +436,41 @@ export default function AyurvedaPage() {
 
       <VideoTestimonials />
       <CTABanner />
+
+      {/* Video Modal Overlay */}
+      {isVideoModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div 
+            className="bg-dark max-w-4xl w-full rounded-[32px] overflow-hidden shadow-2xl border border-white/10 relative flex flex-col max-h-[90vh] animate-slide-up"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-5 border-b border-white/10 flex justify-between items-center shrink-0">
+              <h3 className="font-heading text-xl font-bold text-white font-semibold">Guest Video Testimonials</h3>
+              <button 
+                onClick={() => setIsVideoModalOpen(false)}
+                className="bg-white/10 hover:bg-white/20 text-white rounded-full p-2 backdrop-blur-sm transition-all duration-200 cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Video Player */}
+            <div className="aspect-video w-full bg-black relative flex items-center justify-center">
+              <video
+                src="/img/videos/videotestimonials.mp4"
+                autoPlay
+                controls
+                playsInline
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
