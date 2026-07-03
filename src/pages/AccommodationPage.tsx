@@ -6,8 +6,8 @@ import { Bed, UtensilsCrossed, Wifi, TreePine, MapPin, Sprout, Clock3, Star, Bad
 import { useEffect, useState } from 'react';
 
 const facilityGallery = [
-  '/img/videos/accomadation.mp4',
-  '/img/videos/ayurveda.mp4',
+  '/img/videos/Accommadation.mp4',
+  '/img/videos/ayurveda2.mp4',
   '/img/videos/organicfarm.mp4',
   '/img/videos/meals.mp4',
   '/img/videos/yoga.mp4',
@@ -52,7 +52,7 @@ export default function AccommodationPage() {
   const { ref: yogaRef, isVisible: yogaVis } = useScrollReveal(0.1);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [videoUrl, setVideoUrl] = useState('/img/videos/accomadation.mp4');
+  const [videoUrl, setVideoUrl] = useState('/img/videos/Accommadation.mp4');
 
 const nextSlide = () => {
   setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
@@ -164,7 +164,7 @@ const prevSlide = () => {
             >
               <div 
                 onClick={() => {
-                  setVideoUrl('/img/videos/accomadation.mp4');
+                  setVideoUrl('/img/videos/Accommadation.mp4');
                   setIsVideoModalOpen(true);
                 }}
                 className="relative overflow-hidden rounded-tl-[80px] rounded-bl-[80px] rounded-tr-[30px] rounded-br-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.15)] cursor-pointer group"
