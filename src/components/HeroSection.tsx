@@ -38,7 +38,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         >
           <source 
-            src="/img/videos/Ayruveda massage,Shirodhara, Elakizhi, Nasyam, Panchakarma,Yoga and Meditation.mp4" 
+            src="/img/videos/mainbackground.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.

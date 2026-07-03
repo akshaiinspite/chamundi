@@ -62,7 +62,7 @@ export default function PanchakarmaPage() {
       {/* Left Video */}
       <div>
         <video
-          src="/img/videos/ayurveda.mp4"
+          src="/img/videos/ayurveda2.mp4"
           autoPlay
           loop
           muted

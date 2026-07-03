@@ -98,67 +98,65 @@ function TreatmentRow({
         <div
           className={`w-full lg:max-w-xl ${treatment.imageRight ? "lg:ml-auto" : "lg:mr-auto"}`}
         >
-          <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 lg:p-12 rounded-[28px] lg:rounded-3xl shadow-2xl max-w-full lg:max-w-none mx-auto">
+          <div className="bg-white lg:bg-black/40 lg:backdrop-blur-md border border-[#E8E1D4] lg:border-white/10 p-6 sm:p-8 lg:p-12 rounded-[28px] lg:rounded-3xl shadow-xl lg:shadow-2xl max-w-full lg:max-w-none mx-auto">
             <span className="inline-block bg-accent/15 text-accent font-body text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
               {treatment.tag}
             </span>
 
-            <h3 className="font-heading text-[32px] sm:text-3xl lg:text-[36px] font-semibold text-dark leading-tight mb-5">
+            <h3 className="font-heading text-[32px] sm:text-3xl lg:text-[36px] font-semibold text-dark lg:text-white leading-tight mb-5">
               {treatment.title}
             </h3>
 
-            <p className="font-body text-[15px] lg:text-base text-text/80 leading-8 mb-8">
+            <p className="font-body text-[15px] lg:text-base text-text/80 lg:text-white/80 leading-8 mb-8">
               {treatment.body}
             </p>
-<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-6 border-t border-[#E8E1D4]">
-  {/* Experience */}
-  <div className="flex items-center gap-4">
-    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
-      <span className="font-heading text-xl text-white font-semibold">
-        {treatment.number}
-      </span>
-    </div>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-6 border-t border-[#E8E1D4] lg:border-white/10">
+              {/* Experience */}
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+                  <span className="font-heading text-xl text-white font-semibold">
+                    {treatment.number}
+                  </span>
+                </div>
 
-    <div>
+                <div>
+                  <p className="font-heading text-xl text-primary lg:text-white">
+                    {treatment.subtitle}
+                  </p>
+                </div>
+              </div>
 
-      <p className="font-heading text-xl text-primary">
-        {treatment.subtitle}
-      </p>
-    </div>
-  </div>
-
-  {/* CTA */}
-  {treatment.ctaHref.startsWith('#') ? (
-    <a
-      href={treatment.ctaHref}
-      onClick={(e) => {
-        e.preventDefault();
-        document
-          .querySelector(treatment.ctaHref)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }}
-      className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
-    >
-      {treatment.cta}
-      <ArrowRight
-        size={16}
-        className="group-hover:translate-x-1 transition-transform"
-      />
-    </a>
-  ) : (
-    <Link
-      to={treatment.ctaHref}
-      className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
-    >
-      {treatment.cta}
-      <ArrowRight
-        size={16}
-        className="group-hover:translate-x-1 transition-transform"
-      />
-    </Link>
-  )}
-</div>
-           
+              {/* CTA */}
+              {treatment.ctaHref.startsWith('#') ? (
+                <a
+                  href={treatment.ctaHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector(treatment.ctaHref)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary lg:text-accent hover:text-primary/80 lg:hover:text-accent/80 transition-colors group"
+                >
+                  {treatment.cta}
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </a>
+              ) : (
+                <Link
+                  to={treatment.ctaHref}
+                  className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary lg:text-accent hover:text-primary/80 lg:hover:text-accent/80 transition-colors group"
+                >
+                  {treatment.cta}
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>

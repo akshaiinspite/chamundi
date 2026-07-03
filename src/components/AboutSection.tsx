@@ -96,7 +96,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16">
           <Link to='/ayurveda' className="animate-gentle-float-1">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/rejuvenation.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/property1.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">Ayurveda</h3>
               </div>
@@ -105,7 +105,7 @@ export default function AboutSection() {
           
           <Link to={'/what-we-offer'} className="animate-gentle-float-2">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/weight-loss.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/property2.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">What We Offer</h3>
               </div>
@@ -114,7 +114,7 @@ export default function AboutSection() {
           
           <Link to={'/accommodation'} className="animate-gentle-float-3">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/rooms.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/property3.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">Accommodation</h3>
               </div>
@@ -123,7 +123,7 @@ export default function AboutSection() {
           
           <Link to={'/yoga-course'} className="animate-gentle-float-1">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/yoga.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/property4.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">Yoga Course</h3>
               </div>

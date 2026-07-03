@@ -319,7 +319,7 @@ export default function AyurvedaPage() {
         title="Ayurvedic Treatments in Kerala"
         subtitle="Ancient Wisdom · Modern Healing"
         backgroundImage="/img/kerala-ayurveda-2.jpg"
-        backgroundVideo="/img/videos/ayurveda.mp4"
+        backgroundVideo="/img/videos/ayurveda2.mp4"
         breadcrumb="Ayurveda"
       />
 

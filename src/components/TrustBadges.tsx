@@ -3,17 +3,18 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Award, Star, Leaf, HeartPulse, Soup, Smile, Play, X } from 'lucide-react';
 
 const badges = [
-  { icon: Award, label: 'TripAdvisor Certificate of Excellence' },
-  { icon: Star, label: "Travellers' Choice Award 2024" },
-  { icon: Leaf, label: 'Green Leaf Certified Resort' },
-  { icon: HeartPulse, label: '25+ Years of Authentic Ayurveda' },
-  { icon: Soup, label: '100% Organic Farm-to-Table Kitchen' },
-  { icon: Smile, label: '98% Guest Return & Satisfaction Rate' },
+  { icon: Award, highlight: 'TripAdvisor', text: 'Certificate of Excellence for consistent 5-star ratings' },
+  { icon: Star, highlight: "Travellers' Choice", text: 'Awarded to the top 10% of hotels globally in 2024' },
+  { icon: Leaf, highlight: 'Green Leaf', text: 'Certified Eco-Resort by the Government of Kerala' },
+  { icon: HeartPulse, highlight: '25+ Years', text: 'Of delivering authentic, traditional Ayurvedic healthcare' },
+  { icon: Soup, highlight: '100% Organic', text: 'Farm-to-table dining sourced from our own organic gardens' },
+  { icon: Smile, highlight: '98% Return Rate', text: 'Of guests who return for their annual rejuvenation therapies' },
 ];
 
 interface Badge {
   icon: typeof Award;
-  label: string;
+  highlight: string;
+  text: string;
 }
 
 function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
@@ -26,24 +27,49 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
       : 'animate-gentle-float-3';
 
   return (
-    <div className="w-72 shrink-0 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent/40 hover:bg-white/15 hover:shadow-[0_15px_40px_rgba(0,0,0,0.25)] select-none">
-      {/* Hover Glow */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/10 via-transparent to-transparent" />
+    <div className="w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/5 bg-[#1E1810]/60 backdrop-blur-md p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/40 hover:bg-[#1E1810]/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.15)] select-none">
+      {/* Gold corner brackets for a luxury certificate feel */}
+      <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
+      <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
+      <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
+      <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
 
-      {/* Icon */}
-      <div className="relative flex justify-center mb-4">
-        <div className={`w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center ${floatClass}`}>
+      {/* Top golden border highlight */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/15 to-transparent group-hover:via-accent/60 transition-all duration-500" />
+      
+      {/* Hover Glow */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
+
+      {/* Icon Area with Laurel Wreath SVG */}
+      <div className="relative flex justify-center mb-6">
+        {/* Symmetrical Laurel Wreath */}
+        <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/10 group-hover:text-accent/25 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
+          <path d="M 35 75 C 20 60, 20 40, 35 25 M 65 75 C 80 60, 80 40, 65 25" />
+          <path d="M 28 65 L 22 62 M 25 53 L 18 53 M 28 41 L 22 44 M 32 31 L 28 35" />
+          <path d="M 72 65 L 78 62 M 75 53 L 82 53 M 72 41 L 78 44 M 68 31 L 72 35" />
+        </svg>
+
+        {/* Inner Glowing Ring */}
+        <div className="absolute w-16 h-16 rounded-full bg-accent/5 group-hover:bg-accent/10 blur-md transition-all duration-500" />
+        
+        {/* Floating Icon Ring */}
+        <div className={`relative w-16 h-16 rounded-full border border-accent/25 flex items-center justify-center bg-[#1E1810] group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[inset_0_0_15px_rgba(196,135,59,0.05)] group-hover:shadow-[0_0_20px_rgba(196,135,59,0.25)] ${floatClass}`}>
           <Icon
             className="w-7 h-7 text-accent transition-transform duration-500 group-hover:rotate-6"
-            strokeWidth={1.8}
+            strokeWidth={1.5}
           />
         </div>
       </div>
 
-      {/* Text */}
-      <p className="relative text-white font-medium text-sm leading-relaxed">
-        {badge.label}
-      </p>
+      {/* Text Area */}
+      <div className="relative font-body">
+        <h3 className="font-heading text-xl lg:text-2xl text-accent font-semibold tracking-wide mb-3">
+          {badge.highlight}
+        </h3>
+        <p className="text-white/70 font-body text-sm leading-relaxed max-w-[240px] mx-auto">
+          {badge.text}
+        </p>
+      </div>
     </div>
   );
 }
@@ -56,29 +82,29 @@ export default function TrustBadges() {
     <section
       id="trust"
       ref={ref}
-      className={`relative py-14 sm:py-20 overflow-hidden transition-all duration-700 ${
+      className={`relative py-20 sm:py-28 overflow-hidden transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
       {/* Deep forest background matching brand */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-dark" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-[#16120C]" />
 
       {/* Atmospheric blur effects */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-accent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
-        <div className="absolute bottom-10 right-10 w-56 h-56 bg-accent/50 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-accent rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '6s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/50 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Block */}
-        <div className="text-center mb-12 px-4">
+        <div className="text-center mb-16 px-4">
           <span className="text-accent uppercase tracking-[0.25em] text-xs font-semibold">
             Recognition & Excellence
           </span>
           <h2 className="font-heading text-4xl md:text-5xl text-white mt-3 font-semibold">
             Trusted by Guests Worldwide
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
+          <div className="w-24 h-0.5 bg-accent/60 mx-auto mt-5 rounded-full"></div>
           <p className="text-white/80 text-center mt-6 max-w-3xl mx-auto font-body text-sm sm:text-base leading-relaxed">
             For over 25 years, Chamundi Hill Palace has welcomed guests from 40+ countries 
             to experience the beauty of Kerala's hills. With a 4.9-star rating and 98% of guests returning, 
@@ -87,7 +113,7 @@ export default function TrustBadges() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-2.5 bg-accent hover:bg-accent/95 text-white font-body text-sm font-semibold px-6 py-3.5 rounded-full mt-6 transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 group cursor-pointer"
+            className="inline-flex items-center gap-2.5 bg-accent hover:bg-accent/95 text-white font-body text-sm font-semibold px-6 py-3.5 rounded-full mt-8 transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 group cursor-pointer"
           >
             <Play size={16} fill="white" className="group-hover:translate-x-0.5 transition-transform" />
             Discover Chamundi Hill Palace: Video Walkthrough
@@ -117,23 +143,23 @@ export default function TrustBadges() {
 
       {/* Video Modal Overlay */}
       {isModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
           onClick={() => setIsModalOpen(false)}
         >
-          <div 
+          <div
             className="bg-[#1A150E] max-w-4xl w-full rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
-            <button 
+            <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 backdrop-blur-md transition-all duration-200 z-10 cursor-pointer"
               aria-label="Close video"
             >
               <X size={20} />
             </button>
-            
+
             {/* 16:9 Video Embed */}
             <div className="relative pb-[56.25%] h-0 overflow-hidden bg-black">
               <iframe

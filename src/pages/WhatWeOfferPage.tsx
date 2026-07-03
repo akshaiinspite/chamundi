@@ -28,7 +28,7 @@ const offerCategories = [
   {
     title: 'Ayurvedic Care',
     image: '/img/rejuvenation.jpg',
-    video: '/img/videos/ayurveda.mp4',
+    video: '/img/videos/ayurveda2.mp4',
     items: [
       'A detailed Ayurvedic consultation with our resident doctor upon arrival.',
       'Our doctor is always available, attentive to every concern of yours, during your whole stay.',
@@ -41,7 +41,7 @@ const offerCategories = [
   {
     title: 'Accommodation',
     image: '/img/rooms.jpg',
-    video: '/img/videos/accomadation.mp4',
+    video: '/img/videos/Accommadation.mp4',
     items: [
       'Accommodation inside our premises - Comfortable ensuite rooms at Ayurvedic Treatment Centre.',
       'Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks).',
@@ -98,7 +98,7 @@ export default function WhatWeOfferPage() {
         title="What We Offer"
         subtitle="Authentic Ayurvedic Treatments & Healing Retreat"
         backgroundImage="/img/banner-3.jpg"
-        backgroundVideo="/img/videos/organicfarm.mp4"
+        backgroundVideo="/img/videos/Accommadation.mp4"
         breadcrumb="What We Offer"
       />
       
