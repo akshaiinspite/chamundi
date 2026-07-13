@@ -123,8 +123,8 @@ export default function TrustBadges() {
         {/* Dynamic Infinite Marquee Scroll Container */}
         <div className="relative w-full overflow-hidden py-4 mt-8">
           {/* Subtle edge blur overlays */}
-          <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-primary via-primary/80 to-transparent z-20 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-primary via-primary/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-primary/80 via-primary/30 to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-primary/80 via-primary/30 to-transparent z-20 pointer-events-none" />
 
           {/* Marquee slider track */}
           <div className="flex w-max gap-6 animate-marquee-scroll hover:[animation-play-state:paused] py-4">

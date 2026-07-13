@@ -2,7 +2,23 @@ import { useEffect, useState } from 'react';
 import { ChevronDown, Clock3, Globe2, Star, MapPin } from 'lucide-react';
 
 export default function HeroSection() {
+  const [videoSrc, setVideoSrc] = useState('/img/videos/mainbackground.mp4');
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // mobile and medium screens (< 1024px) use bgmobile, desktop uses mainbackground
+      if (window.innerWidth < 1024) {
+        setVideoSrc('/img/videos/bgmobile.mp4');
+      } else {
+        setVideoSrc('/img/videos/mainbackground.mp4');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
@@ -30,6 +46,7 @@ export default function HeroSection() {
       {/* Background Video with slow cinematic overlay */}
       <div className="absolute inset-0 z-0">
         <video
+          key={videoSrc}
           autoPlay
           loop
           muted
@@ -38,7 +55,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         >
           <source 
-            src="/img/videos/mainbackground.mp4" 
+            src={videoSrc} 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
