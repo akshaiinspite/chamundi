@@ -1,5 +1,3 @@
-import DayAtChamundi from "./DayAtChamundi";
-
 export default function HeritageDivider() {
   return (
     <>

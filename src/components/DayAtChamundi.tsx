@@ -173,7 +173,6 @@ export default function DayAtChamundi() {
             <div className="max-w-4xl mx-auto bg-white rounded-[32px] p-6 sm:p-10 border border-border/40 shadow-xl shadow-stone-100">
               <div className="relative border-l-2 border-primary/25 pl-6 sm:pl-10 ml-2 sm:ml-4 space-y-12">
                 {dailySchedule.map((item, idx) => {
-                  const Icon = item.icon;
                   return (
                     <div key={idx} className="relative group">
                       

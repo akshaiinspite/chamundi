@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowRight } from 'lucide-react';
-import DayAtChamundi from './DayAtChamundi';
 
 
 interface TreatmentBlock {
