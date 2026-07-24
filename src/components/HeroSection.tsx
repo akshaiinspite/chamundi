@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 import { ChevronDown, Clock3, Globe2, Star, MapPin } from 'lucide-react';
 
 export default function HeroSection() {
-  const [videoSrc, setVideoSrc] = useState('/img/videos/mainbackground.mp4');
+  const [videoSrc, setVideoSrc] = useState('/img/videos/IMG_3810 (1).mov');
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      // mobile and medium screens (< 1024px) use bgmobile, desktop uses mainbackground
+      // mobile and medium screens (< 1024px) use bgmobile, desktop uses IMG_3810 (1)
       if (window.innerWidth < 1024) {
-        setVideoSrc('/img/videos/bgmobile.mp4');
+        setVideoSrc('/img/videos/IMG_3810 (1).mov');
       } else {
-        setVideoSrc('/img/videos/mainbackground.mp4');
+        setVideoSrc('/img/videos/IMG_3810 (1).mov');
       }
     };
 
@@ -56,7 +56,6 @@ export default function HeroSection() {
         >
           <source 
             src={videoSrc} 
-            type="video/mp4" 
           />
           Your browser does not support the video tag.
         </video>

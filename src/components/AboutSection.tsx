@@ -27,7 +27,7 @@ export default function AboutSection() {
           {/* Left Image with gentle floating motion */}
           <div className="overflow-hidden rounded-3xl shadow-xl animate-gentle-float-1">
             <img
-              src="/img/about-heritage.jpg"
+              src="/img/saroja-thampi.jpg"
               alt="Chamundi Hill Palace"
               className="w-full h-[550px] object-cover"
             />
