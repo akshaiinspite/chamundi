@@ -22,7 +22,7 @@ const heroStats = [
   },
   {
     icon: Star,
-    value: '4.9',
+    value: '4.9/5',
     label: 'Rated',
   },
   {

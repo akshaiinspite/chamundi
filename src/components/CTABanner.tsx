@@ -162,7 +162,7 @@ export default function CTABanner() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <span className="section-label text-accent font-body mb-2 inline-block">Resort Booking</span>
+        <span className="section-label text-accent font-body mb-2 inline-block">Retreat Booking</span>
         
         <h2 className={`font-heading text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white leading-tight mb-5 ${
           isVisible ? 'animate-header-reveal' : 'opacity-0'

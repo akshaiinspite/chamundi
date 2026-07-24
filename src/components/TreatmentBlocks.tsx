@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowRight } from 'lucide-react';
+import DayAtChamundi from './DayAtChamundi';
+
 
 interface TreatmentBlock {
   image: string;
@@ -17,26 +19,14 @@ interface TreatmentBlock {
 
 const treatments: TreatmentBlock[] = [
   {
-    image: '/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg',
-    imageAlt: 'Panchakarma Ayurvedic treatment being performed at Chamundi Hill Palace',
-    tag: '28 Days Program',
-    title: 'Panchakarma Treatment in Kerala',
-    body: 'A transformative detox therapy that purifies the body, clears the mind, and renews energy. Using herbal oils, traditional massages, and cleansing techniques, Panchakarma helps manage stress, joint pain, sleep disorders, and overall imbalance.',
-    cta: 'Explore Panchakarma',
-    number:'15+',
-    subtitle:'Signature Therapies',
-    ctaHref: '/panchakarma',
-    imageRight: true,
-  },
-  {
     image: '/img/yoga.jpg',
     imageAlt: 'Yoga session at sunrise in the Kerala hills at Chamundi Hill Palace',
     tag: 'Daily Sessions',
     title: 'Yoga Retreat in Kerala',
     body: 'Yoga is integral to every wellness program at Chamundi. Each day begins and ends with guided yoga sessions tailored by experienced instructors. Guests can join our immersive Yoga Course covering asanas, pranayama, and meditation.',
     cta: 'View Yoga Courses',
-    number:'40+',
-    subtitle:'Countries Welcomed',
+    number: '50+',
+    subtitle: 'Countries Welcomed',
     ctaHref: '/yoga-course',
     imageRight: false,
   },
@@ -47,8 +37,8 @@ const treatments: TreatmentBlock[] = [
     title: 'Stay at Chamundi Hill Palace',
     body: 'Spacious ensuite rooms offer fresh air, natural light, and stunning hillside views. Choose the heritage palace or garden cottages — each blending traditional Kerala architecture with modern amenities. Every detail supports deep rest and rejuvenation.',
     cta: 'View Accommodation',
-    number:'98%',
-    subtitle:'Guests Who Return',
+    number: '98%',
+    subtitle: 'Guests Who Return',
     ctaHref: '/accommodation',
     imageRight: true,
   },
@@ -64,7 +54,8 @@ function TreatmentRow({
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section
+    <>
+     <section
       ref={ref}
       id={index === 2 ? "accommodation" : index === 1 ? "yoga" : undefined}
       className={`px-4 relative lg:min-h-[700px] mb-11 mt-20 transition-all duration-700 ${
@@ -161,6 +152,9 @@ function TreatmentRow({
         </div>
       </div>
     </section>
+    </>
+
+   
   );
 }
 

@@ -14,7 +14,7 @@ const photos = [
   { src: '/img/accomodation-facilities.jpg', alt: 'Heritage accommodation rooms' },
   { src: '/img/yoga.jpg', alt: 'Yoga session in Kerala' },
   { src: '/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg', alt: 'Panchakarma treatment' },
-  { src: '/img/banner-1.jpg', alt: 'Resort aerial view' },
+  { src: '/img/banner-1.jpg', alt: 'Retreat aerial view' },
   { src: '/img/banner-2.jpg', alt: 'Tropical gardens' },
   { src: '/img/banner-3.jpg', alt: 'Heritage architecture' },
   { src: '/img/banner-4.jpg', alt: 'Mountain views' },
@@ -75,7 +75,7 @@ export default function GalleryPage() {
         <div ref={photoRef} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${photoVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-14">
             <span className="section-label">Photos</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Our Resort Views</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Our Retreat Views</h2>
           </div>
                  {/* carousel */}
                 <div className="relative mb-16 w-full  max-w-6xl mx-auto px-4 sm:px-6">

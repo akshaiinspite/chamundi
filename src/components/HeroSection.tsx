@@ -74,13 +74,13 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         
         {/* Eyebrow label */}
-        <p
-          className={`text-accent text-xs sm:text-sm font-body font-semibold tracking-[0.25em] uppercase mb-6 transition-all duration-700 ${
+        <div
+          className={`inline-block bg-dark/60 backdrop-blur-md border border-white/15 text-[#E8AF59] text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6 transition-all duration-700 ${
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Heritage Ayurveda Resort · Nadukani Hills, Kerala
-        </p>
+          Heritage Ayurveda Retreat · Nadukani Hills, Kerala
+        </div>
 
         {/* H1 Heading */}
         <h1
@@ -96,9 +96,7 @@ export default function HeroSection() {
           className={`font-heading text-xl sm:text-2xl md:text-[26px] italic text-white/90 mb-10 transition-all duration-700 delay-300 ${
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
-        >
-          Where Ancient Wisdom Meets Modern Wellness
-        </p>
+        >Experience Healing in Nature’s Sanctuary</p>
 
         {/* Staggered Floating Stats Cards */}
         <div
@@ -114,18 +112,18 @@ export default function HeroSection() {
             },
             {
               icon: Globe2,
-              value: '40+',
+              value: '50+',
               label: 'Countries',
             },
             {
               icon: Star,
-              value: '4.9',
+              value: '4.9/5',
               label: 'Rated',
             },
             {
               icon: MapPin,
-              value: 'Kerala',
-              label: 'Hills',
+              value: 'TripAdvisor',
+              label: 'Certificate of Excellence',
             },
           ].map((item, idx) => {
             const Icon = item.icon;

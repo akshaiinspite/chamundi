@@ -84,7 +84,7 @@ const timelineData: TimelineEvent[] = [
     description: "The sanctuary expanded its organic herb and spice gardens, laying down structured Panchakarma courses supervised by resident Ayurvedic doctors. Seekers from surrounding states and abroad began arriving to experience authentic, natural cures.",
     infographicLabel: "Medicinal Species",
     infographicValue: "150+",
-    badge: "Resort Expansion",
+    badge: "Retreat Expansion",
     image: "/img/organic.jpg",
     timelineImage: "/img/historyline/img2000.jpeg"
   },
@@ -93,9 +93,9 @@ const timelineData: TimelineEvent[] = [
     year: 'Global Era',
     title: "The Global Destination for Ayurveda",
     caption: "Where ancient wisdom heals and wellness knows no borders.",
-    description: "Chamundi Hill Palace gained international recognition. Accredited for its absolute authenticity, the resort welcomed guests from over 50 countries, spreading the therapeutic benefits of genuine Kerala Panchakarma and Hatha Yoga globally.",
+    description: "Chamundi Hill Palace gained international recognition. Accredited for its absolute authenticity, the retreat welcomed guests from over 50 countries, spreading the therapeutic benefits of genuine Kerala Panchakarma and Hatha Yoga globally.",
     infographicLabel: "Global Guests From",
-    infographicValue: "40+ Countries",
+    infographicValue: "50+ Countries",
     badge: "Global Acclaim",
     image: "/img/rejuvenation.jpg",
     timelineImage: "/img/historyline/imglobalera.jpeg"
@@ -165,7 +165,7 @@ export default function HistoryTimeline() {
 
   return (
     <section id="our-history" ref={timelineRef} className="py-20 lg:py-28 px-4 bg-primary relative overflow-hidden text-white">
-      
+
       {/* Background drifting particles/glows for depth */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 z-0 select-none">
         <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-accent/20 to-transparent blur-3xl animate-particle-drift-1" />
@@ -175,7 +175,7 @@ export default function HistoryTimeline() {
 
       {/* Content Container */}
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
           <span className="section-label text-accent">Our Heritage</span>
@@ -184,8 +184,8 @@ export default function HistoryTimeline() {
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
           <p className="max-w-2xl mx-auto text-white/80 leading-relaxed font-body">
-            From the initial vision in 1935 to our Silver Jubilee as a globally acclaimed 
-            destination for authentic Ayurveda, our journey has been defined by tradition, 
+            From the initial vision in 1935 to our Silver Jubilee as a globally acclaimed
+            destination for authentic Ayurveda, our journey has been defined by tradition,
             compassion, and pure dedication to holistic healing.
           </p>
         </div>
@@ -198,8 +198,8 @@ export default function HistoryTimeline() {
                 key={event.id}
                 onClick={() => scrollToCard(event.id)}
                 className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-full tracking-wide transition-all duration-300 font-body cursor-pointer ${activeYear === event.id
-                    ? 'bg-accent text-white shadow-md shadow-accent/20 scale-105'
-                    : 'text-white/60 hover:text-white hover:bg-white/10'
+                  ? 'bg-accent text-white shadow-md shadow-accent/20 scale-105'
+                  : 'text-white/60 hover:text-white hover:bg-white/10'
                   }`}
               >
                 {event.year}

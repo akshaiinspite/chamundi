@@ -249,7 +249,7 @@ function PackageInclusions() {
           <ul className="space-y-4 text-sm text-white/90 font-body">
             <li className="flex items-start gap-3">
               <span className="text-accent text-base mt-0.5">✓</span>
-              <span>7, 14, 28, days Rejuvanation Program.</span>
+              <span>7, 14, 28, days Rejuvanation Program</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-accent text-base mt-0.5">✓</span>

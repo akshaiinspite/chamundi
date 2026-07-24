@@ -5,7 +5,7 @@ import { Award, Star, Leaf, HeartPulse, Soup, Smile, Play, X } from 'lucide-reac
 const badges = [
   { icon: Award, highlight: 'TripAdvisor', text: 'Certificate of Excellence for consistent 5-star ratings' },
   { icon: Star, highlight: "Travellers' Choice", text: 'Awarded to the top 10% of hotels globally in 2024' },
-  { icon: Leaf, highlight: 'Green Leaf', text: 'Certified Eco-Resort by the Government of Kerala' },
+  { icon: Leaf, highlight: 'Green Leaf', text: 'Certified Eco-Retreat by the Government of Kerala' },
   { icon: HeartPulse, highlight: '25+ Years', text: 'Of delivering authentic, traditional Ayurvedic healthcare' },
   { icon: Soup, highlight: '100% Organic', text: 'Farm-to-table dining sourced from our own organic gardens' },
   { icon: Smile, highlight: '98% Return Rate', text: 'Of guests who return for their annual rejuvenation therapies' },
@@ -106,8 +106,8 @@ export default function TrustBadges() {
           </h2>
           <div className="w-24 h-0.5 bg-accent/60 mx-auto mt-5 rounded-full"></div>
           <p className="text-white/80 text-center mt-6 max-w-3xl mx-auto font-body text-sm sm:text-base leading-relaxed">
-            For over 25 years, Chamundi Hill Palace has welcomed guests from 40+ countries 
-            to experience the beauty of Kerala's hills. With a 4.9-star rating and 98% of guests returning, 
+            For over 25 years, Chamundi Hill Palace has welcomed guests from 50+ countries 
+            to experience the beauty of Kerala's hills. With a 4.9/5-star rating and 98% of guests returning, 
             we are proud to offer warm hospitality and authentic Ayurvedic healthcare.
           </p>
 

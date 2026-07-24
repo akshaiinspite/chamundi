@@ -11,12 +11,13 @@ import GalleryGrid from '../components/GalleryGrid';
 import CTABanner from '../components/CTABanner';
 import ContactSection from '../components/ContactSection';
 import HeritageDivider from '../components/HeritageDivider';
+import DayAtChamundi from '../components/DayAtChamundi';
 
 export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Chamundi Hill Palace | Heritage Ayurveda Resort in Kerala</title>
+        <title>Chamundi Hill Palace | Heritage Ayurveda Retreat in Kerala</title>
         <meta name="description" content="Reconnect with nature and balance at Chamundi Hill Palace, Kerala's heritage Ayurvedic retreat specializing in Panchakarma and holistic healing." />
       </Helmet>
       <HeroSection />
@@ -26,6 +27,7 @@ export default function HomePage() {
       <HistoryTimeline />
       <OfferingsGrid />
       <HeritageDivider />
+      <DayAtChamundi/>
       <TreatmentBlocks />
       <HeritageDivider />
       <StatsSection />

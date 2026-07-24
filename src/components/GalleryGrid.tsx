@@ -13,7 +13,7 @@ interface GalleryItem {
 const images: GalleryItem[] = [
   { 
     src: '/img/banner-1.jpg', 
-    alt: 'Panoramic view of Chamundi Hill Palace resort', 
+    alt: 'Panoramic view of Chamundi Hill Palace retreat', 
     category: 'Views', 
     title: '', 
     subtitle: 'Lush Green Hills' 
@@ -181,7 +181,7 @@ export default function GalleryGrid() {
                     : 'bg-white border-border/40 text-text/80 hover:bg-[#F2EDE4] hover:text-dark hover:border-accent/35'
                 }`}
               >
-                {cat === 'All' ? 'All Photos' : cat === 'Views' ? 'Resort & Views' : cat === 'Wellness' ? 'Ayurveda & Wellness' : 'Rooms & Yoga'}
+                {cat === 'All' ? 'All Photos' : cat === 'Views' ? 'Retreat & Views' : cat === 'Wellness' ? 'Ayurveda & Wellness' : 'Rooms & Yoga'}
               </button>
             );
           })}

@@ -1,5 +1,8 @@
+import DayAtChamundi from "./DayAtChamundi";
+
 export default function HeritageDivider() {
   return (
+    <>
     <div className="w-full flex justify-center py-6 sm:py-8 overflow-hidden pointer-events-none select-none relative z-10">
       <svg 
         className="w-full max-w-xl h-8 opacity-65" 
@@ -40,5 +43,6 @@ export default function HeritageDivider() {
         </defs>
       </svg>
     </div>
+   </> 
   );
 }

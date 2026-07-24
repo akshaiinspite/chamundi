@@ -42,21 +42,21 @@ const offerings: Offering[] = [
   {
     icon: Droplet,
     image: '/img/rejuvenation.jpg',
-    title: 'Shirodhara',
-    description: 'Warm herbal oil poured continuously on the forehead for deep nervous system relaxation and stress relief.',
-    duration: '7 - 14 Days',
+    title: 'Body Detoxification',
+    description: 'A comprehensive purification program designed to eliminate deep-seated metabolic waste, cleanse the bodily channels, and restore overall vital energy.',
+    duration: '14 - 20 Days',
     steps: [
       {
         number: 1,
-        description: 'Warm, nutrient-rich oil is massaged into the scalp, neck, and shoulders to prepare energy paths.'
+        description: 'Preparation (Purvakarma) utilizing customized herbal steam baths and synchronized oil massages to liquefy toxins.'
       },
       {
         number: 2,
-        description: 'A rhythmic flow of custom-blended warm herbal liquid is gently poured over the third eye chakra.'
+        description: 'Eliminative therapies (Pradhanakarma) specifically tailored to flush metabolic waste from biological channels.'
       },
       {
         number: 3,
-        description: 'Resting in silent reflection, accompanied by warm ginger tea, settles the pacified mind.'
+        description: 'Rebuilding (Paschatkarma) using a restorative diet and specialized Ayurvedic herbs to lock in strength and immunity.'
       }
     ]
   },
