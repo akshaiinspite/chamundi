@@ -6,7 +6,7 @@ import { Bed, UtensilsCrossed, Wifi, TreePine, MapPin, Sprout, Clock3, Star, Bad
 import { useEffect, useState } from 'react';
 
 const facilityGallery = [
-  '/img/videos/Accommadation.mp4',
+  '/img/videos/chamundiroomsnew.mp4',
   '/img/videos/ayurveda2.mp4',
   '/img/videos/organicfarm.mp4',
   '/img/videos/meals.mp4',

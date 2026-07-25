@@ -41,7 +41,7 @@ const offerCategories = [
   {
     title: 'Accommodation',
     image: '/img/rooms.jpg',
-    video: '/img/videos/Accommadation.mp4',
+    video: '/img/videos/chamundiroomsnew.mp4',
     items: [
       'Accommodation inside our premises - Comfortable ensuite rooms at Ayurvedic Treatment Centre.',
       'Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks).',
@@ -51,7 +51,7 @@ const offerCategories = [
   {
     title: 'Yoga & Wellness',
     image: '/img/yoga.jpg',
-    video: '/img/videos/yoga.mp4',
+    video: '/img/videos/yoganew.mp4',
     items: [
       'Daily morning and evening Yoga sessions, 6 days a week, which are free for all who live in the centre.',
       'Spice tours within the Centre.',
@@ -98,7 +98,7 @@ export default function WhatWeOfferPage() {
         title="What We Offer"
         subtitle="Authentic Ayurvedic Treatments & Healing Retreat"
         backgroundImage="/img/banner-3.jpg"
-        backgroundVideo="/img/videos/Accommadation.mp4"
+        backgroundVideo="/img/videos/chamundiroomsnew.mp4"
         breadcrumb="What We Offer"
       />
       

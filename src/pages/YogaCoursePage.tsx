@@ -66,7 +66,7 @@ export default function YogaCoursePage() {
         title="Yoga Course in Kerala"
         subtitle="Intensive Hatha Yoga Training at Chamundi Hill Palace"
         backgroundImage="/img/yoga.jpg"
-        backgroundVideo="/img/videos/yoga.mp4"
+        backgroundVideo="/img/videos/yoganew.mp4"
         breadcrumb="Yoga Course"
       />
 

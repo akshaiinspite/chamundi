@@ -24,12 +24,11 @@ export default function AboutSection() {
         {/* Wrapper for lg absolute positioning */}
         <div className="grid lg:grid-cols-2 gap-10 items-center">
 
-          {/* Left Image with gentle floating motion */}
           <div className="overflow-hidden rounded-3xl shadow-xl animate-gentle-float-1">
             <img
-              src="/img/saroja-thampi.jpg"
+              src="/img/saroja-thampi.jpeg"
               alt="Chamundi Hill Palace"
-              className="w-full h-[550px] object-cover"
+              className="w-full h-[550px] object-cover object-top"
             />
           </div>
 
@@ -137,9 +136,9 @@ export default function AboutSection() {
               {/* 📸 Mrs. Saroja Thampi Portrait */}
               <div className="my-6 flex flex-col md:flex-row gap-6 items-center bg-surface/40 p-6 rounded-2xl border border-border/20 max-w-2xl mx-auto">
                 <img 
-                  src="/img/saroja-thampi.jpg" 
+                  src="/img/saroja-thampi.jpeg" 
                   alt="Mrs. Saroja Thampi" 
-                  className="w-40 h-48 object-cover rounded-xl shadow-md border border-border/30 shrink-0" 
+                  className="w-40 h-48 object-cover object-top rounded-xl shadow-md border border-border/30 shrink-0" 
                 />
                 <div className="text-center md:text-left">
                   <p className="font-heading text-lg font-bold text-primary">Mrs. Saroja Thampi</p>

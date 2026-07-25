@@ -11,7 +11,7 @@ export default function HeroSection() {
       if (window.innerWidth < 1024) {
         setVideoSrc('/img/videos/IMG_3810 (1).mov');
       } else {
-        setVideoSrc('/img/videos/IMG_3810 (1).mov');
+        setVideoSrc('/img/videos/mainbackground.mp4');
       }
     };
 
