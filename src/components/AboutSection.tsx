@@ -28,7 +28,7 @@ export default function AboutSection() {
             <img
               src="/img/saroja-thampi.jpeg"
               alt="Chamundi Hill Palace"
-              className="w-full h-[550px] object-cover object-top"
+              className="w-full"
             />
           </div>
 
