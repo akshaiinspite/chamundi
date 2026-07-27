@@ -12,6 +12,7 @@ import CTABanner from '../components/CTABanner';
 import ContactSection from '../components/ContactSection';
 import HeritageDivider from '../components/HeritageDivider';
 import DayAtChamundi from '../components/DayAtChamundi';
+import RoomsSection from '../components/RoomsSection';
 
 export default function HomePage() {
   return (
@@ -29,6 +30,7 @@ export default function HomePage() {
       <HeritageDivider />
       <DayAtChamundi/>
       <TreatmentBlocks />
+      <RoomsSection/>
       <HeritageDivider />
       <StatsSection />
       <TestimonialsCarousel />

@@ -28,19 +28,19 @@ const treatments: TreatmentBlock[] = [
     subtitle: 'Countries Welcomed',
     ctaHref: '/yoga-course',
     imageRight: false,
-  },
-  {
-    image: '/img/accomodation-facilities.jpg',
-    imageAlt: 'Heritage accommodation rooms with hillside views at Chamundi Hill Palace',
-    tag: 'Heritage Rooms & Cottages',
-    title: 'Stay at Chamundi Hill Palace',
-    body: 'Spacious ensuite rooms offer fresh air, natural light, and stunning hillside views. Choose the heritage palace or garden cottages — each blending traditional Kerala architecture with modern amenities. Every detail supports deep rest and rejuvenation.',
-    cta: 'View Accommodation',
-    number: '98%',
-    subtitle: 'Guests Who Return',
-    ctaHref: '/accommodation',
-    imageRight: true,
-  },
+  }
+  // {
+  //   image: '/img/roomwith balcony.jpeg',
+  //   imageAlt: 'Spacious ensuite room with balcony at Chamundi Hill Palace',
+  //   tag: 'Accommodation',
+  //   title: 'Heritage Rooms & Garden Cottages',
+  //   body: 'Spacious ensuite rooms offer fresh air, natural light, and stunning hillside views. Choose the heritage palace or garden cottages — each blending traditional Kerala architecture with modern amenities. Every detail supports deep rest and rejuvenation.',
+  //   cta: 'View Accommodation',
+  //   number: '98%',
+  //   subtitle: 'Guests Who Return',
+  //   ctaHref: '/accommodation',
+  //   imageRight: true,
+  // }
 ];
 
 function TreatmentRow({
