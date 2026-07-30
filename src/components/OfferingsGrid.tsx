@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Leaf, Droplet, Sparkles, Sun, Flame, Heart, Calendar, HelpCircle, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -147,6 +148,7 @@ const offerings: Offering[] = [
 ];
 
 export default function OfferingsGrid() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const { ref: titleRef, isVisible: titleVisible } = useScrollReveal(0.2);
@@ -227,9 +229,9 @@ export default function OfferingsGrid() {
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="section-label">What We Offer</span>
+          <span className="section-label">{t('offeringsSection.label')}</span>
           <h2 className="font-heading text-4xl sm:text-5xl font-semibold text-white mt-3">
-            Our Signature Offerings
+            {t('offeringsSection.title')}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
         </div>
@@ -313,7 +315,7 @@ export default function OfferingsGrid() {
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar size={14} className="text-accent" />
                   <span className="text-accent text-xs font-semibold tracking-wider uppercase font-body">
-                    Duration: {activeOffering.duration}
+                    {t('offeringsSection.duration')}: {activeOffering.duration}
                   </span>
                 </div>
 
@@ -329,7 +331,7 @@ export default function OfferingsGrid() {
               {/* Dynamic Treatment Flowchart */}
               <div className="border-t border-white/10 pt-6">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-6 flex items-center gap-2">
-                  <span>Therapy Energy Flow</span>
+                  <span>{t('offeringsSection.flowTitle')}</span>
                   <HelpCircle size={12} className="text-white/30" />
                 </h4>
 
@@ -370,7 +372,7 @@ export default function OfferingsGrid() {
               {/* Bottom CTA block */}
               <div className="border-t border-white/10 pt-4 flex items-center justify-between">
                 <span className="text-xs text-white/40 italic">
-                  *Supervised by resident Ayurvedic doctors.
+                  {t('offeringsSection.supervised')}
                 </span>
 
                 <a
@@ -381,7 +383,7 @@ export default function OfferingsGrid() {
                   }}
                   className="inline-flex items-center gap-2 bg-primary hover:bg-primary/95 text-white text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 group whitespace-nowrap"
                 >
-                  Book Treatment Flow
+                  {t('offeringsSection.bookFlow')}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

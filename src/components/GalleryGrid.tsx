@@ -12,10 +12,66 @@ interface GalleryItem {
 
 const images: GalleryItem[] = [
   { 
+    src: '/img/020.jpg', 
+    alt: 'Aerial view of Chamundi Hill Palace retreat surrounded by mist', 
+    category: 'Views', 
+    title: 'Sanctuary in Clouds', 
+    subtitle: 'Nadukani Hills Aerial' 
+  },
+  { 
+    src: '/img/028.jpg', 
+    alt: 'Senior Ayurvedic doctor conducting pulse diagnosis consultation', 
+    category: 'Wellness', 
+    title: 'Pulse Diagnosis', 
+    subtitle: 'Doctor Consultation' 
+  },
+  { 
+    src: '/img/042.jpg', 
+    alt: 'Yoga guru meditating in lotus pose on hilltop rock platform', 
+    category: 'Rooms', 
+    title: 'Hilltop Meditation', 
+    subtitle: 'Outdoor Asana' 
+  },
+  { 
+    src: '/img/053.jpg', 
+    alt: 'Thatched pagoda gazebo viewpoint on hill peak', 
+    category: 'Views', 
+    title: 'Viewpoint Pavilion', 
+    subtitle: 'Hilltop Gazebo' 
+  },
+  { 
+    src: '/img/045.jpg', 
+    alt: 'Therapists pouring warm herbal oils in padabhyanga leg treatment', 
+    category: 'Wellness', 
+    title: 'Padabhyanga Therapy', 
+    subtitle: 'Herbal Oil Treatment' 
+  },
+  { 
+    src: '/img/037.jpg', 
+    alt: 'Guest relaxing on wooden balcony deck amongst green foliage', 
+    category: 'Rooms', 
+    title: 'Balcony Lounge', 
+    subtitle: 'Nature Deck' 
+  },
+  { 
+    src: '/img/091.jpg', 
+    alt: 'Traditional Shirodhara oil stream and eye care therapy', 
+    category: 'Wellness', 
+    title: 'Shirodhara Session', 
+    subtitle: 'Head & Eye Care' 
+  },
+  { 
+    src: '/img/property1.jpg', 
+    alt: 'Exterior facade of Chamundi Hill Palace', 
+    category: 'Views', 
+    title: 'Palace Facade', 
+    subtitle: 'Heritage Estate' 
+  },
+  { 
     src: '/img/banner-1.jpg', 
     alt: 'Panoramic view of Chamundi Hill Palace retreat', 
     category: 'Views', 
-    title: '', 
+    title: 'Panoramic Vistas', 
     subtitle: 'Lush Green Hills' 
   },
   { 
@@ -23,17 +79,10 @@ const images: GalleryItem[] = [
     alt: 'Lush greenery surrounding the heritage palace', 
     category: 'Views', 
     title: 'Heritage Gardens', 
-    subtitle: 'Sacred Grove Walkways' 
+    subtitle: 'Botanical Walkways' 
   },
   { 
     src: '/img/kerala-ayurveda-2.jpg', 
-    alt: 'Traditional Ayurvedic treatment session', 
-    category: 'Wellness', 
-    title: 'Ayurvedic Therapy', 
-    subtitle: 'Doctor-guided Healing' 
-  },
-   { 
-    src: '/img/stress-relief.jpg', 
     alt: 'Traditional Ayurvedic treatment session', 
     category: 'Wellness', 
     title: 'Ayurvedic Therapy', 
@@ -45,27 +94,6 @@ const images: GalleryItem[] = [
     category: 'Rooms', 
     title: 'Palace Suite', 
     subtitle: 'Traditional Architecture' 
-  },
-  { 
-    src: '/img/yoga.jpg', 
-    alt: 'Yoga practice in the natural Kerala setting', 
-    category: 'Rooms', 
-    title: 'Yoga Shala', 
-    subtitle: 'Sunrise Meditation' 
-  },
-   { 
-    src: '/img/yogaretreat.jpg', 
-    alt: 'Yoga practice in the natural Kerala setting', 
-    category: 'Rooms', 
-    title: 'Yoga', 
-    subtitle: '' 
-  },
-   { 
-    src: '/img/rooms.jpg', 
-    alt: 'Yoga practice in the natural Kerala setting', 
-    category: 'Rooms', 
-    title: 'Palace Suite', 
-    subtitle: 'Rooms' 
   },
 ];
 

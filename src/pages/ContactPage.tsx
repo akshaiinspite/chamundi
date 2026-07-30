@@ -1,12 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { MapPin, Phone, Mail, MessageCircle, Clock, Globe } from 'lucide-react';
+import SocialLinks from '../components/SocialLinks';
 
 export default function ContactPage() {
   const { ref, isVisible } = useScrollReveal(0.1);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', treatment: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hash === '#contact-form' || window.location.hash === '#contact') {
+      setTimeout(() => {
+        const el = document.getElementById('contact-form');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 200);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,7 +56,7 @@ export default function ContactPage() {
             {/* Form */}
             <div>
               <h3 className="font-heading text-2xl font-semibold text-dark mb-8">Quick Contact</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="contact-name" className="block font-body text-xs font-semibold text-muted uppercase tracking-wider mb-2">Full Name</label>
                   <input type="text" id="contact-name" name="name" value={formData.name} onChange={handleChange} required className={inputClass} placeholder="Your full name" />
@@ -109,7 +121,7 @@ export default function ContactPage() {
                     <Clock size={20} className="text-accent mt-0.5 shrink-0" />
                     <div>
                       <p className="font-body text-xs font-semibold text-muted uppercase tracking-wider mb-1">Availability</p>
-                      <p className="font-body text-sm text-text/80">Open year-round. Best time to visit: September – May</p>
+                      <p className="font-body text-sm text-text/80">Open year-round.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 bg-surface rounded-xl p-5">
@@ -122,11 +134,15 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
-              <a href="https://wa.me/9447870346" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-body text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg">
-                <MessageCircle size={18} />
-                Chat on WhatsApp
-              </a>
+              {/* WhatsApp & Social Media */}
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                <a href="https://wa.me/9447870346" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-body text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg">
+                  <MessageCircle size={18} />
+                  Chat on WhatsApp
+                </a>
+
+                <SocialLinks title="Stay Connected with Chamundi" dark={false} />
+              </div>
 
               {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-border shadow-sm">

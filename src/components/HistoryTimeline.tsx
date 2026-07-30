@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, X, Sparkles, BookOpen, ShieldCheck } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -115,6 +116,7 @@ const timelineData: TimelineEvent[] = [
 ];
 
 export default function HistoryTimeline() {
+  const { t } = useTranslation();
   const { ref: timelineRef } = useScrollReveal(0.15);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -178,15 +180,13 @@ export default function HistoryTimeline() {
 
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <span className="section-label text-accent">Our Heritage</span>
+          <span className="section-label text-accent">{t('history.label')}</span>
           <h2 className="font-heading text-4xl sm:text-5xl mt-3 mb-6 text-white font-semibold">
-            The Legacy of Chamundi Hill Palace
+            {t('history.title')}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
           <p className="max-w-2xl mx-auto text-white/80 leading-relaxed font-body">
-            From the initial vision in 1935 to our Silver Jubilee as a globally acclaimed
-            destination for authentic Ayurveda, our journey has been defined by tradition,
-            compassion, and pure dedication to holistic healing.
+            {t('history.description')}
           </p>
         </div>
 
@@ -285,7 +285,7 @@ export default function HistoryTimeline() {
                           </div>
 
                           <span className="text-xs font-semibold text-accent hover:text-accent/80 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform duration-300">
-                            Explore History
+                            {t('history.exploreHistory')}
                             <ArrowRight size={14} />
                           </span>
                         </div>
@@ -384,10 +384,10 @@ export default function HistoryTimeline() {
                     </div>
                     <div>
                       <p className="text-[10px] text-text/50 uppercase font-bold tracking-wider">
-                        Retreat Focus
+                        {t('history.retreatFocus')}
                       </p>
                       <p className="font-body text-sm font-semibold text-text">
-                        100% Authentic Kerala Ayurveda
+                        {t('history.retreatFocusVal')}
                       </p>
                     </div>
                   </div>
@@ -396,12 +396,10 @@ export default function HistoryTimeline() {
 
               {/* Detailed Description */}
               <div className="space-y-4 font-body leading-relaxed text-text/90">
-                <h4 className="font-heading text-xl font-bold text-accent">Historical Narrative</h4>
+                <h4 className="font-heading text-xl font-bold text-accent">{t('history.historicalNarrative')}</h4>
                 <p className="text-sm sm:text-base">{selectedEvent.description}</p>
                 <p className="text-xs text-text/50 leading-relaxed italic border-t border-border/60 pt-4">
-                  "Chamundi Hill Palace has maintained these founding principles, ensuring that
-                  medicinal oils are boiled on-site, therapies are strictly tailored, and the
-                  natural landscape remains pristine."
+                  "{t('history.foundingPrinciples')}"
                 </p>
               </div>
 
@@ -411,13 +409,13 @@ export default function HistoryTimeline() {
             <div className="p-5 border-t border-border/60 bg-surface flex justify-between items-center shrink-0">
               <div className="flex items-center gap-2 text-xs text-[#85B267] font-semibold">
                 <ShieldCheck size={16} />
-                Authentic Legacy Registered
+                {t('history.authenticLegacy')}
               </div>
               <button
                 onClick={() => setSelectedEvent(null)}
                 className="px-6 py-2 bg-accent text-white rounded-full text-sm font-medium hover:bg-accent/95 transition-all duration-200 cursor-pointer"
               >
-                Close View
+                {t('history.closeView')}
               </button>
             </div>
 

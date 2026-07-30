@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { MapPin, Phone, Mail, MessageCircle, Leaf, Loader2 } from 'lucide-react';
+import SocialLinks from './SocialLinks';
 
 export default function ContactSection() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', treatment: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
@@ -81,14 +84,14 @@ export default function ContactSection() {
 
       <div ref={ref} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <span className="section-label">Get in Touch</span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-semibold text-dark mt-3">Contact Us</h2>
+          <span className="section-label">{t('contactSection.label')}</span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-semibold text-dark mt-3">{t('contactSection.title')}</h2>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           
           {/* Interactive Form */}
-          <form onSubmit={handleSubmit} className="space-y-8 bg-white/40 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-border/50 shadow-md">
+          <form id="contact-form" onSubmit={handleSubmit} className="space-y-8 bg-white/40 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-border/50 shadow-md">
             
             {/* Full Name */}
             <div className="relative group">
@@ -100,13 +103,13 @@ export default function ContactSection() {
                 onChange={handleChange} 
                 required 
                 className="w-full bg-transparent border-b-2 border-border/50 focus:border-primary px-0 py-3 font-body text-text outline-none transition-all duration-300 peer placeholder-transparent"
-                placeholder="Full Name"
+                placeholder={t('contactSection.name')}
               />
               <label 
                 htmlFor="name" 
                 className="absolute left-0 top-3 font-body text-xs font-semibold text-muted uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:text-text/40 peer-placeholder-shown:top-3.5 peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold"
               >
-                Full Name
+                {t('contactSection.name')}
               </label>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-1/2 peer-focus:w-full transition-all duration-500" />
             </div>
@@ -121,13 +124,13 @@ export default function ContactSection() {
                 onChange={handleChange} 
                 required 
                 className="w-full bg-transparent border-b-2 border-border/50 focus:border-primary px-0 py-3 font-body text-text outline-none transition-all duration-300 peer placeholder-transparent"
-                placeholder="Email Address"
+                placeholder={t('contactSection.email')}
               />
               <label 
                 htmlFor="email" 
                 className="absolute left-0 top-3 font-body text-xs font-semibold text-muted uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:text-text/40 peer-placeholder-shown:top-3.5 peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold"
               >
-                Email Address
+                {t('contactSection.email')}
               </label>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-1/2 peer-focus:w-full transition-all duration-500" />
             </div>
@@ -141,28 +144,27 @@ export default function ContactSection() {
                 value={formData.phone} 
                 onChange={handleChange} 
                 className="w-full bg-transparent border-b-2 border-border/50 focus:border-primary px-0 py-3 font-body text-text outline-none transition-all duration-300 peer placeholder-transparent"
-                placeholder="Phone Number"
+                placeholder={t('contactSection.phone')}
               />
               <label 
                 htmlFor="phone" 
                 className="absolute left-0 top-3 font-body text-xs font-semibold text-muted uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:text-text/40 peer-placeholder-shown:top-3.5 peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold"
               >
-                Phone Number
+                {t('contactSection.phone')}
               </label>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-1/2 peer-focus:w-full transition-all duration-500" />
             </div>
 
             {/* Treatment dropdown */}
             <div className="relative group">
-              <label htmlFor="treatment" className="block font-body text-xs font-semibold text-muted uppercase tracking-wider mb-1">Treatment Interest</label>
+              <label htmlFor="treatment" className="block font-body text-xs font-semibold text-muted uppercase tracking-wider mb-1">{t('contactSection.treatment')}</label>
               <select id="treatment" name="treatment" value={formData.treatment} onChange={handleChange} className="w-full bg-transparent border-b-2 border-border/50 focus:border-primary px-0 py-3 font-body text-text outline-none transition-all duration-300 cursor-pointer">
-                <option value="">Select a treatment</option>
-                <option value="panchakarma">Panchakarma</option>
-                <option value="rejuvenation">Rejuvenation</option>
-                <option value="stress-relief">Stress Relief</option>
-                <option value="weight-loss">Weight Loss</option>
-                <option value="yoga">Yoga Course</option>
-                <option value="general">General Enquiry</option>
+                <option value="">{t('contactSection.treatment')}</option>
+                <option value="panchakarma">{t('nav.panchakarma')}</option>
+                <option value="rejuvenation">{t('nav.rejuvenation')}</option>
+                <option value="stress-relief">{t('nav.stressRelief')}</option>
+                <option value="weight-loss">{t('nav.weightLoss')}</option>
+                <option value="yoga">{t('nav.yogaMeditation')}</option>
               </select>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-1/2 focus-within:w-full transition-all duration-500" />
             </div>
@@ -176,13 +178,13 @@ export default function ContactSection() {
                 onChange={handleChange} 
                 rows={4} 
                 className="w-full bg-transparent border-b-2 border-border/50 focus:border-primary px-0 py-3 font-body text-text outline-none transition-all duration-300 peer placeholder-transparent resize-none"
-                placeholder="Message"
+                placeholder={t('contactSection.message')}
               />
               <label 
                 htmlFor="message" 
                 className="absolute left-0 top-3 font-body text-xs font-semibold text-muted uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:text-text/40 peer-placeholder-shown:top-3.5 peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold"
               >
-                Message
+                {t('contactSection.message')}
               </label>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-1/2 peer-focus:w-full transition-all duration-500" />
             </div>
@@ -198,7 +200,7 @@ export default function ContactSection() {
               }`}
             >
               {status === 'sending' && <Loader2 size={16} className="animate-spin" />}
-              {status === 'success' ? '✓ Enquiry Sent!' : 'Send Enquiry'}
+              {status === 'sending' ? t('contactSection.sending') : status === 'success' ? t('contactSection.success') : t('contactSection.submit')}
             </button>
           </form>
 
@@ -239,8 +241,8 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Chat Button */}
-              <div className="pt-2">
+              {/* Chat Button & Social Links */}
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
                 <a 
                   href="https://wa.me/9447870346" 
                   target="_blank" 
@@ -248,8 +250,10 @@ export default function ContactSection() {
                   className="relative inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-body text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 group overflow-hidden"
                 >
                   <MessageCircle size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-                  Chat on WhatsApp
+                  {t('contactSection.whatsappTitle')}
                 </a>
+
+                <SocialLinks title="Stay Connected with Chamundi" dark={false} />
               </div>
             </div>
 

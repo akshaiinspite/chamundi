@@ -1,0 +1,274 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "ayurveda": "Ayurvéda",
+    "whatWeOffer": "Ce que nous offrons",
+    "accommodation": "Hébergement",
+    "feedback": "Avis",
+    "gallery": "Galerie",
+    "yogaCourse": "Cours de Yoga",
+    "contact": "Contact",
+    "bookNow": "Réserver"
+  },
+  "hero": {
+    "eyebrow": "Retraite Ayurvédique Patrimoniale · Collines de Nadukani, Kerala",
+    "title": "Chamundi Hill Palace",
+    "subtitle": "Vivez la Guérison dans le Sanctuaire de la Nature",
+    "stats": {
+      "years": "Années",
+      "countries": "Pays",
+      "rated": "Noté",
+      "excellence": "Prix Travellers' Choice"
+    },
+    "exploreTreatments": "Explorer les Soins",
+    "bookStay": "Réserver un Séjour"
+  },
+  "trust": {
+    "label": "Reconnaissance & Excellence",
+    "title": "La confiance des voyageurs du monde entier",
+    "description": "Depuis plus de 25 ans, Chamundi Hill Palace accueille des hôtes de plus de 50 pays pour découvrir la beauté des collines du Kerala. Avec une note de 4,9/5 et 98 % d'hôtes fidèles, nous sommes fiers d'offrir une hospitalité chaleureuse et des soins Ayurvédiques authentiques.",
+    "videoButton": "Découvrir Chamundi Hill Palace : Visite Vidéo",
+    "badges": {
+      "tripadvisor": { "highlight": "TripAdvisor", "text": "Certificat d'Excellence pour des notes 5 étoiles constantes" },
+      "travellersChoice": { "highlight": "Choix des Voyageurs", "text": "Récompensé aux 10 % meilleurs hôtels mondiaux en 2024" },
+      "greenLeaf": { "highlight": "Feuille Verte", "text": "Éco-retraite certifiée par le Gouvernement du Kerala" },
+      "years": { "highlight": "25+ Ans", "text": "De soins Ayurvédiques authentiques et traditionnels" },
+      "organic": { "highlight": "100 % Bio", "text": "Restauration du jardin à la table issue de nos jardins biologiques" },
+      "returnRate": { "highlight": "98 % de Fidélité", "text": "Des hôtes qui reviennent chaque année pour leurs thérapies de rajeunissement" }
+    }
+  },
+  "about": {
+    "label": "Notre Histoire",
+    "title": "L'Histoire de Chamundi Hill Palace",
+    "description": "Niché au cœur des collines verdoyantes du Kerala, le Centre de Traitement Ayurvédique de Chamundi Hill Palace est un sanctuaire de paix, de guérison et de beauté intemporelle. Perché sur une colline isolée, il offre une atmosphère où la nature, la spiritualité et le bien-être coexistent en parfaite harmonie.",
+    "experienceLabel": "Expérience",
+    "experienceValue": "Années de Guérison",
+    "readStory": "Lire Notre Histoire",
+    "links": {
+      "ayurveda": "Ayurvéda",
+      "whatWeOffer": "Ce que nous offrons",
+      "accommodation": "Hébergement"
+    },
+    "modal": {
+      "label": "Notre Patrimoine",
+      "title": "L'Histoire de Chamundi Hill Palace",
+      "subtitle": "Centre de Traitement Ayurvédique",
+      "royalHeritage": "Un Héritage Royal",
+      "p1": "Le magnifique palais a été construit il y a plus de 85 ans par M. G N Thampi et son frère. À cette époque, la colline était presque six mètres plus haute qu'aujourd'hui. Grâce aux efforts inlassables des ouvriers locaux, la colline fut soigneusement abaissée et une route fut taillée dans la roche à la main.",
+      "p2": "En 1963, Mme Saroja Thampi arriva à Chamundi Hill Palace en tant que jeune épouse de M. C. G. Thampi, fils de Sri. G N Thampi. Dès son arrivée, elle tomba amoureuse des paysages à couper le souffle et de l'atmosphère paisible du domaine.",
+      "founderName": "Mme Saroja Thampi",
+      "founderTitle": "Fondatrice & Visionnaire",
+      "founderDesc": "Dont la guérison miraculeuse par l'Ayurvéda et la foi inébranlable ont inspiré la transformation de son palais ancestral en un sanctuaire de guérison pour les visiteurs du monde entier.",
+      "p3": "Au fil des ans, Mme Thampi a nourri un rêve — que la beauté, la tranquillité et l'énergie positive de Chamundi Hill Palace ne restent pas un privilège pour sa famille seule, mais soient partagées avec des personnes du monde entier en quête de paix et de guérison.",
+      "miracle": "Un Miracle Qui Change la Vie",
+      "p4": "En 1989, Mme Saroja Thampi a fait face au plus grand défi de sa vie. Elle a souffert d'une grave insuffisance rénale qui l'a laissée partiellement paralysée. Les médecins spécialistes avaient peu d'espoir pour son rétablissement.",
+      "p5": "Pourtant, ce qui suivit fut extraordinaire. Sans autre intervention médicale, ses reins se remiraient progressivement à fonctionner, et grâce au traitement Ayurvédique, elle retrouva ses forces en quelques mois.",
+      "p6": "La famille Thampi a toujours été dévouée à la déesse Chamundi, leur divinité familiale, symbole de force, de protection et de compassion. Mme Thampi croyait fermement que son rétablissement était un miracle accordé par la déesse.",
+      "p7": "Peu après sa guérison, elle vécut un rêve vivant dans lequel la déesse Chamundi lui demanda de transformer sa demeure ancestrale en un centre de guérison Ayurvédique traditionnel.",
+      "p8": "Bien que Mme Thampi ait vécu la vie d'une femme au foyer traditionnelle sans expérience en architecture ou hôtellerie, elle accepta cette mission divine avec une foi inébranlable.",
+      "p9": "Remarquablement, en seulement quelques mois, sa vision devint réalité.",
+      "p10": "Tragiquement, son mari M. C. G. Thampi décéda un an plus tard. Malgré cette perte profonde, Mme Thampi trouva la force de poursuivre sa mission.",
+      "legacy": "Un Héritage de Guérison",
+      "p11": "Aujourd'hui, le Centre de Traitement Ayurvédique de Chamundi Hill Palace est un symbole de foi, de résilience et de guérison Ayurvédique authentique. Depuis plus de 25 ans, il accueille des hôtes du monde entier.",
+      "p12": "Ce qui a commencé comme un voyage miraculeux de guérison personnelle est devenu une destination où des milliers d'hôtes ont vécu transformation, bien-être et paix intérieure."
+    }
+  },
+  "rooms": {
+    "label": "Nos Sanctuaires",
+    "title": "Hébergements Conçus pour un Repos Profond",
+    "description": "Chaque chambre de Chamundi Hill Palace est conçue comme un sanctuaire paisible pour votre corps et votre esprit, alliant le design traditionnel du Kerala aux éléments organiques modernes.",
+    "enquireNow": "Renseignez-vous",
+    "types": {
+      "standard": {
+        "name": "Chambre Standard",
+        "tag": "Héritage Confortable",
+        "description": "Chambres de charme alliant l'artisanat en bois traditionnel du Kerala au confort moderne. Parfaites pour un séjour de guérison reposant.",
+        "size": "26 m²",
+        "view": "Vue Jardin / Domaine",
+        "amenities": ["Lit Simple/Double", "Wi-Fi Gratuit", "Salle de bain privée"]
+      },
+      "balcony": {
+        "name": "Chambre avec Balcon",
+        "tag": "Vue Panoramique",
+        "description": "Chambres spacieuses avec balcon privé offrant lumière naturelle, air de montagne frais et vues panoramiques sur les collines enveloppées de brume.",
+        "size": "32 m²",
+        "view": "Vue Spectaculaire sur les Collines",
+        "amenities": ["Lit King Size", "Wi-Fi Gratuit", "Balcon Privé"]
+      },
+      "cottage": {
+        "name": "Cottage de Jardin",
+        "tag": "Intimité Absolue",
+        "description": "Charmants cottages isolés nichés dans la végétation tropicale luxuriante, avec véranda privée et luxe rustique au cœur de la nature.",
+        "size": "39 m²",
+        "view": "Vue sur la Forêt",
+        "amenities": ["Lit King Size", "Véranda Privée", "Emplacement Isolé"]
+      }
+    }
+  },
+  "stats": {
+    "label": "Métriques du Retreat",
+    "title": "Pourquoi les Hôtes Reviennent — Encore et Encore",
+    "items": {
+      "science": "Années de Science Ayurvédique",
+      "guests": "Hôtes Satisfaits et Rajeunés",
+      "doctors": "Médecins Ayurvédiques Certifiés",
+      "program": "Programme Panchakarma Complet"
+    },
+    "features": ["Plans de Traitement Personnalisés", "Repas Ayurvédiques Bio", "Cadre Naturel en Altitude"]
+  },
+  "cta": {
+    "label": "Réservation du Retreat",
+    "title": "Commencez Votre Voyage de Guérison Aujourd'hui",
+    "subtitle": "Panchakarma · Yoga · Rajeunissement · Détox",
+    "bookStay": "Réserver votre Séjour"
+  },
+  "footer": {
+    "tagline": "Ayurvéda Authentique dans les Collines du Kerala",
+    "quickLinks": "Liens Rapides",
+    "treatments": "Traitements",
+    "contact": "Contact",
+    "rights": "© 2025 Chamundi Hill Palace Ayurveda Treatment Centre · Tous Droits Réservés",
+    "airportNotice": "Aéroport le plus proche : Aéroport international de Cochin (COK) — Transferts disponibles",
+    "links": {
+      "home": "Accueil",
+      "ayurveda": "Ayurvéda",
+      "whatWeOffer": "Ce que nous offrons",
+      "accommodation": "Hébergement",
+      "yogaCourse": "Cours de Yoga",
+      "gallery": "Galerie",
+      "contact": "Contact"
+    },
+    "treatments_links": {
+      "panchakarma": "Panchakarma",
+      "rejuvenation": "Rajeunissement",
+      "stressRelief": "Anti-Stress",
+      "weightLoss": "Perte de Poids",
+      "yogaMeditation": "Yoga & Méditation",
+      "guestFeedback": "Avis des Hôtes"
+    }
+  },
+  "award": {
+    "label": "Distinction Honorée",
+    "title": "Gagnant du Prix Travellers' Choice de Tripadvisor",
+    "subtitle": "Classé parmi les 10 % des meilleurs hôtels et retraites au monde",
+    "description": "Le Centre Ayurvédique Chamundi Hill Palace est profondément honoré de recevoir le prestigieux prix Travellers' Choice de Tripadvisor. Basé sur des avis authentiques de millions de voyageurs du monde entier, cette distinction célèbre notre engagement envers les soins ayurvédiques traditionnels et l'hospitalité kéralaise.",
+    "consecutive": "Gagnant consécutif pendant 3 années consécutives",
+    "winner": "Gagnant",
+    "top10": "Top 10%",
+    "top10Sub": "Reconnaissance Mondiale",
+    "fiveStar": "Classé 5 Étoiles",
+    "fiveStarSub": "Évaluations Constantes des Voyageurs",
+    "authenticCare": "Soins Authentiques",
+    "authenticCareSub": "Panchakarma Certifié"
+  },
+  "spotlight": {
+    "badge": "Hôte Fidèle (18 Visites)",
+    "guestName": "Jeannie · Royaume-Uni 🇬🇧",
+    "label": "Une Vie de Confiance et de Guérison",
+    "title": "18 Visites et Plus : L'Histoire de Jeannie",
+    "subtitle": "Visite depuis le Royaume-Uni depuis plus de deux décennies",
+    "quote": "Chamundi Hill Palace n'est pas seulement un centre de bien-être pour moi, c'est ma deuxième maison au Kerala. Y revenir 18 fois au fil des ans a revitalisé mon corps, apaisé mon esprit et ancré mon âme dans l'Ayurvéda authentique.",
+    "profileLabel": "Profil de l'Hôte",
+    "profileVal": "Jeannie (UK)",
+    "retreatLabel": "Nombre de Séjours",
+    "retreatVal": "18 Séjours de Rajeunissement",
+    "therapiesLabel": "Thérapies Préférées",
+    "therapiesVal": "Panchakarma Complet & Soins aux Plantes",
+    "annualRetreats": "Retraites Annuelles",
+    "yearsTrust": "Années de Confiance",
+    "authenticAyurveda": "Ayurvéda Authentique"
+  },
+  "history": {
+    "label": "Notre Patrimoine",
+    "title": "L'Héritage de Chamundi Hill Palace",
+    "description": "De la vision initiale en 1935 à notre Jubilé d'Argent en tant que destination ayurvédique mondiale, notre parcours s'est caractérisé par la tradition, la compassion et le dévouement aux soins holistiques.",
+    "exploreHistory": "Explorer l'Histoire",
+    "historicalNarrative": "Récit Historique",
+    "foundingPrinciples": "Chamundi Hill Palace maintient ses principes fondateurs : les huiles médicinales sont cuites sur place, les soins sont strictement sur mesure et la nature reste intacte.",
+    "authenticLegacy": "Héritage Authentique Enregistré",
+    "closeView": "Fermer la Vue",
+    "retreatFocus": "Objectif du Centre",
+    "retreatFocusVal": "100 % Ayurvéda Authentique du Kerala"
+  },
+  "dayAtChamundi": {
+    "label": "Une Journée Type",
+    "title": "Une Journée à Chamundi Hill Palace",
+    "description": "Découvrez une routine parfaitement structurée alliant traitements traditionnels, alimentation biologique, yoga régénérant et activités enrichissantes sur notre colline sacrée.",
+    "tabs": {
+      "schedule": "Programme Quotidien",
+      "nourishment": "Cuisine Biologique",
+      "rooms": "Hébergement",
+      "excursions": "Activités & Excursions"
+    },
+    "nourishmentTitle": "Une Nourriture pour la Guérison",
+    "nourishmentTag": "Restauration Biologique",
+    "nourishmentDesc": "La nutrition est essentielle à la guérison. Notre cuisine végétarienne kéralaise est soigneusement élaborée à partir d'ingrédients biologiques pour soutenir votre bien-être.",
+    "nourishmentBullet1": "Repas végétariens frais préparés avec des légumes et épices biologiques de notre jardin.",
+    "nourishmentBullet2": "Eau ayurvédique aux herbes préparée fraîche chaque jour.",
+    "nourishmentBullet3": "Repas servis sur une table commune, favorisant les échanges chaleureux entre les hôtes.",
+    "roomsTag": "Espaces de Vie avec Salle de Bain",
+    "roomsTitle": "Hébergement Confortable",
+    "roomsDesc1": "Toutes les chambres sont spacieuses, avec salle de bain privée. Certaines sont situées dans le palais principal, d'autres dans des cottages paisibles avec vue sur les collines.",
+    "roomsDesc2": "En tant que retraite ayurvédique de haut niveau au Kerala, nous garantissons des espaces calmes favorisant votre régénération.",
+    "roomsBullet1": "Suites Spacieuses",
+    "roomsBullet2": "Salles de Bain Privées",
+    "roomsBullet3": "Palais ou Cottages",
+    "roomsBullet4": "Vues Magnifiques sur les Collines",
+    "includedTitle": "Inclus Dans Votre Séjour",
+    "complimentary": "Inclus",
+    "activity": "Activité"
+  },
+  "offeringsSection": {
+    "label": "Ce Que Nous Offrons",
+    "title": "Nos Soins Signature",
+    "duration": "Durée",
+    "flowTitle": "Flux Énergétique du Traitement",
+    "supervised": "*Supervisé par des médecins ayurvédiques résidents.",
+    "bookFlow": "Réserver ce Traitement"
+  },
+  "contactSection": {
+    "label": "Prendre Contact",
+    "title": "Contactez-nous",
+    "name": "Nom Complet",
+    "email": "Adresse Email",
+    "phone": "Téléphone / WhatsApp",
+    "treatment": "Sélectionnez le Soin Souhaité",
+    "message": "Votre Message",
+    "submit": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "success": "Message Envoyé avec Succès !",
+    "addressTitle": "Emplacement de la Retraite",
+    "phoneTitle": "Assistance Téléphonique",
+    "emailTitle": "Demandes par Email",
+    "whatsappTitle": "WhatsApp Direct"
+  },
+  "treatmentBlocks": {
+    "yoga": {
+      "tag": "Séances Quotidiennes",
+      "title": "Retraite de Yoga au Kerala",
+      "body": "Le yoga est au cœur de chaque programme de bien-être à Chamundi. Chaque journée commence et se termine par des séances guidées animées par des instructeurs expérimentés. Les hôtes peuvent rejoindre notre cours de yoga immersif couvrant asanas, pranayama et méditation.",
+      "cta": "Voir les Cours de Yoga",
+      "number": "50+",
+      "subtitle": "Pays Représentés"
+    }
+  },
+  "feedback": {
+    "heroStats": {
+      "rated": "Noté",
+      "repeatGuests": "Hôtes Fidèles",
+      "certifiedDoctors": "Médecins Certifiés",
+      "panchakarma": "Jours Panchakarma"
+    },
+    "videoSectionLabel": "Vidéos Témoignages",
+    "videoSectionTitle": "Regarder les Témoignages",
+    "videoSectionDesc": "Écoutez directement nos hôtes partager leurs expériences transformatrices et les moments forts de leur séjour à Chamundi Hill Palace.",
+    "reviewsLabel": "Avis",
+    "reviewsTitle": "Témoignages"
+  },
+  "testimonials": {
+    "label": "Histoires d'Hôtes",
+    "title": "Ce que Disent Nos Hôtes",
+    "watchVideo": "Regarder la Vidéo",
+    "guestReview": "Avis d'Hôte"
+  }
+}

@@ -1,6 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Bed, Wifi, Trees, Compass, ArrowRight, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface RoomType {
   name: string;
@@ -12,50 +13,53 @@ interface RoomType {
   view: string;
 }
 
-const roomTypes: RoomType[] = [
-  {
-    name: 'Standard Room',
-    tag: 'Cozy Heritage',
-    image: '/img/standardroom.jpeg',
-    description: 'Beautifully appointed heritage rooms blending traditional Keralan wood craftsmanship with modern comforts. Perfect for a restful healing stay.',
-    size: '280 sq. ft.',
-    view: 'Garden / Estate View',
-    amenities: [
-      { icon: Bed, text: 'Twin/Double Bed' },
-      { icon: Wifi, text: 'Complimentary Wi-Fi' },
-      { icon: Layers, text: 'Ensuite Bathroom' },
-    ],
-  },
-  {
-    name: 'Room with Balcony',
-    tag: 'Scenic View',
-    image: '/img/roomwith balcony.jpeg',
-    description: 'Spacious rooms featuring a private balcony that invites natural light, cool mountain air, and breathtaking panoramic views of the mist-clad hills.',
-    size: '340 sq. ft.',
-    view: 'Stunning Hillside View',
-    amenities: [
-      { icon: Bed, text: 'King Size Bed' },
-      { icon: Wifi, text: 'Complimentary Wi-Fi' },
-      { icon: Compass, text: 'Private Balcony' },
-    ],
-  },
-  {
-    name: 'Garden Cottage',
-    tag: 'Ultimate Privacy',
-    image: '/img/gardencottage.jpeg',
-    description: 'Charming standalone cottages tucked away in lush tropical foliage. Offers a private veranda, quiet rustic luxury, and deep connection to nature.',
-    size: '420 sq. ft.',
-    view: 'Lush Forest View',
-    amenities: [
-      { icon: Bed, text: 'King Size Bed' },
-      { icon: Trees, text: 'Private Veranda' },
-      { icon: Compass, text: 'Secluded Location' },
-    ],
-  },
-];
+
 
 export default function RoomsSection() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
+
+  const roomTypes: RoomType[] = [
+    {
+      name: t('rooms.types.standard.name'),
+      tag: t('rooms.types.standard.tag'),
+      image: '/img/standardroom.jpeg',
+      description: t('rooms.types.standard.description'),
+      size: t('rooms.types.standard.size'),
+      view: t('rooms.types.standard.view'),
+      amenities: [
+        { icon: Bed, text: t('rooms.types.standard.amenities.0') },
+        { icon: Wifi, text: t('rooms.types.standard.amenities.1') },
+        { icon: Layers, text: t('rooms.types.standard.amenities.2') },
+      ],
+    },
+    {
+      name: t('rooms.types.balcony.name'),
+      tag: t('rooms.types.balcony.tag'),
+      image: '/img/rooms.jpg',
+      description: t('rooms.types.balcony.description'),
+      size: t('rooms.types.balcony.size'),
+      view: t('rooms.types.balcony.view'),
+      amenities: [
+        { icon: Bed, text: t('rooms.types.balcony.amenities.0') },
+        { icon: Wifi, text: t('rooms.types.balcony.amenities.1') },
+        { icon: Compass, text: t('rooms.types.balcony.amenities.2') },
+      ],
+    },
+    {
+      name: t('rooms.types.cottage.name'),
+      tag: t('rooms.types.cottage.tag'),
+      image: '/img/gardencottage.jpeg',
+      description: t('rooms.types.cottage.description'),
+      size: t('rooms.types.cottage.size'),
+      view: t('rooms.types.cottage.view'),
+      amenities: [
+        { icon: Bed, text: t('rooms.types.cottage.amenities.0') },
+        { icon: Trees, text: t('rooms.types.cottage.amenities.1') },
+        { icon: Compass, text: t('rooms.types.cottage.amenities.2') },
+      ],
+    },
+  ];
 
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -74,13 +78,13 @@ export default function RoomsSection() {
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-label text-accent font-semibold tracking-widest uppercase text-xs">
-            Our Sanctuaries
+            {t('rooms.label')}
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl font-semibold text-dark mt-3 mb-6">
-            Accommodations Crafted for Deep Rest
+            {t('rooms.title')}
           </h2>
           <p className="font-body text-base text-text/85 leading-relaxed">
-            Every room at Chamundi Hill Palace is designed to serve as a peaceful sanctuary for your body and mind. Blending traditional Kerala design with modern organic elements, our spaces prioritize natural airflow, light, and privacy.
+            {t('rooms.description')}
           </p>
         </div>
 
@@ -148,7 +152,7 @@ export default function RoomsSection() {
                     to="/contact"
                     className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-surface text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300 group/btn"
                   >
-                    <span className="text-xs uppercase tracking-wider">Enquire Now</span>
+                    <span className="text-xs uppercase tracking-wider">{t('rooms.enquireNow')}</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>

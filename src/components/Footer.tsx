@@ -1,60 +1,47 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MessageCircle } from 'lucide-react';
-
-const FacebookIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-);
-const InstagramIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-);
-const YoutubeIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-);
-
-const quickLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Ayurveda', to: '/ayurveda' },
-  { label: 'What We Offer', to: '/what-we-offer' },
-  { label: 'Accommodation', to: '/accommodation' },
-  { label: 'Yoga Course', to: '/yoga-course' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Contact', to: '/contact' },
-];
-
-const treatmentLinks = [
-  { label: 'Panchakarma', to: '/panchakarma' },
-  { label: 'Rejuvenation', to: '/ayurveda' },
-  { label: 'Stress Relief', to: '/ayurveda' },
-  { label: 'Weight Loss', to: '/ayurveda' },
-  { label: 'Yoga & Meditation', to: '/yoga-course' },
-  { label: 'Guest Feedback', to: '/feedback' },
-];
+import { Phone, Mail, MessageCircle, Plane, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
+  const quickLinks = [
+    { label: t('footer.links.home'), to: '/' },
+    { label: t('footer.links.ayurveda'), to: '/ayurveda' },
+    { label: t('footer.links.whatWeOffer'), to: '/what-we-offer' },
+    { label: t('footer.links.accommodation'), to: '/accommodation' },
+    { label: t('footer.links.yogaCourse'), to: '/yoga-course' },
+    { label: t('footer.links.gallery'), to: '/gallery' },
+    { label: t('footer.links.contact'), to: '/contact' },
+  ];
+
+  const treatmentLinks = [
+    { label: t('footer.treatments_links.panchakarma'), to: '/panchakarma' },
+    { label: t('footer.treatments_links.rejuvenation'), to: '/ayurveda' },
+    { label: t('footer.treatments_links.stressRelief'), to: '/ayurveda' },
+    { label: t('footer.treatments_links.weightLoss'), to: '/ayurveda' },
+    { label: t('footer.treatments_links.yogaMeditation'), to: '/yoga-course' },
+    { label: t('footer.treatments_links.guestFeedback'), to: '/feedback' },
+  ];
+
   return (
     <footer className="bg-dark border-t-2 border-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Col 1 — Brand */}
+          {/* Col 1 — Brand & Social */}
           <div className="space-y-5 text-center md:text-left">
             <img src="/img/logo.png" alt="Chamundi Hill Palace Logo" className="h-14 w-auto mx-auto md:mx-0" loading="lazy" />
-            <p className="font-body text-sm text-muted leading-relaxed">Authentic Ayurveda in the Hills of Kerala</p>
-            <div className="flex items-center justify-center md:justify-start gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-muted/30 flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors" aria-label="Facebook">
-                <FacebookIcon />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-muted/30 flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors" aria-label="Instagram">
-                <InstagramIcon />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-muted/30 flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors" aria-label="YouTube">
-                <YoutubeIcon />
-              </a>
+            <p className="font-body text-sm text-muted leading-relaxed">{t('footer.tagline')}</p>
+
+            <div className="pt-2 flex justify-center md:justify-start">
+              <SocialLinks title="Stay Connected with Chamundi" dark={true} />
             </div>
           </div>
 
           {/* Col 2 — Quick Links */}
           <div className="text-center md:text-left">
-            <h4 className="font-heading text-lg font-semibold text-white mb-5">Quick Links</h4>
+            <h4 className="font-heading text-lg font-semibold text-white mb-5">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -66,7 +53,7 @@ export default function Footer() {
 
           {/* Col 3 — Treatments */}
           <div className="text-center md:text-left">
-            <h4 className="font-heading text-lg font-semibold text-white mb-5">Treatments</h4>
+            <h4 className="font-heading text-lg font-semibold text-white mb-5">{t('footer.treatments')}</h4>
             <ul className="space-y-2.5">
               {treatmentLinks.map((link) => (
                 <li key={link.label}>
@@ -78,34 +65,33 @@ export default function Footer() {
 
           {/* Col 4 — Contact */}
           <div className="text-center md:text-left">
-            <h4 className="font-heading text-lg font-semibold text-white mb-5">Contact</h4>
+            <h4 className="font-heading text-lg font-semibold text-white mb-5">{t('footer.contact')}</h4>
             <div className="space-y-3 text-center md:text-left">
-              <p className="font-body text-sm text-muted leading-relaxed">Nadukani Hills, Kanjirapally,<br />Kottayam, Kerala – 686512</p>
-             <a
-  href="tel:+919447870346"
-  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
->
-  <Phone size={14} />
-  +91 94478 70346
-</a>
+              <div className="flex items-start justify-center md:justify-start gap-2">
+                <MapPin size={14} className="text-muted shrink-0 mt-0.5" />
+                <p className="font-body text-sm text-muted leading-relaxed">Nadukani Hills, Kanjirapally,<br />Kottayam, Kerala – 686512</p>
+              </div>
 
-<a
-  href="mailto:info@chamundihillpalace.org"
-  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
->
-  <Mail size={14} />
-  info@chamundihillpalace.org
-</a>
+              <a href="tel:+919447870346" className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
+                <Phone size={14} />
+                +91 94478 70346
+              </a>
 
-<a
-  href="https://wa.me/9447870346"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors"
->
-  <MessageCircle size={14} />
-  WhatsApp
-</a>
+              <a href="mailto:info@chamundihillpalace.org" className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
+                <Mail size={14} />
+                info@chamundihillpalace.org
+              </a>
+
+              <a href="https://wa.me/9447870346" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-2 font-body text-sm text-muted hover:text-accent transition-colors">
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+
+              {/* Airport Notice */}
+              <div className="flex items-center justify-center md:justify-start gap-2 pt-1 text-accent/80 border-t border-white/5 mt-2">
+                <Plane size={14} className="text-accent shrink-0" />
+                <span className="font-body text-xs font-medium">Nearest to Cochin International Airport (COK)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -113,9 +99,18 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#2A2118]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        {/* Airport Proximity Banner */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 border-b border-white/5">
+          <div className="flex items-center gap-2.5 bg-white/5 border border-accent/20 rounded-full px-5 py-2 hover:border-accent/40 transition-colors duration-300">
+            <Plane size={15} className="text-accent shrink-0" />
+            <span className="font-body text-xs text-white/80 font-medium tracking-wide">
+              {t('footer.airportNotice')}
+            </span>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="font-body text-xs text-muted/60 text-center">
-            &copy; 2025 Chamundi Hill Palace Ayurveda Treatment Centre · All Rights Reserved
+            {t('footer.rights')}
           </p>
         </div>
       </div>

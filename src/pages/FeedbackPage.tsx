@@ -1,32 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import PageHero from '../components/PageHero';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Star, Quote, Leaf, Users, BadgeCheck, Play, X } from 'lucide-react';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-
-const heroStats = [
-  {
-    icon: Star,
-    value: '4.9/5',
-    label: 'Rated',
-  },
-  {
-    icon: Users,
-    value: '15+',
-    label: 'Repeat Guests',
-  },
-  {
-    icon: BadgeCheck,
-    value: '100%',
-    label: 'Certified Doctors',
-  },
-  {
-    icon: Leaf,
-    value: '28',
-    label: 'Day Panchakarma',
-  },
-];
+import LoyalGuestSpotlight from '../components/LoyalGuestSpotlight';
 
 const feedbacks = [
   {
@@ -93,9 +72,17 @@ const videoTestimonials = [
 ];
 
 export default function FeedbackPage() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
   const { ref: videoRef, isVisible: videoVisible } = useScrollReveal(0.1);
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; isYoutube: boolean } | null>(null);
+
+  const heroStats = [
+    { icon: Star,       value: '4.9/5', label: t('feedback.heroStats.rated') },
+    { icon: Users,      value: '15+',   label: t('feedback.heroStats.repeatGuests') },
+    { icon: BadgeCheck, value: '100%',  label: t('feedback.heroStats.certifiedDoctors') },
+    { icon: Leaf,       value: '28',    label: t('feedback.heroStats.panchakarma') },
+  ];
 
   return (
     <>
@@ -176,6 +163,7 @@ export default function FeedbackPage() {
       </section>
 
       <TestimonialsCarousel />
+      <LoyalGuestSpotlight />
 
       {/* Video Reviews Grid Section */}
       <section className="py-20 bg-surface relative overflow-hidden">
@@ -186,13 +174,13 @@ export default function FeedbackPage() {
           }`}
         >
           <div className="text-center mb-16">
-            <span className="section-label">Video Reviews</span>
+            <span className="section-label">{t('feedback.videoSectionLabel')}</span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark mt-3">
-              Watch Guest Testimonials
+              {t('feedback.videoSectionTitle')}
             </h2>
             <div className="w-24 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
             <p className="max-w-2xl mx-auto text-text/80 leading-relaxed font-body mt-4 text-sm sm:text-base">
-              Listen directly to our guests share their transformational experiences, wellness outcomes, and highlights of their stay at Chamundi Hill Palace.
+              {t('feedback.videoSectionDesc')}
             </p>
           </div>
 
@@ -244,8 +232,8 @@ export default function FeedbackPage() {
           className="mx-5 lg:mx-20 px-4 sm:px-6 relative z-10"
         >
           <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="section-label">Reviews</span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mt-3">Feedback</h2>
+            <span className="section-label">{t('feedback.reviewsLabel')}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mt-3">{t('feedback.reviewsTitle')}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">

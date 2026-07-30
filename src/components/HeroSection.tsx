@@ -1,24 +1,11 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, Clock3, Globe2, Star, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection() {
-  const [videoSrc, setVideoSrc] = useState('/img/videos/IMG_3810 (1).mov');
+  const { t } = useTranslation();
   const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      // mobile and medium screens (< 1024px) use bgmobile, desktop uses IMG_3810 (1)
-      if (window.innerWidth < 1024) {
-        setVideoSrc('/img/videos/IMG_3810 (1).mov');
-      } else {
-        setVideoSrc('/img/videos/mainbackground.mp4');
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const videoSrc = '/img/videos/video hero.MOV';
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
@@ -44,23 +31,22 @@ export default function HeroSection() {
       `}</style>
 
       {/* Background Video with slow cinematic overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          key={videoSrc}
           autoPlay
           loop
           muted
           playsInline
           poster="/img/banner-1.jpg"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center scale-105 animate-hero-zoom"
         >
           <source 
-            src={videoSrc} 
+            src={videoSrc}
           />
           Your browser does not support the video tag.
         </video>
-        {/* Deep darken gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-dark/50" />
+        {/* Professional gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/50 to-dark/40 backdrop-brightness-[0.88]" />
       </div>
 
       {/* Atmospheric ambient glows */}
@@ -78,7 +64,7 @@ export default function HeroSection() {
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Heritage Ayurveda Retreat · Nadukani Hills, Kerala
+          {t('hero.eyebrow')}
         </div>
 
         {/* H1 Heading */}
@@ -87,7 +73,7 @@ export default function HeroSection() {
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Chamundi Hill Palace
+          {t('hero.title')}
         </h1>
 
         {/* Subtitle statement */}
@@ -95,7 +81,7 @@ export default function HeroSection() {
           className={`font-heading text-xl sm:text-2xl md:text-[26px] italic text-white/90 mb-10 transition-all duration-700 delay-300 ${
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
-        >Experience Healing in Nature’s Sanctuary</p>
+        >{t('hero.subtitle')}</p>
 
         {/* Staggered Floating Stats Cards */}
         <div
@@ -107,22 +93,24 @@ export default function HeroSection() {
             {
               icon: Clock3,
               value: '25+',
-              label: 'Years',
+              label: t('hero.stats.years'),
             },
             {
               icon: Globe2,
               value: '50+',
-              label: 'Countries',
+              label: t('hero.stats.countries'),
             },
             {
               icon: Star,
               value: '4.9/5',
-              label: 'Rated',
+              label: t('hero.stats.rated'),
             },
             {
               icon: MapPin,
+              customIcon: '/img/ChatGPT Image Jul 30, 2026, 10_54_32 AM.png',
               value: 'TripAdvisor',
-              label: 'Certificate of Excellence',
+              label: t('hero.stats.excellence'),
+              targetId: '#award-section',
             },
           ].map((item, idx) => {
             const Icon = item.icon;
@@ -136,14 +124,25 @@ export default function HeroSection() {
             return (
               <div
                 key={item.label}
-                className={`group bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-4 flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/15 hover:border-accent/40 hover:shadow-2xl hover:shadow-black/35 ${floatClass}`}
+                onClick={item.targetId ? () => handleScroll(item.targetId!) : undefined}
+                className={`group bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-4 flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/15 hover:border-accent/40 hover:shadow-2xl hover:shadow-black/35 ${floatClass} ${
+                  item.targetId ? 'cursor-pointer hover:border-accent/60' : ''
+                }`}
               >
-                <div className="flex-shrink-0">
-                  <Icon
-                    size={22}
-                    strokeWidth={1.8}
-                    className="text-accent transition-transform duration-300 group-hover:scale-110"
-                  />
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  {item.customIcon ? (
+                    <img
+                      src={item.customIcon}
+                      alt={item.value}
+                      className="w-7 h-7 object-cover object-center rounded-full transition-transform duration-300 group-hover:scale-110 shadow-sm"
+                    />
+                  ) : (
+                    <Icon
+                      size={22}
+                      strokeWidth={1.8}
+                      className="text-accent transition-transform duration-300 group-hover:scale-110"
+                    />
+                  )}
                 </div>
 
                 <div className="text-left select-none">
@@ -169,14 +168,14 @@ export default function HeroSection() {
             onClick={() => handleScroll('#treatments')}
             className="bg-primary hover:bg-primary/95 text-white font-body text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 w-full sm:w-auto hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
           >
-            Explore Treatments
+            {t('hero.exploreTreatments')}
           </button>
           
           <button
             onClick={() => handleScroll('#contact')}
             className="border-2 border-accent text-white hover:bg-accent hover:text-white font-body text-sm font-semibold px-8 py-3.5 rounded-full transition-all duration-300 w-full sm:w-auto hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-lg shadow-accent/5"
           >
-            Book a Stay
+            {t('hero.bookStay')}
           </button>
         </div>
       </div>

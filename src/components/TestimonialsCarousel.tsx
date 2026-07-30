@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ChevronLeft, ChevronRight, Star, Quote, Play, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface Testimonial {
   quote: string;
@@ -35,6 +36,7 @@ interface TestimonialsCarouselProps {
 }
 
 export default function TestimonialsCarousel({ showGermanVideo = false }: TestimonialsCarouselProps) {
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { ref, isVisible } = useScrollReveal(0.15);
@@ -127,9 +129,9 @@ export default function TestimonialsCarousel({ showGermanVideo = false }: Testim
       >
         {/* Section Title */}
         <div className="text-center mb-16">
-          <span className="section-label">Guest Stories</span>
+          <span className="section-label">{t('testimonials.label')}</span>
           <h2 className="font-heading text-4xl sm:text-5xl font-semibold text-dark mt-3">
-            What Our Guests Say
+            {t('testimonials.title')}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
         </div>
@@ -268,10 +270,10 @@ export default function TestimonialsCarousel({ showGermanVideo = false }: Testim
                     <Play size={24} className="text-white ml-1" fill="white" />
                   </div>
                   <span className="mt-4 text-[10px] font-bold text-accent uppercase tracking-widest bg-dark/65 px-3 py-1 rounded-full backdrop-blur-sm">
-                    Watch Video
+                    {t('testimonials.watchVideo')}
                   </span>
                   <p className="mt-2 text-base font-bold text-white leading-tight max-w-[200px] font-heading">
-                    Guest Review
+                    {t('testimonials.guestReview')}
                   </p>
                 </div>
               </button>

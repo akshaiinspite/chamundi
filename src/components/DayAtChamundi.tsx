@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Clock, Utensils, Home, Compass, Coffee, Check, ShieldCheck, HeartPulse, ChevronRight } from 'lucide-react';
 
@@ -16,19 +17,19 @@ interface ActivityItem {
 
 const dailySchedule: TimelineItem[] = [
   {
-    time: "06:00 AM – 07:30 AM",
+    time: "07:00 AM – 08:00 AM",
     title: "Morning Yoga & Meditation",
     desc: "Start your day in our peaceful nature shala. Gentle Hatha yoga, pranayama, and guided meditation to prepare your body and mind for healing.",
     icon: Coffee,
   },
   {
-    time: "08:00 AM – 09:00 AM",
+    time: "08:00 AM – 10:00 AM",
     title: "Fresh Organic Breakfast",
     desc: "A freshly cooked, organic vegetarian breakfast served in our communal dining area, fostering connections with fellow seekers.",
     icon: Utensils,
   },
   {
-    time: "09:30 AM – 12:00 PM",
+    time: "09:00 AM – 12:00 PM",
     title: "Morning Treatment Session",
     desc: "Your first personalized Ayurvedic therapy of the day (e.g. Abhyanga or Body Detoxification), precisely prescribed by the resident doctor.",
     icon: HeartPulse,
@@ -40,13 +41,13 @@ const dailySchedule: TimelineItem[] = [
     icon: Utensils,
   },
   {
-    time: "02:30 PM – 04:00 PM",
+    time: "02:30 PM Onwards",
     title: "Doctor Consultation & Rest",
     desc: "Meet with our resident doctor, always available to monitor your progress and tailor your treatment plan.",
     icon: ShieldCheck,
   },
   {
-    time: "04:30 PM – 06:00 PM",
+    time: "03:00 PM – 06:00 PM",
     title: "Evening Treatment & Care",
     desc: "Your second daily therapy session, supporting deep biological purification. Cleanse your channels and release blockages.",
     icon: HeartPulse,
@@ -62,6 +63,12 @@ const dailySchedule: TimelineItem[] = [
     title: "Community Vegetarian Dinner",
     desc: "Wind down with a nourishing dinner. Share experiences and mingle with the regular clientele in our friendly dining space.",
     icon: Utensils,
+  },
+  {
+    time: "08:30 PM Onwards",
+    title: "Medication & Night Rest",
+    desc: "Administration of prescribed Ayurvedic evening herbal medications followed by quiet rest to promote overnight deep healing and restorative sleep.",
+    icon: HeartPulse,
   },
 ];
 
@@ -100,6 +107,7 @@ const weeklyActivities: ActivityItem[] = [
 ];
 
 export default function DayAtChamundi() {
+  const { t } = useTranslation();
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal(0.15);
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal(0.15);
   const [activeTab, setActiveTab] = useState<'schedule' | 'nourishment' | 'rooms' | 'excursions'>('schedule');
@@ -122,24 +130,23 @@ export default function DayAtChamundi() {
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="section-label">A Typical Day</span>
+          <span className="section-label">{t('dayAtChamundi.label')}</span>
           <h2 className="font-heading text-4xl sm:text-5xl mt-3 mb-6 text-primary font-semibold">
-            A Day at Chamundi Hill Palace
+            {t('dayAtChamundi.title')}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6 rounded-full" />
           <p className="max-w-2xl mx-auto text-text leading-relaxed font-body">
-            Experience a perfectly structured routine that harmonizes traditional treatments, 
-            organic nutrition, healing yoga, and enriching activities on our sacred hill.
+            {t('dayAtChamundi.description')}
           </p>
         </div>
 
         {/* Tab Selection Navigation */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 max-w-4xl mx-auto">
           {[
-            { id: 'schedule', label: 'Daily Schedule', icon: Clock },
-            { id: 'nourishment', label: 'Organic Food', icon: Utensils },
-            { id: 'rooms', label: 'Accommodation', icon: Home },
-            { id: 'excursions', label: 'Activities & Excursions', icon: Compass },
+            { id: 'schedule', label: t('dayAtChamundi.tabs.schedule'), icon: Clock },
+            { id: 'nourishment', label: t('dayAtChamundi.tabs.nourishment'), icon: Utensils },
+            { id: 'rooms', label: t('dayAtChamundi.tabs.rooms'), icon: Home },
+            { id: 'excursions', label: t('dayAtChamundi.tabs.excursions'), icon: Compass },
           ].map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -210,23 +217,23 @@ export default function DayAtChamundi() {
               </div>
               
               <div className="lg:col-span-7 space-y-6">
-                <span className="bg-accent/15 text-accent font-body text-xs font-semibold px-4 py-1.5 rounded-full">Organic Dining</span>
-                <h3 className="font-heading text-3xl font-bold text-primary">Nourishment For Healing</h3>
+                <span className="bg-accent/15 text-accent font-body text-xs font-semibold px-4 py-1.5 rounded-full">{t('dayAtChamundi.nourishmentTag')}</span>
+                <h3 className="font-heading text-3xl font-bold text-primary">{t('dayAtChamundi.nourishmentTitle')}</h3>
                 <p className="font-body text-text/80 leading-relaxed text-sm sm:text-base">
-                  Nourishment is a vital part of healing, and our cuisine is thoroughly and thoughtfully crafted to support your wellness journey. Sumptuous Keralan vegetarian food is served for all three meals, in addition to refreshing morning and evening tea or coffee.
+                  {t('dayAtChamundi.nourishmentDesc')}
                 </p>
                 <div className="space-y-4 pt-4 border-t border-border/30">
                   <div className="flex items-start gap-3">
                     <Check size={18} className="text-accent shrink-0 mt-1" />
-                    <p className="text-sm font-body text-text/90">Freshly cooked vegetarian food made from organically grown vegetables and spices.</p>
+                    <p className="text-sm font-body text-text/90">{t('dayAtChamundi.nourishmentBullet1')}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check size={18} className="text-accent shrink-0 mt-1" />
-                    <p className="text-sm font-body text-text/90">Ayurvedic Herbal water is prepared fresh and available throughout the day.</p>
+                    <p className="text-sm font-body text-text/90">{t('dayAtChamundi.nourishmentBullet2')}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check size={18} className="text-accent shrink-0 mt-1" />
-                    <p className="text-sm font-body text-text/90">Food is served on a common dining table, offering a wonderful opportunity to mingle with fellow guests and class mates.</p>
+                    <p className="text-sm font-body text-text/90">{t('dayAtChamundi.nourishmentBullet3')}</p>
                   </div>
                 </div>
               </div>
@@ -241,30 +248,30 @@ export default function DayAtChamundi() {
               </div>
               
               <div className="lg:col-span-7 space-y-6">
-                <span className="bg-accent/15 text-accent font-body text-xs font-semibold px-4 py-1.5 rounded-full">Ensuite Living Spaces</span>
-                <h3 className="font-heading text-3xl font-bold text-primary">Comfortable Ensuite Accommodation</h3>
+                <span className="bg-accent/15 text-accent font-body text-xs font-semibold px-4 py-1.5 rounded-full">{t('dayAtChamundi.roomsTag')}</span>
+                <h3 className="font-heading text-3xl font-bold text-primary">{t('dayAtChamundi.roomsTitle')}</h3>
                 <p className="font-body text-text/80 leading-relaxed text-sm sm:text-base">
-                  All rooms are spacious and comfortable, featuring private bathrooms and supporting deep rest. Some rooms are located within the heritage main palace building, while others are situated in quiet cottages with beautiful hillside views.
+                  {t('dayAtChamundi.roomsDesc1')}
                 </p>
                 <p className="font-body text-text/80 leading-relaxed text-sm sm:text-base">
-                  As a luxury Ayurveda retreat, we ensure serene, peaceful living spaces that assist your recovery and rejuvenation. Chamundi Palace stands out as the best Ayurvedic retreat in Kerala and is widely recognized as the best Ayurvedic retreat in India.
+                  {t('dayAtChamundi.roomsDesc2')}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-border/30">
                   <div className="flex items-center gap-2">
                     <Check size={16} className="text-accent shrink-0" />
-                    <span className="text-sm text-text font-body">Spacious Suites</span>
+                    <span className="text-sm text-text font-body">{t('dayAtChamundi.roomsBullet1')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check size={16} className="text-accent shrink-0" />
-                    <span className="text-sm text-text font-body">Ensuite Bathrooms</span>
+                    <span className="text-sm text-text font-body">{t('dayAtChamundi.roomsBullet2')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check size={16} className="text-accent shrink-0" />
-                    <span className="text-sm text-text font-body">Main Palace or Cottages</span>
+                    <span className="text-sm text-text font-body">{t('dayAtChamundi.roomsBullet3')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check size={16} className="text-accent shrink-0" />
-                    <span className="text-sm text-text font-body">Stunning Hill Views</span>
+                    <span className="text-sm text-text font-body">{t('dayAtChamundi.roomsBullet4')}</span>
                   </div>
                 </div>
               </div>
@@ -279,12 +286,12 @@ export default function DayAtChamundi() {
                 {weeklyActivities.map((act, idx) => (
                   <div key={idx} className="bg-white rounded-2xl p-6 border border-border/40 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
                     <div>
-                      <span className="text-xs uppercase tracking-wider text-accent font-semibold font-body">Activity</span>
+                      <span className="text-xs uppercase tracking-wider text-accent font-semibold font-body">{t('dayAtChamundi.activity')}</span>
                       <h4 className="font-heading text-lg font-bold text-primary mt-2 mb-3">{act.title}</h4>
                       <p className="text-text/80 text-sm leading-relaxed font-body">{act.desc}</p>
                     </div>
                     <div className="flex items-center gap-1 text-accent text-xs font-semibold mt-4">
-                      <span>Complimentary</span>
+                      <span>{t('dayAtChamundi.complimentary')}</span>
                       <ChevronRight size={14} />
                     </div>
                   </div>
@@ -293,7 +300,7 @@ export default function DayAtChamundi() {
 
               {/* Inclusions List */}
               <div className="bg-white rounded-[32px] p-6 sm:p-10 border border-border/40 shadow-xl">
-                <h3 className="font-heading text-2xl font-bold text-primary mb-8 text-center">What is Included in Your Stay</h3>
+                <h3 className="font-heading text-2xl font-bold text-primary mb-8 text-center">{t('dayAtChamundi.includedTitle')}</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {inclusions.map((inc, idx) => (
                     <div key={idx} className="flex items-start gap-3 bg-surface/30 p-4 rounded-xl border border-border/10">

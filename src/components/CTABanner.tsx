@@ -1,6 +1,8 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useTranslation } from 'react-i18next';
 
 export default function CTABanner() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.15);
 
   const LeafWatermark = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
@@ -162,16 +164,16 @@ export default function CTABanner() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <span className="section-label text-accent font-body mb-2 inline-block">Retreat Booking</span>
+        <span className="section-label text-accent font-body mb-2 inline-block">{t('cta.label')}</span>
         
         <h2 className={`font-heading text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white leading-tight mb-5 ${
           isVisible ? 'animate-header-reveal' : 'opacity-0'
         }`}>
-          Begin Your Healing Journey Today
+          {t('cta.title')}
         </h2>
         
         <p className="font-body text-sm sm:text-base text-white/70 mb-10 tracking-wide font-medium">
-          Panchakarma · Yoga · Rejuvenation · Detox
+          {t('cta.subtitle')}
         </p>
         
         <a
@@ -183,7 +185,7 @@ export default function CTABanner() {
           className="inline-block bg-accent hover:bg-accent/90 text-white font-body text-base font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-0.5 shadow-lg shadow-accent/20 animate-pulse hover:[animation-play-state:paused]"
           style={{ animationDuration: '3s' }}
         >
-          Book Your Stay
+          {t('cta.bookStay')}
         </a>
       </div>
     </section>

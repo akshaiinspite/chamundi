@@ -7,12 +7,14 @@ import OfferingsGrid from '../components/OfferingsGrid';
 import TreatmentBlocks from '../components/TreatmentBlocks';
 import StatsSection from '../components/StatsSection';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import LoyalGuestSpotlight from '../components/LoyalGuestSpotlight';
 import GalleryGrid from '../components/GalleryGrid';
 import CTABanner from '../components/CTABanner';
 import ContactSection from '../components/ContactSection';
 import HeritageDivider from '../components/HeritageDivider';
 import DayAtChamundi from '../components/DayAtChamundi';
 import RoomsSection from '../components/RoomsSection';
+import AwardSection from '../components/AwardSection';
 
 export default function HomePage() {
   return (
@@ -23,6 +25,7 @@ export default function HomePage() {
       </Helmet>
       <HeroSection />
       <TrustBadges />
+      <AwardSection />
       <AboutSection />
       <HeritageDivider />
       <HistoryTimeline />
@@ -34,6 +37,7 @@ export default function HomePage() {
       <HeritageDivider />
       <StatsSection />
       <TestimonialsCarousel />
+      <LoyalGuestSpotlight />
       <GalleryGrid />
       <CTABanner />
       <ContactSection />

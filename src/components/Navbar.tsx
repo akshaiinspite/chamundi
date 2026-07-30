@@ -1,26 +1,69 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useScrollPosition } from '../hooks/useScrollPosition';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Ayurveda', href: '/ayurveda' },
-  { label: 'What We Offer', href: '/what-we-offer' },
-  { label: 'Accommodation', href: '/accommodation' },
-  { label: 'Feedback', href: '/feedback' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Yoga Course', href: '/yoga-course' },
-  { label: 'Contact', href: '/contact' },
+const languages = [
+  { code: 'en', label: 'English', flag: '🇬🇧', short: 'EN' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷', short: 'FR' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪', short: 'DE' },
 ];
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const scrollY = useScrollPosition();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const langRef = useRef<HTMLDivElement>(null);
   const isHome = location.pathname === '/';
   const isScrolled = scrollY > 50;
   const showSolid = isScrolled || !isHome;
+
+  const currentLang = languages.find(l => l.code === i18n.language) ?? languages[0];
+
+  const navLinks = [
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.ayurveda'), href: '/ayurveda' },
+    { label: t('nav.whatWeOffer'), href: '/what-we-offer' },
+    { label: t('nav.accommodation'), href: '/accommodation' },
+    { label: t('nav.feedback'), href: '/feedback' },
+    { label: t('nav.gallery'), href: '/gallery' },
+    { label: t('nav.yogaCourse'), href: '/yoga-course' },
+    { label: t('nav.contact'), href: '/contact' },
+  ];
+
+  const handleBookNow = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (location.pathname === '/contact') {
+      const el = document.getElementById('contact-form');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else {
+      navigate('/contact#contact-form');
+      setTimeout(() => {
+        const el = document.getElementById('contact-form');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 250);
+    }
+  };
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -35,6 +78,11 @@ export default function Navbar() {
     setMobileOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  const handleLangChange = (code: string) => {
+    i18n.changeLanguage(code);
+    setLangOpen(false);
+  };
 
   return (
     <nav
@@ -81,12 +129,67 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Book Now */}
             <Link
-              to="/contact"
+              to="/contact#contact-form"
+              onClick={handleBookNow}
               className="bg-accent hover:bg-accent/90 text-white font-body text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
             >
-              Book Now
+              {t('nav.bookNow')}
             </Link>
+
+            {/* Language Switcher */}
+            <div ref={langRef} className="relative">
+              <button
+                onClick={() => setLangOpen(prev => !prev)}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full border transition-all duration-300 font-body text-xs font-semibold cursor-pointer ${
+                  showSolid
+                    ? 'border-border text-text hover:border-primary hover:text-primary bg-background'
+                    : 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                } ${langOpen ? (showSolid ? 'border-primary text-primary' : 'border-white bg-white/10') : ''}`}
+                aria-label="Select language"
+                aria-expanded={langOpen}
+              >
+                <Globe size={14} />
+                <span>{currentLang.flag}</span>
+                <span>{currentLang.short}</span>
+                <ChevronDown
+                  size={12}
+                  className={`transition-transform duration-300 ${langOpen ? 'rotate-180' : ''}`}
+                />
+              </button>
+
+              {/* Dropdown Panel */}
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-2 w-44 bg-background border border-border rounded-2xl shadow-xl shadow-dark/10 overflow-hidden z-50 animate-in">
+                  <div className="p-1.5 flex flex-col gap-0.5">
+                    {languages.map((lang) => {
+                      const isActive = i18n.language === lang.code;
+                      return (
+                        <button
+                          key={lang.code}
+                          onClick={() => handleLangChange(lang.code)}
+                          className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer font-body text-sm ${
+                            isActive
+                              ? 'bg-primary/10 text-primary font-semibold'
+                              : 'text-text hover:bg-surface hover:text-dark'
+                          }`}
+                        >
+                          <span className="text-lg leading-none">{lang.flag}</span>
+                          <div className="flex-1">
+                            <span className="block font-semibold text-[13px]">{lang.label}</span>
+                          </div>
+                          {isActive && (
+                            <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -105,7 +208,7 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-400 ease-out ${
-          mobileOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="bg-background/98 backdrop-blur-xl border-t border-border px-4 py-6 space-y-1">
@@ -124,11 +227,38 @@ export default function Navbar() {
           ))}
           <div className="pt-3 px-4">
             <Link
-              to="/contact"
+              to="/contact#contact-form"
+              onClick={handleBookNow}
               className="block w-full text-center bg-accent hover:bg-accent/90 text-white font-body text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300"
             >
-              Book Now
+              {t('nav.bookNow')}
             </Link>
+          </div>
+
+          {/* Mobile Language Switcher */}
+          <div className="pt-3 px-4">
+            <p className="text-text/60 font-body text-xs font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">
+              <Globe size={12} /> Language
+            </p>
+            <div className="flex gap-2">
+              {languages.map((lang) => {
+                const isActive = i18n.language === lang.code;
+                return (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLangChange(lang.code)}
+                    className={`flex-1 flex flex-col items-center gap-1 py-2.5 rounded-xl border transition-all duration-200 cursor-pointer font-body text-xs font-semibold ${
+                      isActive
+                        ? 'bg-primary/10 border-primary text-primary'
+                        : 'bg-surface border-border text-text hover:border-accent/40'
+                    }`}
+                  >
+                    <span className="text-xl">{lang.flag}</span>
+                    <span>{lang.short}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
