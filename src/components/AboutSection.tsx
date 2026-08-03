@@ -175,7 +175,7 @@ export default function AboutSection() {
           
           <Link to={'/what-we-offer'} className="animate-gentle-float-2">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/yogaretreat.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/what we offer.png" alt="What We Offer" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">{t('about.links.whatWeOffer')}</h3>
               </div>
@@ -184,7 +184,7 @@ export default function AboutSection() {
           
           <Link to={'/accommodation'} className="animate-gentle-float-3">
             <div className="group relative overflow-hidden rounded-2xl shadow-md border border-white/5">
-              <img src="/img/rooms.jpg" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
+              <img src="/img/roomwith balcony.jpeg" alt="Accommodation" className="w-full h-72 object-cover transition duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/40 flex items-end p-6">
                 <h3 className="text-white text-2xl font-heading">{t('about.links.accommodation')}</h3>
               </div>

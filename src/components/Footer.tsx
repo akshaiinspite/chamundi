@@ -99,15 +99,6 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#2A2118]">
-        {/* Airport Proximity Banner */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 border-b border-white/5">
-          <div className="flex items-center gap-2.5 bg-white/5 border border-accent/20 rounded-full px-5 py-2 hover:border-accent/40 transition-colors duration-300">
-            <Plane size={15} className="text-accent shrink-0" />
-            <span className="font-body text-xs text-white/80 font-medium tracking-wide">
-              {t('footer.airportNotice')}
-            </span>
-          </div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="font-body text-xs text-muted/60 text-center">
             {t('footer.rights')}

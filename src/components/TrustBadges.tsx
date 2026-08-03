@@ -7,6 +7,9 @@ interface Badge {
   icon: typeof Award;
   highlight: string;
   text: string;
+  bgImage?: string;
+  imgPosition?: string;
+  badgeTag?: string;
   onClick?: () => void;
   extraContent?: React.ReactNode;
 }
@@ -19,46 +22,108 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
       ? 'animate-gentle-float-2'
       : 'animate-gentle-float-3';
 
+  // If card has a full photo background image, render with photo fully visible at top and text below
+  if (badge.bgImage) {
+    return (
+      <div
+        onClick={badge.onClick}
+        className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/10 bg-[#1E1810]/90 backdrop-blur-md p-4 text-center flex flex-col items-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/60 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+      >
+        {/* Corner Accents */}
+        <div className="absolute top-2.5 left-2.5 w-3 h-3 border-t border-l border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
+        <div className="absolute top-2.5 right-2.5 w-3 h-3 border-t border-r border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
+        <div className="absolute bottom-2.5 left-2.5 w-3 h-3 border-b border-l border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
+        <div className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b border-r border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
+
+        {/* Top Fully Visible Photo Container (Height h-52 sm:h-56 with focal alignment on faces at 28%) */}
+        <div className="relative w-full h-52 sm:h-56 rounded-2xl overflow-hidden mb-3 border border-accent/30 shadow-md bg-[#16120C]">
+          <img
+            src={badge.bgImage}
+            alt={badge.highlight}
+            className={`w-full h-full object-cover ${badge.imgPosition || 'object-[center_28%]'} transition-transform duration-700 group-hover:scale-105`}
+          />
+          {/* Floating TripAdvisor Tag */}
+          <div className="absolute top-2.5 right-2.5 bg-[#140F0A]/90 backdrop-blur-md border border-accent/50 rounded-full px-2.5 py-1 flex items-center gap-1.5 text-accent text-[10px] font-bold uppercase tracking-wider shadow-lg z-10">
+            <Award size={12} className="text-accent" />
+            <span>TripAdvisor</span>
+          </div>
+        </div>
+
+        {/* Text Details Below Photo */}
+        <div className="w-full font-body px-1 pb-1">
+          <h3 className="font-heading text-lg sm:text-xl text-white font-bold tracking-wide mb-1">
+            {badge.highlight}
+          </h3>
+
+          <p className="text-accent font-heading text-sm font-semibold leading-snug mb-2.5">
+            {badge.text}
+          </p>
+
+          {badge.extraContent && (
+            <div className="mb-2.5">
+              {badge.extraContent}
+            </div>
+          )}
+
+          {badge.onClick && (
+            <div className="text-[10px] uppercase tracking-widest text-accent/90 group-hover:text-accent font-bold transition-colors flex items-center justify-center gap-1">
+              View Details →
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       onClick={badge.onClick}
-      className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/5 bg-[#1E1810]/60 backdrop-blur-md p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/40 hover:bg-[#1E1810]/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.15)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+      className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/10 bg-[#1E1810]/60 backdrop-blur-md p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/60 hover:bg-[#1E1810]/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
     >
-      <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
-      <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
-      <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
-      <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-accent/20 group-hover:border-accent/60 transition-all duration-500" />
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/15 to-transparent group-hover:via-accent/60 transition-all duration-500" />
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
+      {/* Decorative Corner Accents */}
+      <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
+      <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
+      <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
+      <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent group-hover:via-accent/80 transition-all duration-500 z-10" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/10 via-transparent to-transparent z-10" />
 
-      <div className="relative flex justify-center mb-6">
-        <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/10 group-hover:text-accent/25 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
+      {/* Top Icon Badge */}
+      <div className="relative z-10 flex justify-center mb-4">
+        <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/15 group-hover:text-accent/35 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
           <path d="M 35 75 C 20 60, 20 40, 35 25 M 65 75 C 80 60, 80 40, 65 25" />
           <path d="M 28 65 L 22 62 M 25 53 L 18 53 M 28 41 L 22 44 M 32 31 L 28 35" />
           <path d="M 72 65 L 78 62 M 75 53 L 82 53 M 72 41 L 78 44 M 68 31 L 72 35" />
         </svg>
-        <div className="absolute w-16 h-16 rounded-full bg-accent/5 group-hover:bg-accent/10 blur-md transition-all duration-500" />
-        <div className={`relative w-16 h-16 rounded-full border border-accent/25 flex items-center justify-center bg-[#1E1810] group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[inset_0_0_15px_rgba(196,135,59,0.05)] group-hover:shadow-[0_0_20px_rgba(196,135,59,0.25)] ${floatClass}`}>
-          <Icon className="w-7 h-7 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.5} />
+        <div className="absolute w-16 h-16 rounded-full bg-accent/10 group-hover:bg-accent/20 blur-md transition-all duration-500" />
+        <div className={`relative w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center bg-[#1E1810]/90 group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[0_0_15px_rgba(196,135,59,0.2)] group-hover:shadow-[0_0_25px_rgba(196,135,59,0.4)] ${floatClass}`}>
+          <Icon className="w-6 h-6 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.6} />
         </div>
       </div>
 
-      <div className="relative font-body">
-        <h3 className="font-heading text-xl lg:text-2xl text-accent font-semibold tracking-wide mb-3">
+      <div className="relative z-10 font-body">
+        {badge.badgeTag && (
+          <span className="inline-block bg-accent/20 border border-accent/40 text-accent text-[10px] uppercase font-semibold tracking-widest px-3 py-0.5 rounded-full mb-2">
+            {badge.badgeTag}
+          </span>
+        )}
+
+        <h3 className="font-heading text-xl lg:text-2xl text-accent font-semibold tracking-wide mb-2">
           {badge.highlight}
         </h3>
-        <p className="text-white/70 font-body text-sm leading-relaxed max-w-[240px] mx-auto">
+
+        <p className="text-white/90 font-body text-sm leading-relaxed max-w-[250px] mx-auto font-medium">
           {badge.text}
         </p>
 
         {badge.extraContent && (
-          <div className="mt-5 pt-4 border-t border-white/10">
+          <div className="mt-4 pt-3 border-t border-white/15">
             {badge.extraContent}
           </div>
         )}
 
         {badge.onClick && (
-          <div className="mt-3 text-[10px] uppercase tracking-widest text-accent/50 group-hover:text-accent/80 transition-colors font-semibold">
+          <div className="mt-4 text-[10px] uppercase tracking-widest text-accent/80 group-hover:text-accent transition-colors font-bold flex items-center justify-center gap-1">
             View Details →
           </div>
         )}
@@ -78,20 +143,23 @@ export default function TrustBadges() {
   };
 
   const travellersChoiceExtra = (
-    <div className="flex items-center justify-center gap-3">
+    <div className="flex flex-col items-center gap-3 pt-2 w-full">
+      {/* Large TripAdvisor Logo */}
       <img
         src="/img/ChatGPT Image Jul 30, 2026, 10_54_32 AM.png"
         alt="Travellers' Choice Award"
-        className="w-10 h-10 rounded-full object-cover object-center shadow-md border border-accent/30"
+        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-center shadow-[0_0_25px_rgba(196,135,59,0.35)] border-2 border-accent shrink-0 hover:scale-105 transition-transform"
       />
-      <div className="flex gap-1.5">
+
+      {/* 3 Prominent Full-Width Year Badges */}
+      <div className="flex items-center justify-between gap-2.5 w-full pt-1">
         {['2024', '2025', '2026'].map((yr) => (
           <div
             key={yr}
-            className="flex flex-col items-center bg-accent/15 border border-accent/30 rounded-lg px-2 py-1"
+            className="flex-1 flex flex-col items-center justify-center bg-gradient-to-b from-accent/30 via-accent/20 to-accent/10 border-2 border-accent/60 rounded-2xl py-2.5 px-2 shadow-lg hover:border-accent hover:scale-105 transition-all"
           >
-            <Trophy size={10} className="text-accent mb-0.5" />
-            <span className="font-heading text-xs font-bold text-white leading-none">{yr}</span>
+            <Trophy size={18} className="text-accent mb-1" />
+            <span className="font-heading text-base sm:text-lg font-black text-white leading-none tracking-tight">{yr}</span>
           </div>
         ))}
       </div>
@@ -99,24 +167,19 @@ export default function TrustBadges() {
   );
 
   const jeannieExtra = (
-    <div className="flex items-center justify-center gap-3">
-      <img
-        src="/img/clinet.jpeg"
-        alt="Jeannie from UK — 18 Visits"
-        className="w-10 h-10 rounded-full object-cover object-top shadow-md border-2 border-accent/50"
-      />
-      <div className="text-left">
-        <p className="font-heading text-sm font-semibold text-white leading-tight">Jeannie · UK 🇬🇧</p>
-        <p className="font-body text-[11px] text-accent font-semibold">18 Annual Retreat Visits</p>
-      </div>
+    <div className="inline-flex items-center justify-center gap-2 bg-accent/20 border border-accent/40 rounded-full py-1.5 px-4 shadow-sm">
+      <Award size={15} className="text-accent shrink-0" />
+      <span className="text-sm text-white font-bold font-body">18 Annual Retreat Visits</span>
     </div>
   );
 
   const badges: Badge[] = [
     {
       icon: Award,
-      highlight: t('trust.badges.tripadvisor.highlight'),
-      text: t('trust.badges.tripadvisor.text'),
+      badgeTag: 'TripAdvisor Excellence',
+      highlight: 'Jeannie · UK 🇬🇧',
+      text: 'Visited Chamundi for Ayurveda for 18 Years',
+      bgImage: '/img/clinet.jpeg',
       extraContent: jeannieExtra,
       onClick: () => scrollTo('jeannie-spotlight'),
     },

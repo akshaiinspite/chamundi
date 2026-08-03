@@ -21,22 +21,9 @@ export default function RoomsSection() {
 
   const roomTypes: RoomType[] = [
     {
-      name: t('rooms.types.standard.name'),
-      tag: t('rooms.types.standard.tag'),
-      image: '/img/standardroom.jpeg',
-      description: t('rooms.types.standard.description'),
-      size: t('rooms.types.standard.size'),
-      view: t('rooms.types.standard.view'),
-      amenities: [
-        { icon: Bed, text: t('rooms.types.standard.amenities.0') },
-        { icon: Wifi, text: t('rooms.types.standard.amenities.1') },
-        { icon: Layers, text: t('rooms.types.standard.amenities.2') },
-      ],
-    },
-    {
       name: t('rooms.types.balcony.name'),
       tag: t('rooms.types.balcony.tag'),
-      image: '/img/rooms.jpg',
+      image: '/img/roomwith balcony.jpeg',
       description: t('rooms.types.balcony.description'),
       size: t('rooms.types.balcony.size'),
       view: t('rooms.types.balcony.view'),
@@ -57,6 +44,19 @@ export default function RoomsSection() {
         { icon: Bed, text: t('rooms.types.cottage.amenities.0') },
         { icon: Trees, text: t('rooms.types.cottage.amenities.1') },
         { icon: Compass, text: t('rooms.types.cottage.amenities.2') },
+      ],
+    },
+    {
+      name: t('rooms.types.standard.name'),
+      tag: t('rooms.types.standard.tag'),
+      image: '/img/standardroom.jpeg',
+      description: t('rooms.types.standard.description'),
+      size: t('rooms.types.standard.size'),
+      view: t('rooms.types.standard.view'),
+      amenities: [
+        { icon: Bed, text: t('rooms.types.standard.amenities.0') },
+        { icon: Wifi, text: t('rooms.types.standard.amenities.1') },
+        { icon: Layers, text: t('rooms.types.standard.amenities.2') },
       ],
     },
   ];

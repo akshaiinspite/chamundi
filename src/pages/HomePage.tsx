@@ -25,11 +25,11 @@ export default function HomePage() {
       </Helmet>
       <HeroSection />
       <TrustBadges />
-      <AwardSection />
+      <OfferingsGrid />
       <AboutSection />
       <HeritageDivider />
       <HistoryTimeline />
-      <OfferingsGrid />
+      <AwardSection />
       <HeritageDivider />
       <DayAtChamundi/>
       <TreatmentBlocks />

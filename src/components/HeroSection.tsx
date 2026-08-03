@@ -92,7 +92,7 @@ export default function HeroSection() {
           {[
             {
               icon: Clock3,
-              value: '25+',
+              value: '25+ Years',
               label: t('hero.stats.years'),
             },
             {
@@ -108,7 +108,7 @@ export default function HeroSection() {
             {
               icon: MapPin,
               customIcon: '/img/ChatGPT Image Jul 30, 2026, 10_54_32 AM.png',
-              value: 'TripAdvisor',
+              value: 'TripAdvisor 2026',
               label: t('hero.stats.excellence'),
               targetId: '#award-section',
             },

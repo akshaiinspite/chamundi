@@ -79,7 +79,7 @@ export default function StatsSection() {
 
   const stats = [
     { value: 3000, suffix: '+', label: t('stats.items.science'), svg: ScienceSVG },
-    { value: 1500, suffix: '+', label: t('stats.items.guests'), svg: GuestsSVG },
+    { value: 2500, suffix: '+', label: t('stats.items.guests'), svg: GuestsSVG },
     { value: 100, suffix: '%', label: t('stats.items.doctors'), svg: DoctorsSVG },
     { value: 28, suffix: ' Days', label: t('stats.items.program'), svg: ProgramSVG },
   ];

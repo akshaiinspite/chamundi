@@ -244,7 +244,7 @@ export default function DayAtChamundi() {
           {activeTab === 'rooms' && (
             <div className="grid lg:grid-cols-12 gap-10 items-center bg-white rounded-[32px] p-6 sm:p-10 border border-border/40 shadow-xl">
               <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-md h-80 lg:h-[450px]">
-                <img src="/img/rooms.jpg" alt="Comfortable accommodation at Chamundi" className="w-full h-full object-cover" />
+                <img src="/img/roomwith balcony.jpeg" alt="Comfortable accommodation at Chamundi" className="w-full h-full object-cover" />
               </div>
               
               <div className="lg:col-span-7 space-y-6">
