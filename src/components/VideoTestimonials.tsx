@@ -9,28 +9,19 @@ const videoTestimonials = [
   { title: 'Guest Review (German)', url: 'https://youtube.com/shorts/tQDnXW9aqXw?si=NMLxn9Z-vaeKU61n', thumb: '/img/banner-4.jpg' },
 ];
 
-const textTestimonials = [
-  {
-    quote: 'I had 3 wonderful weeks at Chamundi Hills Palace in July 2022, a beautiful place in the hills, the view is stunning and the sounds of the birds capture you. I was met with genuine warm hospitality, even before I arrived. After 3 weeks I achieved a change for my life, loving myself again after some difficult years, I am happy, positive and calm.',
-    name: 'Tina J',
-    date: 'Aug 2022',
-  },
-  {
-    quote: "More than a hotel, it's living in a large plantation house which provides ayurvedic treatment. It was really like staying with friends. The treatments are of quality and the food is flavourful and perfectly adapted to non-Indian taste buds.",
-    name: 'Sergio K',
-    location: 'Marseille',
-    date: 'Dec 2019',
-  },
-  {
-    quote: 'A hidden gem. I have visited this place 5 or 6 times. It is my favourite Centre in Kerala. Very authentic. The entire staff (or rather family) are wonderful and really cannot do enough for you.',
-    name: 'Maria Caroline',
-    date: 'Dec 2019',
-  },
-];
+interface TextTestimonial {
+  quote: string;
+  name: string;
+  location?: string;
+  date?: string;
+}
 
 export default function VideoTestimonials() {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
+
+  const rawTextTestimonials = t('testimonialsList', { returnObjects: true });
+  const textTestimonials: TextTestimonial[] = Array.isArray(rawTextTestimonials) ? rawTextTestimonials : [];
 
   return (
     <section className="py-20 sm:py-28 bg-surface">

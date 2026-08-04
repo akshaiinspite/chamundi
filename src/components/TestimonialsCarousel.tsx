@@ -10,33 +10,15 @@ interface Testimonial {
   initials: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    quote: 'I had 3 wonderful weeks at Chamundi Hills Palace. A beautiful place in the hills — the view is stunning. After 3 weeks I achieved a change for my life, loving myself again after some difficult years. I am happy, positive and calm.',
-    name: 'Tina J',
-    location: 'Copenhagen, Denmark',
-    initials: 'TJ'
-  },
-  {
-    quote: "More than a hotel, it's living in a large plantation house. It was really like staying with friends. The treatments are of quality and the food is flavourful and perfectly adapted to non-Indian taste buds.",
-    name: 'Sergio K',
-    location: 'Marseille, France',
-    initials: 'SK'
-  },
-  {
-    quote: 'A hidden gem. I have visited 5 or 6 times — it is my favourite centre in Kerala. Very authentic. The entire staff (or rather family) are wonderful and really cannot do enough for you.',
-    name: 'Maria Caroline',
-    location: 'London, United Kingdom',
-    initials: 'MC'
-  },
-];
-
 interface TestimonialsCarouselProps {
   showGermanVideo?: boolean;
 }
 
 export default function TestimonialsCarousel({ showGermanVideo = false }: TestimonialsCarouselProps) {
   const { t } = useTranslation();
+  const rawTestimonials = t('testimonialsList', { returnObjects: true });
+  const testimonials: Testimonial[] = Array.isArray(rawTestimonials) ? rawTestimonials : [];
+
   const [current, setCurrent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { ref, isVisible } = useScrollReveal(0.15);
@@ -47,12 +29,14 @@ export default function TestimonialsCarousel({ showGermanVideo = false }: Testim
   }, []);
 
   const next = useCallback(() => {
+    if (testimonials.length === 0) return;
     goTo((current + 1) % testimonials.length);
-  }, [current, goTo]);
+  }, [current, goTo, testimonials.length]);
 
   const prev = useCallback(() => {
+    if (testimonials.length === 0) return;
     goTo((current - 1 + testimonials.length) % testimonials.length);
-  }, [current, goTo]);
+  }, [current, goTo, testimonials.length]);
 
   // Auto-advance every 7 seconds
   useEffect(() => {

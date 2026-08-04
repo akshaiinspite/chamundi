@@ -892,5 +892,67 @@
         "desc": "Verantwortet den Betrieb und die Gästebetreuung mit 25 Jahren engagierter Führung für ein erstklassiges Aufenthaltserlebnis."
       }
     }
-  }
+  },
+  "testimonialsList": [
+    {
+      "quote": "Ich hatte im Juli 2022 3 wunderbare Wochen im Chamundi Hill Palace, einem wunderschönen Ort in den Hügeln. Die Aussicht ist atemberaubend und der Gesang der Vögel verzaubert einen. Schon vor meiner Ankunft wurde ich mit echter Herzlichkeit empfangen. Nach 3 Wochen habe ich eine Lebensveränderung erreicht: Ich liebe mich nach einigen schwierigen Jahren wieder selbst und bin glücklich, positiv und ruhig.",
+      "name": "Tina J",
+      "location": "Kopenhagen, Dänemark",
+      "date": "Aug 2022",
+      "initials": "TJ"
+    },
+    {
+      "quote": "Mehr als ein Hotel: Es ist das Leben in einem großen Plantagenhaus, das ayurvedische Behandlungen anbietet. Es war wirklich wie ein Aufenthalt bei Freunden. Die Behandlungen sind von höchster Qualität und das Essen ist schmackhaft und perfekt auf westliche Gaumen abgestimmt.",
+      "name": "Sergio K",
+      "location": "Marseille, Frankreich",
+      "date": "Dez 2019",
+      "initials": "SK"
+    },
+    {
+      "quote": "Ein verstecktes Juwel. Ich habe diesen Ort 5 oder 6 Mal besucht. Es ist mein Lieblingszentrum in Kerala. Sehr authentisch. Das gesamte Team (oder vielmehr die Familie) ist wunderbar und tut wirklich alles für einen.",
+      "name": "Maria Caroline",
+      "location": "London, Vereinigtes Königreich",
+      "date": "Dez 2019",
+      "initials": "MC"
+    }
+  ],
+  "feedbackCards": [
+    {
+      "name": "Wander23307748133",
+      "date": "Juli 2023",
+      "title": "Ein wahrer Segen",
+      "quote": "Der Aufenthalt im Chamundi Hill Palace war ein echter Segen. Die Lage ist absolut malerisch mit atemberaubender Aussicht. Das Team war so herzlich und hilfsbereit. Dr. Sheela hat sich täglich um mich gekümmert. Eine rundum verjüngende Erfahrung!"
+    },
+    {
+      "name": "Barbs H",
+      "date": "Jan 2023",
+      "title": "Gesund, glücklich und familiär",
+      "quote": "Vielen Dank, dass Sie meinen zweiten Besuch im Chamundi Hill Palace noch unvergesslicher gemacht haben. Die Ayurveda-Therapien werden mit Präzision und stets mit einem Lächeln durchgeführt. Die familiäre Atmosphäre von Jibu, Dr. Sheela und dem gesamten Team ist einmalig!"
+    },
+    {
+      "name": "Gästebewertung",
+      "date": "Dez 2022",
+      "title": "Dem Paradies so nah!",
+      "quote": "Der beste Ort, um sich vom Alltagsstress zu erholen. Erlangen Sie Ihre Gesundheit mit heilender Ayurveda-Therapie inmitten des tropischen Waldes zurück. Die langjährige Erfahrung von Dr. Sheela macht diesen Aufenthalt unbezahlbar."
+    },
+    {
+      "name": "Tina J",
+      "date": "Aug 2022",
+      "title": "Eine wunderschöne Lebensveränderung",
+      "quote": "Ich hatte im Juli 2022 3 wunderbare Wochen im Chamundi Hill Palace. Ein wunderschöner Ort in den Hügeln. Schon vor meiner Ankunft wurde ich mit echter Herzlichkeit empfangen. Nach 3 Wochen fühle ich mich glücklich, positiv und voller innerer Ruhe."
+    },
+    {
+      "name": "Sergio K",
+      "date": "Dez 2019",
+      "location": "Marseille",
+      "title": "Ein fantastischer Ort der Ruhe",
+      "quote": "Mehr als ein Hotel: Es ist das Leben in einem großen Plantagenhaus, das ayurvedische Behandlungen anbietet. Es war wirklich wie ein Aufenthalt bei Freunden. Die Behandlungen sind von höchster Qualität und das Essen ist schmackhaft und perfekt abgestimmt."
+    },
+    {
+      "name": "Maria Caroline",
+      "date": "Dez 2019",
+      "title": "Ein echter Geheimtipp",
+      "quote": "Ein verstecktes Juwel. Ich habe diesen Ort 5 oder 6 Mal besucht. Es ist mein Lieblingszentrum in Kerala. Sehr authentisch. Das gesamte Team (oder vielmehr die Familie) ist wunderbar und tut wirklich alles für einen."
+    }
+  ]
 }
