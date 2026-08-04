@@ -12,57 +12,92 @@ interface PhotoItem {
   category: string;
   title: string;
   subtitle: string;
+  objectPosition?: string;
+  fit?: 'contain' | 'cover';
 }
 
 const photos: PhotoItem[] = [
+  // Ayurveda & Wellness (Authentic Treatment Images)
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.24 PM.jpeg',
+    alt: 'Authentic Ayurvedic Abhyanga massage therapy session by expert therapists on wooden Droni table',
+    category: 'Ayurveda & Wellness',
+    title: 'Abhyanga Oil Massage',
+    subtitle: 'Synchronized Body Therapy',
+    objectPosition: 'object-top'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.24 PM (1).jpeg',
+    alt: 'Therapist performing targeted Ayurvedic herbal oil massage for joint and muscle revitalization',
+    category: 'Ayurveda & Wellness',
+    title: 'Herbal Oil Therapy',
+    subtitle: 'Targeted Body Healing',
+    fit: 'contain'
+  },
+  {
+    src: '/img/kerala-ayurveda-2.jpg',
+    alt: 'Ayurvedic body therapy session with traditional oils',
+    category: 'Ayurveda & Wellness',
+    title: 'Classic Rejuvenation Care',
+    subtitle: 'Holistic Body Healing'
+  },
+  {
+    src: '/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg',
+    alt: 'Specialized Panchakarma oil pouring treatment',
+    category: 'Ayurveda & Wellness',
+    title: 'Panchakarma Detox',
+    subtitle: 'Authentic Herbal Healing'
+  },
+  {
+    src: '/img/rejuvenation.jpg',
+    alt: 'Steam bath chamber for herbal ayurvedic detox',
+    category: 'Ayurveda & Wellness',
+    title: 'Herbal Steam Chamber',
+    subtitle: 'Natural Purification'
+  },
+
+  // Retreat & Nature
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.22 PM (1).jpeg',
+    alt: 'Guests relaxing on deck chairs taking in the breathtaking sunset over western ghats mountain valleys',
+    category: 'Retreat & Nature',
+    title: 'Sunset Viewpoint Lounge',
+    subtitle: 'Panoramic Mountain Horizon'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.22 PM (2).jpeg',
+    alt: 'Guest enjoying peaceful moments at the hilltop pagoda gazebo overlooking forest canopy',
+    category: 'Retreat & Nature',
+    title: 'Hilltop Pagoda Pavilion',
+    subtitle: 'Panoramic Forest Viewpoint'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.19 PM.jpeg',
+    alt: 'Chamundi Hill Palace main entrance portico illuminated at twilight',
+    category: 'Retreat & Nature',
+    title: 'Palace Estate at Twilight',
+    subtitle: 'Illuminated Heritage Portico'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.24.53 PM.jpeg',
+    alt: 'Lush green tropical garden pathway bordered by vibrant flora',
+    category: 'Retreat & Nature',
+    title: 'Tropical Botanical Pathway',
+    subtitle: 'Lush Nature Walkways'
+  },
   {
     src: '/img/020.jpg',
-    alt: 'Aerial view of Chamundi Hill Palace surrounded by mist and mountain forests',
+    alt: 'Heritage wooden staircase with traditional lamps and antique clock interior',
     category: 'Retreat & Nature',
-    title: 'Sanctuary in the Clouds',
-    subtitle: 'Nadukani Hills Aerial View'
-  },
-  {
-    src: '/img/028.jpg',
-    alt: 'Senior Ayurvedic doctor conducting pulse diagnosis consultation',
-    category: 'Ayurveda & Wellness',
-    title: 'Pulse Diagnosis Consultation',
-    subtitle: 'Expert Doctor Care'
-  },
-  {
-    src: '/img/042.jpg',
-    alt: 'Yoga guru meditating in lotus pose on hilltop rock platform',
-    category: 'Yoga & Meditation',
-    title: 'Hilltop Rock Meditation',
-    subtitle: 'Mindful Outdoor Asana'
+    title: 'Heritage Palace Interior',
+    subtitle: 'Teak Architecture & Artifacts'
   },
   {
     src: '/img/053.jpg',
-    alt: 'Thatched pagoda gazebo viewpoint on hill peak',
+    alt: 'Staff member assisting guest down the traditional wooden staircase',
     category: 'Retreat & Nature',
-    title: 'Panoramic Viewpoint Pavilion',
-    subtitle: 'Hilltop Gazebo'
-  },
-  {
-    src: '/img/045.jpg',
-    alt: 'Therapists pouring warm herbal oils in padabhyanga leg treatment',
-    category: 'Ayurveda & Wellness',
-    title: 'Padabhyanga Therapy',
-    subtitle: 'Herbal Oil Pouring'
-  },
-  {
-    src: '/img/037.jpg',
-    alt: 'Guest relaxing on wooden balcony deck amongst green foliage',
-    category: 'Accommodation',
-    title: 'Balcony Reading Nook',
-    subtitle: 'Tree Canopy Deck'
-  },
-  {
-    src: '/img/091.jpg',
-    alt: 'Traditional Shirodhara oil stream and eye care therapy',
-    category: 'Ayurveda & Wellness',
-    title: 'Shirodhara & Eye Care',
-    subtitle: 'Deep Mind Revitalisation'
+    title: 'Warm Palace Hospitality',
+    subtitle: 'Personalized Guest Care'
   },
   {
     src: '/img/property1.jpg',
@@ -76,7 +111,7 @@ const photos: PhotoItem[] = [
     alt: 'Panoramic mountain and valley view from retreat peak',
     category: 'Retreat & Nature',
     title: 'Mist-Covered Valleys',
-    subtitle: 'Scenic Landscape'
+    subtitle: 'Nadukani Hills Landscape'
   },
   {
     src: '/img/banner-2.jpg',
@@ -100,18 +135,88 @@ const photos: PhotoItem[] = [
     subtitle: 'Sunset Viewpoint'
   },
   {
-    src: '/img/kerala-ayurveda-2.jpg',
-    alt: 'Ayurvedic body therapy session with traditional oils',
-    category: 'Ayurveda & Wellness',
-    title: 'Abhyanga Body Therapy',
-    subtitle: 'Classic Rejuvenation'
+    src: '/img/excursion.jpg',
+    alt: 'Guided plantation walk and sightseeing excursion',
+    category: 'Retreat & Nature',
+    title: 'Nature Plantation Walk',
+    subtitle: 'Guided Excursions'
+  },
+
+  // Yoga & Meditation
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.21 PM.jpeg',
+    alt: 'Yoga master and guest practicing Virabhadrasana warrior pose on elevated treehouse deck',
+    category: 'Yoga & Meditation',
+    title: 'Treehouse Deck Yoga',
+    subtitle: 'Warrior Asana Practice',
+    fit: 'contain'
   },
   {
-    src: '/img/ayurvedapage/314962107_566571368608410_5904308292292831319_n.jpg',
-    alt: 'Specialized Panchakarma oil pouring treatment',
-    category: 'Ayurveda & Wellness',
-    title: 'Panchakarma Detox',
-    subtitle: 'Authentic Herbal Healing'
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.20 PM.jpeg',
+    alt: 'Group meditation and yoga session in traditional hall beneath Nataraja artwork',
+    category: 'Yoga & Meditation',
+    title: 'Meditation Hall Session',
+    subtitle: 'Guided Group Practice'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.22 PM.jpeg',
+    alt: 'Guest practicing lotus meditation on hilltop platform overlooking forested valley',
+    category: 'Yoga & Meditation',
+    title: 'Hilltop Mindful Meditation',
+    subtitle: 'Lotus Pose in Nature',
+    fit: 'contain'
+  },
+  {
+    src: '/img/091.jpg',
+    alt: 'Yoga instructor performing Natarajasana posture on wooden deck under ancient banyan trees',
+    category: 'Yoga & Meditation',
+    title: 'Banyan Tree Asana',
+    subtitle: 'Natarajasana Balance',
+    objectPosition: 'object-top'
+  },
+  {
+    src: '/img/yoga.jpg',
+    alt: 'Morning yoga practice on deck in nature',
+    category: 'Yoga & Meditation',
+    title: 'Sunrise Yoga Practice',
+    subtitle: 'Pranayama & Asanas'
+  },
+
+  // Accommodation
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.18 PM.jpeg',
+    alt: 'Garden cottage exterior illuminated with warm lights amidst serene plantation grounds',
+    category: 'Accommodation',
+    title: 'Garden Cottage Sanctuary',
+    subtitle: 'Private Eco-Cottage'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.24.54 PM.jpeg',
+    alt: 'Paved stone pathway and veranda under traditional tiled roof',
+    category: 'Accommodation',
+    title: 'Cottage Verandah Walkway',
+    subtitle: 'Peaceful Outdoor Spaces'
+  },
+  {
+    src: '/img/028.jpg',
+    alt: 'Veranda sitting balcony with white cane chair overlooking tropical greenery',
+    category: 'Accommodation',
+    title: 'Veranda Balcony View',
+    subtitle: 'Private Nature Seating'
+  },
+  {
+    src: '/img/037.jpg',
+    alt: 'Modern spacious ensuite bathroom with floral tiled walls and premium vanity',
+    category: 'Accommodation',
+    title: 'Luxury Suite Bathroom',
+    subtitle: 'Ensuite Bath Facilities'
+  },
+  {
+    src: '/img/042.jpg',
+    alt: 'Spacious tiled bath chamber with rainfall shower and modern fittings',
+    category: 'Accommodation',
+    title: 'Spacious Bath Chamber',
+    subtitle: 'Private Rejuvenation Room'
   },
   {
     src: '/img/accomodation-facilities.jpg',
@@ -121,25 +226,11 @@ const photos: PhotoItem[] = [
     subtitle: 'Luxury Accommodation'
   },
   {
-    src: '/img/yoga.jpg',
-    alt: 'Morning yoga practice on deck in nature',
-    category: 'Yoga & Meditation',
-    title: 'Sunrise Yoga Practice',
-    subtitle: 'Pranayama & Asanas'
-  },
-  {
-    src: '/img/yogaretreat.jpg',
-    alt: 'Group meditation pavilion surrounded by trees',
-    category: 'Yoga & Meditation',
-    title: 'Peaceful Yoga Pavilion',
-    subtitle: 'Group Meditation'
-  },
-  {
     src: '/img/gardencottage.jpeg',
     alt: 'Secluded garden cottage exterior with lush flora',
     category: 'Accommodation',
-    title: 'Garden Cottage Sanctuary',
-    subtitle: 'Private Eco-Stay'
+    title: 'Garden Cottage Retreat',
+    subtitle: 'Private Sanctuary'
   },
   {
     src: '/img/rooms.jpg',
@@ -155,6 +246,30 @@ const photos: PhotoItem[] = [
     title: 'Private Balcony Room',
     subtitle: 'Panoramas of the Hills'
   },
+
+  // Dining & Organic
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.24.53 PM (1).jpeg',
+    alt: 'Authentic Kerala Sattvic vegetarian thali served in traditional copper tableware',
+    category: 'Dining & Organic',
+    title: 'Traditional Sattvic Thali',
+    subtitle: 'Balanced Ayurvedic Meal'
+  },
+  {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.19 PM (1).jpeg',
+    alt: 'Guest holding fresh organic harvest of nutmeg, cashew apples, and yardlong beans from estate farm',
+    category: 'Dining & Organic',
+    title: 'Estate Organic Harvest',
+    subtitle: 'Farm-Fresh Herbal Produce',
+    fit: 'contain'
+  },
+  {
+    src: '/img/045.jpg',
+    alt: 'Elegant wooden dining table set with fresh fruits and brass urns in heritage dining room',
+    category: 'Dining & Organic',
+    title: 'Heritage Dining Space',
+    subtitle: 'Private Herbal Dining'
+  },
   {
     src: '/img/meals.jpg',
     alt: 'Authentic Kerala Sattvic vegetarian meals served fresh',
@@ -168,42 +283,28 @@ const photos: PhotoItem[] = [
     category: 'Dining & Organic',
     title: 'Organic Food & Herb Farm',
     subtitle: 'Farm-To-Table Ingredients'
-  },
-  {
-    src: '/img/rejuvenation.jpg',
-    alt: 'Steam bath chamber for herbal ayurvedic detox',
-    category: 'Ayurveda & Wellness',
-    title: 'Herbal Steam Bath',
-    subtitle: 'Swedana Therapy'
-  },
-  {
-    src: '/img/excursion.jpg',
-    alt: 'Guided plantation walk and sightseeing excursion',
-    category: 'Retreat & Nature',
-    title: 'Nature Plantation Walk',
-    subtitle: 'Guided Excursions'
   }
 ];
 
 
 const videos = [
-  { title: 'Chamundi Hill Palace Experience', url: 'https://www.youtube.com/watch?v=pfIWKk6vBTQ', thumb: '/img/020.jpg' },
-  { title: 'Ayurveda Treatments Showcase', url: 'https://www.youtube.com/shorts/iE9MgpBtz-Q', thumb: '/img/045.jpg' },
-  { title: 'Mrs. Pilar — Guest Testimonial', url: 'https://www.youtube.com/watch?v=B-5vcic6zl8&t=55s', thumb: '/img/037.jpg' },
+  { title: 'Chamundi Hill Palace Experience', url: 'https://www.youtube.com/watch?v=pfIWKk6vBTQ', thumb: '/img/banner-1.jpg' },
+  { title: 'Ayurveda Treatments Showcase', url: 'https://www.youtube.com/shorts/iE9MgpBtz-Q', thumb: '/img/WhatsApp Image 2026-08-04 at 12.33.24 PM.jpeg' },
+  { title: 'Mrs. Pilar — Guest Testimonial', url: 'https://www.youtube.com/watch?v=B-5vcic6zl8&t=55s', thumb: '/img/028.jpg' },
   { title: 'Guest Review (German)', url: 'https://youtube.com/shorts/tQDnXW9aqXw?si=NMLxn9Z-vaeKU61n', thumb: '/img/091.jpg' },
 ];
 
 const facilityGallery = [
-  { src: '/img/020.jpg', title: 'Mist-Covered Retreat Peak' },
-  { src: '/img/028.jpg', title: 'Expert Doctor Consultation' },
-  { src: '/img/042.jpg', title: 'Hilltop Rock Yoga & Meditation' },
-  { src: '/img/045.jpg', title: 'Authentic Ayurvedic Oil Therapy' },
-  { src: '/img/037.jpg', title: 'Serene Balcony Nature Deck' },
-  { src: '/img/091.jpg', title: 'Rejuvenating Shirodhara Session' },
-  { src: '/img/property1.jpg', title: 'Chamundi Palace Main Building' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.33.24 PM.jpeg', title: 'Authentic Abhyanga Oil Therapy' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.33.21 PM.jpeg', title: 'Treehouse Outdoor Yoga' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.24.53 PM (1).jpeg', title: 'Fresh Sattvic Thali Dining' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.33.22 PM (1).jpeg', title: 'Sunset Mountain View Lounge' },
+  { src: '/img/028.jpg', title: 'Serene Balcony Viewpoint Deck' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.33.18 PM.jpeg', title: 'Garden Cottage Sanctuary' },
+  { src: '/img/property1.jpg', title: 'Chamundi Palace Main Estate' },
   { src: '/img/banner-1.jpg', title: 'Panoramic Nadukani Hills' },
   { src: '/img/accomodation-facilities.jpg', title: 'Heritage Palace Suites' },
-  { src: '/img/meals.jpg', title: 'Fresh Sattvic Dining' },
+  { src: '/img/WhatsApp Image 2026-08-04 at 12.33.19 PM (1).jpeg', title: 'Estate Organic Farm Harvest' },
 ];
 
 export default function GalleryPage() {
@@ -382,13 +483,30 @@ export default function GalleryPage() {
                 className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 bg-surface border border-border/40 flex flex-col"
                 onClick={() => setLightbox(i)}
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
-                    loading="lazy"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden bg-dark/90 flex items-center justify-center">
+                  {img.fit === 'contain' ? (
+                    <>
+                      <img
+                        src={img.src}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover blur-xl opacity-50 scale-125"
+                      />
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="relative z-10 max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out p-1"
+                        loading="lazy"
+                      />
+                    </>
+                  ) : (
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className={`w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out ${img.objectPosition || 'object-center'}`}
+                      loading="lazy"
+                    />
+                  )}
 
                   {/* Gradient & Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">

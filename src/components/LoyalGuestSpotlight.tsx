@@ -73,9 +73,25 @@ export default function LoyalGuestSpotlight() {
                 <Heart size={13} fill="currentColor" /> {t('spotlight.label')}
               </span>
 
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
-                {t('spotlight.title')}
-              </h2>
+              {(() => {
+                const titleText = t('spotlight.title');
+                if (titleText.startsWith('18')) {
+                  const restOfTitle = titleText.slice(2);
+                  return (
+                    <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight [font-variant-numeric:lining-nums]">
+                      <span className="font-heading text-accent text-4xl sm:text-5xl lg:text-6xl font-bold inline-block mr-1.5 align-baseline [font-variant-numeric:lining-nums] drop-shadow-md">
+                        18
+                      </span>
+                      {restOfTitle}
+                    </h2>
+                  );
+                }
+                return (
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight [font-variant-numeric:lining-nums]">
+                    {titleText}
+                  </h2>
+                );
+              })()}
 
               <p className="font-body text-white/70 text-lg mt-3 flex items-center justify-center lg:justify-start gap-2">
                 <MapPin size={18} className="text-accent shrink-0" />
@@ -110,17 +126,17 @@ export default function LoyalGuestSpotlight() {
             {/* 3 Metric Pill Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center lg:text-left">
-                <div className="font-heading text-3xl font-bold text-accent">18</div>
+                <div className="font-heading text-3xl font-bold text-accent [font-variant-numeric:lining-nums]">18</div>
                 <div className="font-body text-xs text-white/80 mt-1 uppercase tracking-wider">{t('spotlight.annualRetreats')}</div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center lg:text-left">
-                <div className="font-heading text-3xl font-bold text-accent">20+</div>
+                <div className="font-heading text-3xl font-bold text-accent [font-variant-numeric:lining-nums]">20+</div>
                 <div className="font-body text-xs text-white/80 mt-1 uppercase tracking-wider">{t('spotlight.yearsTrust')}</div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center lg:text-left">
-                <div className="font-heading text-3xl font-bold text-accent">100%</div>
+                <div className="font-heading text-3xl font-bold text-accent [font-variant-numeric:lining-nums]">100%</div>
                 <div className="font-body text-xs text-white/80 mt-1 uppercase tracking-wider">{t('spotlight.authenticAyurveda')}</div>
               </div>
             </div>

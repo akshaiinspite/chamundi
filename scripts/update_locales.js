@@ -1626,7 +1626,7 @@ en.leadership = {
       name: "Mrs. Saroja Thampi",
       role: "Founder & Visionary",
       badge: "Founding Visionary",
-      desc: "The visionary founder who established Chamundi Hill Palace, laying down the foundation of authentic Kerala Ayurveda, warm hospitality, and timeless heritage care."
+      desc: "After experiencing the miraculous healing benefits of authentic Ayurveda firsthand, Mrs. Saroja Thampi was inspired to share these life-changing therapies with the world, opening her peaceful ancestral home in the lush hills as a sanctuary of wellness, serene nature, and holistic care."
     },
     sheela: {
       name: "Dr. Sheela V.G (BAMS)",
@@ -1652,7 +1652,7 @@ fr.leadership = {
       name: "Mme Saroja Thampi",
       role: "Fondatrice & Visionnaire",
       badge: "Fondatrice Visionnaire",
-      desc: "La fondatrice visionnaire qui a créé le Chamundi Hill Palace, instaurant les valeurs fondamentales de l Ayurveda authentique du Kerala et du bien-être holistique."
+      desc: "Après avoir fait l'expérience directe des bienfaits miraculeux de l'Ayurvéda authentique, Mme Saroja Thampi a souhaité partager ces soins régénérants avec le monde entier en ouvrant sa demeure familiale sereine, nichée au cœur d'une nature apaisante, comme sanctuaire de guérison holistique."
     },
     sheela: {
       name: "Dr Sheela V.G (BAMS)",
@@ -1678,7 +1678,7 @@ de.leadership = {
       name: "Frau Saroja Thampi",
       role: "Gründerin & Visionärin",
       badge: "Visionäre Gründerin",
-      desc: "Die visionäre Gründerin von Chamundi Hill Palace, die den Grundstein für authentische Kerala-Ayurveda-Traditionen und ganzheitliche Pflege legte."
+      desc: "Nachdem Frau Saroja Thampi die erstaunliche Heilkraft des authentischen Ayurveda am eigenen Leib erfahren hatte, beschloss sie, diese lebensverändernden Therapien mit der Welt zu teilen und verwandelte ihr friedvolles Anwesen in den grünen Hügeln in ein einmaliges Zentrum für ganzheitliche Erholung und Naturheilkunde."
     },
     sheela: {
       name: "Dr. Sheela V.G (BAMS)",
