@@ -28,7 +28,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
     return (
       <div
         onClick={badge.onClick}
-        className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/95 backdrop-blur-md p-4 text-center flex flex-col items-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+        className={`w-80 h-[430px] shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/95 backdrop-blur-md p-4 text-center flex flex-col items-center justify-between transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
       >
         {/* Corner Accents */}
         <div className="absolute top-2.5 left-2.5 w-3 h-3 border-t border-l border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
@@ -37,7 +37,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
         <div className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b border-r border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
 
         {/* Top Fully Visible Photo Container */}
-        <div className="relative w-full h-52 sm:h-56 rounded-2xl overflow-hidden mb-3 border border-accent/40 shadow-md bg-[#16120C]">
+        <div className="relative w-full h-52 sm:h-56 rounded-2xl overflow-hidden mb-3 border border-accent/40 shadow-md bg-[#16120C] shrink-0">
           <img
             src={badge.bgImage}
             alt={badge.highlight}
@@ -50,8 +50,8 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
           </div>
         </div>
 
-        {/* Text Details Below Photo */}
-        <div className="w-full font-body px-1 pb-1">
+        {/* Text Details Below Photo - Vertically Centered */}
+        <div className="w-full font-body px-1 pb-1 flex flex-col items-center justify-center my-auto">
           <h3 className="font-heading text-xl sm:text-2xl text-white font-extrabold tracking-wide mb-1">
             {badge.highlight}
           </h3>
@@ -61,7 +61,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
           </p>
 
           {badge.extraContent && (
-            <div className="mb-2.5">
+            <div className="mb-2.5 w-full flex justify-center">
               {badge.extraContent}
             </div>
           )}
@@ -79,7 +79,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
   return (
     <div
       onClick={badge.onClick}
-      className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/85 backdrop-blur-md p-6 sm:p-7 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:bg-[#1E1810]/95 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+      className={`w-80 h-[430px] shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/85 backdrop-blur-md p-6 sm:p-7 text-center flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:bg-[#1E1810]/95 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
     >
       {/* Decorative Corner Accents */}
       <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-accent/40 group-hover:border-accent transition-all duration-500 z-10" />
@@ -89,20 +89,21 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/50 to-transparent group-hover:via-accent transition-all duration-500 z-10" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/15 via-transparent to-transparent z-10" />
 
-      {/* Top Icon Badge */}
-      <div className="relative z-10 flex justify-center mb-4">
-        <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/20 group-hover:text-accent/45 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
-          <path d="M 35 75 C 20 60, 20 40, 35 25 M 65 75 C 80 60, 80 40, 65 25" />
-          <path d="M 28 65 L 22 62 M 25 53 L 18 53 M 28 41 L 22 44 M 32 31 L 28 35" />
-          <path d="M 72 65 L 78 62 M 75 53 L 82 53 M 72 41 L 78 44 M 68 31 L 72 35" />
-        </svg>
-        <div className="absolute w-16 h-16 rounded-full bg-accent/15 group-hover:bg-accent/30 blur-md transition-all duration-500" />
-        <div className={`relative w-14 h-14 rounded-full border-2 border-accent/50 flex items-center justify-center bg-[#1E1810]/95 group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[0_0_15px_rgba(196,135,59,0.3)] group-hover:shadow-[0_0_25px_rgba(196,135,59,0.5)] ${floatClass}`}>
-          <Icon className="w-7 h-7 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.8} />
+      {/* Main Inner Container Vertically & Horizontally Centered */}
+      <div className="relative z-10 font-body flex flex-col items-center justify-center w-full my-auto text-center">
+        {/* Top Icon Badge Container */}
+        <div className="relative z-10 flex justify-center mb-4 shrink-0">
+          <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/20 group-hover:text-accent/45 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
+            <path d="M 35 75 C 20 60, 20 40, 35 25 M 65 75 C 80 60, 80 40, 65 25" />
+            <path d="M 28 65 L 22 62 M 25 53 L 18 53 M 28 41 L 22 44 M 32 31 L 28 35" />
+            <path d="M 72 65 L 78 62 M 75 53 L 82 53 M 72 41 L 78 44 M 68 31 L 72 35" />
+          </svg>
+          <div className="absolute w-16 h-16 rounded-full bg-accent/15 group-hover:bg-accent/30 blur-md transition-all duration-500" />
+          <div className={`relative w-14 h-14 rounded-full border-2 border-accent/50 flex items-center justify-center bg-[#1E1810]/95 group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[0_0_15px_rgba(196,135,59,0.3)] group-hover:shadow-[0_0_25px_rgba(196,135,59,0.5)] ${floatClass}`}>
+            <Icon className="w-7 h-7 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.8} />
+          </div>
         </div>
-      </div>
 
-      <div className="relative z-10 font-body">
         {badge.badgeTag && (
           <span className="inline-block bg-accent/25 border border-accent/50 text-accent text-[11px] uppercase font-extrabold tracking-wider px-3.5 py-0.5 rounded-full mb-2 shadow-sm">
             {badge.badgeTag}
@@ -113,18 +114,18 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
           {badge.highlight}
         </h3>
 
-        <p className="text-white font-body text-sm sm:text-base leading-snug max-w-full mx-auto font-semibold">
+        <p className="text-white font-body text-sm sm:text-base leading-relaxed max-w-full mx-auto font-semibold">
           {badge.text}
         </p>
 
         {badge.extraContent && (
-          <div className="mt-4 pt-3 border-t border-white/20">
+          <div className="mt-3.5 pt-3 border-t border-white/20 w-full flex justify-center">
             {badge.extraContent}
           </div>
         )}
 
         {badge.onClick && (
-          <div className="mt-3.5 text-[11px] uppercase tracking-widest text-accent/90 group-hover:text-white transition-colors font-extrabold flex items-center justify-center gap-1">
+          <div className="mt-3 text-[11px] uppercase tracking-widest text-accent/90 group-hover:text-white transition-colors font-extrabold flex items-center justify-center gap-1">
             {t('trust.viewDetails')}
           </div>
         )}
