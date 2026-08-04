@@ -56,7 +56,21 @@
     },
     "jeannieTag": "A visité Chamundi pour l'Ayurveda pendant 18 ans",
     "jeannieRetreatVisits": "18 Retraites Annuelles",
-    "viewDetails": "Voir Détails →"
+    "viewDetails": "Voir Détails →",
+    "cureInclusions": {
+      "badge": "Cure Ayurveda Tout Compris",
+      "title": "Ce Que Comprend Votre Cure Ayurvédique Personnalisée",
+      "items": [
+        { "title": "Hébergement au Palais", "subtitle": "Chambres paisibles au cœur de la nature" },
+        { "title": "Alimentation Biologique Ayurvédique", "subtitle": "Repas sattviques de notre jardin biologique" },
+        { "title": "2 Soins Quotidiens À 4 Mains", "subtitle": "Deux thérapies corporelles synchronisées par jour" },
+        { "title": "2 Séances de Yoga & Méditation", "subtitle": "Pratiques quotidiennes pour le corps et l'esprit" },
+        { "title": "Conférences & Cours de Cuisine", "subtitle": "Ateliers éducatifs & cuisine aux plantes" },
+        { "title": "Diagnostic de Votre Prakruti", "subtitle": "Analyse de votre constitution (Vata, Pitta, Kapha)" },
+        { "title": "Assistance Médicale 24h/24", "subtitle": "Suivi et consultations médicales permanentes" },
+        { "title": "Visites de Temples & Balades", "subtitle": "Excursions culturelles & promenades en nature" }
+      ]
+    }
   },
   "about": {
     "label": "Notre Histoire",

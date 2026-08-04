@@ -56,7 +56,21 @@
     },
     "jeannieTag": "Besucht Chamundi seit 18 Jahren für Ayurveda",
     "jeannieRetreatVisits": "18 Jährliche Retreat-Besuche",
-    "viewDetails": "Details Anzeigen →"
+    "viewDetails": "Details Anzeigen →",
+    "cureInclusions": {
+      "badge": "All-Inclusive Verjüngung",
+      "title": "Was Ihre Personalisierte Ayurveda-Kur Beinhaltet",
+      "items": [
+        { "title": "Palast-Unterkunft", "subtitle": "Ruhige Zimmer inmitten der Natur" },
+        { "title": "Biologische Ayurveda-Diät", "subtitle": "Sattvische Mahlzeiten aus eigenem Bio-Garten" },
+        { "title": "Täglich 2 Vierhand-Behandlungen", "subtitle": "Zwei synchronisierte Körpertherapien täglich" },
+        { "title": "Täglich 2 Yoga & Meditation", "subtitle": "Zwei tägliche Sitzungen für Körper & Geist" },
+        { "title": "Ayurveda-Vorträge & Kochkurs", "subtitle": "Lehrreiche Vorträge & Kräuterkochkurs" },
+        { "title": "Konstitutionsanalyse (Prakruti)", "subtitle": "Bestimmung von Vata, Pitta & Kapha" },
+        { "title": "24/7 Ärztliche Betreuung", "subtitle": "Rund-um-die-Uhr Arztgespräche & Überwachung" },
+        { "title": "Tempelbesuch & Naturwanderung", "subtitle": "Geführte Tempel- & Plantagenwanderungen" }
+      ]
+    }
   },
   "about": {
     "label": "Unsere Geschichte",

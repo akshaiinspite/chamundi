@@ -56,7 +56,21 @@
     },
     "jeannieTag": "Visited Chamundi for Ayurveda for 18 Years",
     "jeannieRetreatVisits": "18 Annual Retreat Visits",
-    "viewDetails": "View Details →"
+    "viewDetails": "View Details →",
+    "cureInclusions": {
+      "badge": "All-Inclusive Rejuvenation",
+      "title": "What Your Personalized Ayurvedic Cure Includes",
+      "items": [
+        { "title": "Heritage Palace Stay", "subtitle": "Peaceful accommodations amidst nature" },
+        { "title": "Organic Ayurvedic Diet", "subtitle": "Sattvic meals from our own organic garden" },
+        { "title": "Daily 4-Handed Therapies", "subtitle": "Two synchronized body treatments daily" },
+        { "title": "Daily Yoga & Meditation", "subtitle": "Twice-daily sessions for mind-body balance" },
+        { "title": "Ayurvedic Lectures & Classes", "subtitle": "Educational talks & herbal cooking lessons" },
+        { "title": "Prakruti Assessment", "subtitle": "Discover your unique Vata, Pitta & Kapha" },
+        { "title": "24/7 Doctor Consultations", "subtitle": "Round-the-clock physician care & tracking" },
+        { "title": "Temple & Nature Excursions", "subtitle": "Guided temple visits & plantation walks" }
+      ]
+    }
   },
   "about": {
     "label": "Our Story",
