@@ -175,6 +175,14 @@ const photos: PhotoItem[] = [
     objectPosition: 'object-top'
   },
   {
+    src: '/img/WhatsApp Image 2026-08-04 at 12.33.20 PM (1).jpeg',
+    alt: 'Advanced Hanumanasana monkey pose split posture demonstration in yoga hall',
+    category: 'Yoga & Meditation',
+    title: 'Hanumanasana Split Practice',
+    subtitle: 'Advanced Yoga Posture',
+    fit: 'contain'
+  },
+  {
     src: '/img/yoga.jpg',
     alt: 'Morning yoga practice on deck in nature',
     category: 'Yoga & Meditation',
