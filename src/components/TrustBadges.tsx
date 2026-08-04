@@ -28,46 +28,46 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
     return (
       <div
         onClick={badge.onClick}
-        className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/10 bg-[#1E1810]/90 backdrop-blur-md p-4 text-center flex flex-col items-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/60 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+        className={`w-96 sm:w-[420px] shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/95 backdrop-blur-md p-5 text-center flex flex-col items-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:shadow-[0_25px_60px_rgba(196,135,59,0.3)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
       >
         {/* Corner Accents */}
-        <div className="absolute top-2.5 left-2.5 w-3 h-3 border-t border-l border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
-        <div className="absolute top-2.5 right-2.5 w-3 h-3 border-t border-r border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
-        <div className="absolute bottom-2.5 left-2.5 w-3 h-3 border-b border-l border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
-        <div className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b border-r border-accent/40 group-hover:border-accent/80 transition-all duration-500 z-10" />
+        <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
+        <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
+        <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
+        <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-accent/50 group-hover:border-accent transition-all duration-500 z-10" />
 
-        {/* Top Fully Visible Photo Container (Height h-52 sm:h-56 with focal alignment on faces at 28%) */}
-        <div className="relative w-full h-52 sm:h-56 rounded-2xl overflow-hidden mb-3 border border-accent/30 shadow-md bg-[#16120C]">
+        {/* Top Fully Visible Photo Container */}
+        <div className="relative w-full h-60 sm:h-64 rounded-2xl overflow-hidden mb-4 border-2 border-accent/40 shadow-lg bg-[#16120C]">
           <img
             src={badge.bgImage}
             alt={badge.highlight}
             className={`w-full h-full object-cover ${badge.imgPosition || 'object-[center_28%]'} transition-transform duration-700 group-hover:scale-105`}
           />
           {/* Floating TripAdvisor Tag */}
-          <div className="absolute top-2.5 right-2.5 bg-[#140F0A]/90 backdrop-blur-md border border-accent/50 rounded-full px-2.5 py-1 flex items-center gap-1.5 text-accent text-[10px] font-bold uppercase tracking-wider shadow-lg z-10">
-            <Award size={12} className="text-accent" />
+          <div className="absolute top-3 right-3 bg-[#140F0A]/95 backdrop-blur-md border border-accent/60 rounded-full px-3 py-1.5 flex items-center gap-2 text-accent text-xs font-extrabold uppercase tracking-wider shadow-xl z-10">
+            <Award size={14} className="text-accent" />
             <span>TripAdvisor</span>
           </div>
         </div>
 
         {/* Text Details Below Photo */}
-        <div className="w-full font-body px-1 pb-1">
-          <h3 className="font-heading text-lg sm:text-xl text-white font-bold tracking-wide mb-1">
+        <div className="w-full font-body px-2 pb-2">
+          <h3 className="font-heading text-2xl sm:text-3xl text-white font-extrabold tracking-wide mb-1.5">
             {badge.highlight}
           </h3>
 
-          <p className="text-accent font-heading text-sm font-semibold leading-snug mb-2.5">
+          <p className="text-accent font-heading text-base sm:text-lg font-bold leading-snug mb-3">
             {badge.text}
           </p>
 
           {badge.extraContent && (
-            <div className="mb-2.5">
+            <div className="mb-3">
               {badge.extraContent}
             </div>
           )}
 
           {badge.onClick && (
-            <div className="text-[10px] uppercase tracking-widest text-accent/90 group-hover:text-accent font-bold transition-colors flex items-center justify-center gap-1">
+            <div className="text-xs uppercase tracking-widest text-accent font-bold group-hover:text-white transition-colors flex items-center justify-center gap-1.5 pt-1">
               {t('trust.viewDetails')}
             </div>
           )}
@@ -79,52 +79,52 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
   return (
     <div
       onClick={badge.onClick}
-      className={`w-80 shrink-0 group relative overflow-hidden rounded-3xl border border-white/10 bg-[#1E1810]/60 backdrop-blur-md p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/60 hover:bg-[#1E1810]/80 hover:shadow-[0_20px_50px_rgba(196,135,59,0.25)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
+      className={`w-96 sm:w-[420px] shrink-0 group relative overflow-hidden rounded-3xl border border-accent/30 bg-[#1E1810]/80 backdrop-blur-md p-8 sm:p-9 text-center transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-accent/80 hover:bg-[#1E1810]/95 hover:shadow-[0_25px_60px_rgba(196,135,59,0.3)] select-none ${badge.onClick ? 'cursor-pointer' : ''}`}
     >
       {/* Decorative Corner Accents */}
-      <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
-      <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
-      <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
-      <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-accent/30 group-hover:border-accent/80 transition-all duration-500 z-10" />
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent group-hover:via-accent/80 transition-all duration-500 z-10" />
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/10 via-transparent to-transparent z-10" />
+      <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-accent/40 group-hover:border-accent transition-all duration-500 z-10" />
+      <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-accent/40 group-hover:border-accent transition-all duration-500 z-10" />
+      <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-accent/40 group-hover:border-accent transition-all duration-500 z-10" />
+      <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-accent/40 group-hover:border-accent transition-all duration-500 z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-accent/50 to-transparent group-hover:via-accent transition-all duration-500 z-10" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/15 via-transparent to-transparent z-10" />
 
       {/* Top Icon Badge */}
-      <div className="relative z-10 flex justify-center mb-4">
-        <svg viewBox="0 0 100 100" className="absolute w-24 h-24 -top-4 text-accent/15 group-hover:text-accent/35 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
+      <div className="relative z-10 flex justify-center mb-5">
+        <svg viewBox="0 0 100 100" className="absolute w-28 h-28 -top-5 text-accent/20 group-hover:text-accent/45 group-hover:scale-110 transition-all duration-700 fill-none stroke-current" strokeWidth="1.2">
           <path d="M 35 75 C 20 60, 20 40, 35 25 M 65 75 C 80 60, 80 40, 65 25" />
           <path d="M 28 65 L 22 62 M 25 53 L 18 53 M 28 41 L 22 44 M 32 31 L 28 35" />
           <path d="M 72 65 L 78 62 M 75 53 L 82 53 M 72 41 L 78 44 M 68 31 L 72 35" />
         </svg>
-        <div className="absolute w-16 h-16 rounded-full bg-accent/10 group-hover:bg-accent/20 blur-md transition-all duration-500" />
-        <div className={`relative w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center bg-[#1E1810]/90 group-hover:border-accent group-hover:scale-105 transition-all duration-500 shadow-[0_0_15px_rgba(196,135,59,0.2)] group-hover:shadow-[0_0_25px_rgba(196,135,59,0.4)] ${floatClass}`}>
-          <Icon className="w-6 h-6 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.6} />
+        <div className="absolute w-20 h-20 rounded-full bg-accent/15 group-hover:bg-accent/30 blur-md transition-all duration-500" />
+        <div className={`relative w-16 h-16 rounded-full border-2 border-accent/50 flex items-center justify-center bg-[#1E1810]/95 group-hover:border-accent group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(196,135,59,0.3)] group-hover:shadow-[0_0_30px_rgba(196,135,59,0.5)] ${floatClass}`}>
+          <Icon className="w-8 h-8 text-accent transition-transform duration-500 group-hover:rotate-6" strokeWidth={1.8} />
         </div>
       </div>
 
       <div className="relative z-10 font-body">
         {badge.badgeTag && (
-          <span className="inline-block bg-accent/20 border border-accent/40 text-accent text-[10px] uppercase font-semibold tracking-widest px-3 py-0.5 rounded-full mb-2">
+          <span className="inline-block bg-accent/25 border border-accent/50 text-accent text-xs uppercase font-extrabold tracking-widest px-4 py-1 rounded-full mb-3 shadow-sm">
             {badge.badgeTag}
           </span>
         )}
 
-        <h3 className="font-heading text-xl lg:text-2xl text-accent font-semibold tracking-wide mb-2">
+        <h3 className="font-heading text-2xl sm:text-3xl text-accent font-extrabold tracking-wide mb-2.5">
           {badge.highlight}
         </h3>
 
-        <p className="text-white/90 font-body text-sm leading-relaxed max-w-[250px] mx-auto font-medium">
+        <p className="text-white font-body text-base sm:text-lg leading-relaxed max-w-full mx-auto font-medium">
           {badge.text}
         </p>
 
         {badge.extraContent && (
-          <div className="mt-4 pt-3 border-t border-white/15">
+          <div className="mt-5 pt-4 border-t border-white/20">
             {badge.extraContent}
           </div>
         )}
 
         {badge.onClick && (
-          <div className="mt-4 text-[10px] uppercase tracking-widest text-accent/80 group-hover:text-accent transition-colors font-bold flex items-center justify-center gap-1">
+          <div className="mt-4 text-xs uppercase tracking-widest text-accent/90 group-hover:text-white transition-colors font-extrabold flex items-center justify-center gap-1.5">
             {t('trust.viewDetails')}
           </div>
         )}
@@ -144,23 +144,23 @@ export default function TrustBadges() {
   };
 
   const travellersChoiceExtra = (
-    <div className="flex flex-col items-center gap-3 pt-2 w-full">
+    <div className="flex flex-col items-center gap-3.5 pt-2 w-full">
       {/* Large TripAdvisor Logo */}
       <img
         src="/img/ChatGPT Image Jul 30, 2026, 10_54_32 AM.png"
         alt="Travellers' Choice Award"
-        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-center shadow-[0_0_25px_rgba(196,135,59,0.35)] border-2 border-accent shrink-0 hover:scale-105 transition-transform"
+        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-center shadow-[0_0_30px_rgba(196,135,59,0.4)] border-2 border-accent shrink-0 hover:scale-105 transition-transform"
       />
 
       {/* 3 Prominent Full-Width Year Badges */}
-      <div className="flex items-center justify-between gap-2.5 w-full pt-1">
+      <div className="flex items-center justify-between gap-3 w-full pt-1">
         {['2024', '2025', '2026'].map((yr) => (
           <div
             key={yr}
-            className="flex-1 flex flex-col items-center justify-center bg-gradient-to-b from-accent/30 via-accent/20 to-accent/10 border-2 border-accent/60 rounded-2xl py-2.5 px-2 shadow-lg hover:border-accent hover:scale-105 transition-all"
+            className="flex-1 flex flex-col items-center justify-center bg-gradient-to-b from-accent/35 via-accent/25 to-accent/15 border-2 border-accent/70 rounded-2xl py-3 px-2 shadow-lg hover:border-accent hover:scale-105 transition-all"
           >
-            <Trophy size={18} className="text-accent mb-1" />
-            <span className="font-heading text-base sm:text-lg font-black text-white leading-none tracking-tight">{yr}</span>
+            <Trophy size={20} className="text-accent mb-1" />
+            <span className="font-heading text-lg sm:text-xl font-black text-white leading-none tracking-tight">{yr}</span>
           </div>
         ))}
       </div>
@@ -168,24 +168,26 @@ export default function TrustBadges() {
   );
 
   const jeannieExtra = (
-    <div className="inline-flex items-center justify-center gap-2 bg-accent/20 border border-accent/40 rounded-full py-1.5 px-4 shadow-sm">
-      <Award size={15} className="text-accent shrink-0" />
-      <span className="text-sm text-white font-bold font-body">{t('trust.jeannieRetreatVisits')}</span>
+    <div className="inline-flex items-center justify-center gap-2.5 bg-accent/25 border border-accent/50 rounded-full py-2 px-5 shadow-md mt-1">
+      <Award size={18} className="text-accent shrink-0" />
+      <span className="text-base text-white font-bold font-body">{t('trust.jeannieRetreatVisits')}</span>
     </div>
   );
 
   const cureCardExtra = (
-    <div className="flex flex-col gap-1.5 pt-2 text-left w-full text-xs text-white/90 font-body">
+    <div className="flex flex-col gap-2.5 pt-3 text-left w-full font-body">
       {[
         { icon: Home, text: 'Palace Stay & In-House Organic Diet' },
-        { icon: HeartPulse, text: 'Daily 2 4-Hand Therapies & 2 Yoga' },
-        { icon: GraduationCap, text: 'Ayurvedic Lectures & Cooking Class' },
-        { icon: UserCheck, text: 'Prakruti (Vata, Pitta, Kapha) Analysis' },
-        { icon: Stethoscope, text: '24/7 Doctor Care, Temple & Nature Walks' },
+        { icon: HeartPulse, text: 'Daily 2 4-Hand Therapies & 2 Yoga Sessions' },
+        { icon: GraduationCap, text: 'Ayurvedic Lectures & Cooking Classes' },
+        { icon: UserCheck, text: 'Prakruti (Vata, Pitta, Kapha) Constitution Analysis' },
+        { icon: Stethoscope, text: '24/7 Doctor Care, Temple Visits & Nature Walks' },
       ].map((item, i) => (
-        <div key={i} className="flex items-center gap-2 font-medium text-accent/90">
-          <item.icon size={13} className="shrink-0 text-accent" />
-          <span className="text-[11px] leading-tight text-white/90">{item.text}</span>
+        <div key={i} className="flex items-center gap-3 bg-accent/10 border border-accent/25 rounded-xl px-3.5 py-2 hover:bg-accent/20 hover:border-accent/50 transition-colors">
+          <div className="w-7 h-7 rounded-lg bg-accent/20 border border-accent/40 flex items-center justify-center text-accent shrink-0 shadow-sm">
+            <item.icon size={15} strokeWidth={2} />
+          </div>
+          <span className="text-xs sm:text-sm font-bold leading-tight text-white tracking-wide">{item.text}</span>
         </div>
       ))}
     </div>
