@@ -18,135 +18,6 @@ interface Offering {
   steps: OfferingStep[];
 }
 
-const offerings: Offering[] = [
-  {
-    icon: Leaf,
-    image: '/img/314962107_566571368608410_5904308292292831319_n.jpg',
-    title: "28 Days' Panchakarma",
-    description: "Experience authentic Kerala Panchakarma at Chamundi Hill Palace. This 28-day program balances the Doshas, detoxifies the body, and restores lasting vitality through customized traditional purification therapies, Ayurvedic diet, and daily yoga under expert guidance.",
-    duration: '28 Days',
-    steps: [
-      {
-        number: 1,
-        description: 'Deep oil massage (Abhyanga) and steam therapy (Svedana) loosen deep-seated cellular toxins.'
-      },
-      {
-        number: 2,
-        description: 'The five purification procedures safely eliminate metabolic waste from the biological channels.'
-      },
-      {
-        number: 3,
-        description: 'Rejuvenating herbs and structured diet rebuild digestive fire and secure lasting immunity.'
-      }
-    ]
-  },
-  {
-    icon: Droplet,
-    image: '/img/rejuvenation.jpg',
-    title: 'Body Detoxification',
-    description: 'A comprehensive purification program designed to eliminate deep-seated metabolic waste, cleanse the bodily channels, and restore overall vital energy.',
-    duration: '14 - 20 Days',
-    steps: [
-      {
-        number: 1,
-        description: 'Preparation (Purvakarma) utilizing customized herbal steam baths and synchronized oil massages to liquefy toxins.'
-      },
-      {
-        number: 2,
-        description: 'Eliminative therapies (Pradhanakarma) specifically tailored to flush metabolic waste from biological channels.'
-      },
-      {
-        number: 3,
-        description: 'Rebuilding (Paschatkarma) using a restorative diet and specialized Ayurvedic herbs to lock in strength and immunity.'
-      }
-    ]
-  },
-  {
-    icon: Sparkles,
-    image: '/img/kerala-ayurveda-2.jpg',
-    title: 'Rejuvenation Program',
-    description: 'Experience authentic Ayurvedic rejuvenation at Chamundi Hill Palace. Designed to restore energy and inner harmony, this program utilizes traditional Rasayana therapy, detoxifying oil massages, and custom nutrition to slow cellular aging and promote lasting wellness.',
-    duration: '7 - 28 Days',
-    steps: [
-      {
-        number: 1,
-        description: 'Detailed diagnosis determines your native body constitution and specific biological imbalances.'
-      },
-      {
-        number: 2,
-        description: 'Four-hand synchronized massages, herbal bags, and fresh organic meals revitalize tissues.'
-      },
-      {
-        number: 3,
-        description: 'Guided breathwork, yoga, and rasayana herbs lock in energy, brightness, and deep stability.'
-      }
-    ]
-  },
-  {
-    icon: Sun,
-    image: '/img/yoga.jpg',
-    title: 'Yoga & Meditation',
-    description: 'Experience guided yoga and meditation sessions tailored to your fitness level and Ayurvedic needs. Held in a peaceful hall surrounded by nature, these daily practices enhance flexibility, balance breathing, and bring calm to the mind.',
-    duration: 'Daily Sessions',
-    steps: [
-      {
-        number: 1,
-        description: 'Conscious breathing practices calm the nervous system and sweep debris from spiritual channels.'
-      },
-      {
-        number: 2,
-        description: 'Slow, customized physical postures stretch and tone lines in harmony with your doshic state.'
-      },
-      {
-        number: 3,
-        description: 'Guided visual meditation and yoga nidra transition the consciousness into peace.'
-      }
-    ]
-  },
-  {
-    icon: Flame,
-    image: '/img/weight-loss.jpg',
-    title: 'Weight Loss Program',
-    description: 'Discover natural weight management through Ayurveda at Chamundi Hill Palace. This holistic program combines traditional therapies like Udvartana, a customized metabolic diet, and daily yoga for sustainable fat reduction and overall vitality.',
-    duration: '14 - 28 Days',
-    steps: [
-      {
-        number: 1,
-        description: 'Dry herbal powders are massaged vigorously into the body to crack subcutaneous adipose deposits.'
-      },
-      {
-        number: 2,
-        description: 'Sweat chamber therapy liquefies toxins, stimulates metabolic paths, and cleanses the pores.'
-      },
-      {
-        number: 3,
-        description: 'A warming, light organic diet combined with detoxifying herbal decoctions sustains weight loss.'
-      }
-    ]
-  },
-  {
-    icon: Heart,
-    image: '/img/stress-relief.jpg',
-    title: 'Stress Relief Program',
-    description: 'Find calm and clarity with the Stress Relief Program at Chamundi Hill Palace. This holistic program combines traditional Ayurvedic therapies, gentle yoga, and a custom diet to ease tension, combat burnout, and restore mental peace.',
-    duration: '14 - 21 Days',
-    steps: [
-      {
-        number: 1,
-        description: 'Localized warm steam and rhythmic herbal bundle massages release physical tension nodes.'
-      },
-      {
-        number: 2,
-        description: 'Herbal paste is applied to the crown, followed by warm coconut milk dhara to soothe brainwaves.'
-      },
-      {
-        number: 3,
-        description: 'Gentle, cooling aromatherapy, meditation, and nerve-strengthening nutrition complete the reset.'
-      }
-    ]
-  }
-];
-
 export default function OfferingsGrid() {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -154,7 +25,82 @@ export default function OfferingsGrid() {
   const { ref: titleRef, isVisible: titleVisible } = useScrollReveal(0.2);
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal(0.15);
 
-  const activeOffering = offerings[activeIndex];
+  const offerings: Offering[] = [
+    {
+      icon: Leaf,
+      image: '/img/314962107_566571368608410_5904308292292831319_n.jpg',
+      title: t('offeringsSection.items.panchakarma.title'),
+      description: t('offeringsSection.items.panchakarma.description'),
+      duration: t('offeringsSection.items.panchakarma.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.panchakarma.step1') },
+        { number: 2, description: t('offeringsSection.items.panchakarma.step2') },
+        { number: 3, description: t('offeringsSection.items.panchakarma.step3') },
+      ]
+    },
+    {
+      icon: Droplet,
+      image: '/img/rejuvenation.jpg',
+      title: t('offeringsSection.items.detox.title'),
+      description: t('offeringsSection.items.detox.description'),
+      duration: t('offeringsSection.items.detox.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.detox.step1') },
+        { number: 2, description: t('offeringsSection.items.detox.step2') },
+        { number: 3, description: t('offeringsSection.items.detox.step3') },
+      ]
+    },
+    {
+      icon: Sparkles,
+      image: '/img/kerala-ayurveda-2.jpg',
+      title: t('offeringsSection.items.rejuvenation.title'),
+      description: t('offeringsSection.items.rejuvenation.description'),
+      duration: t('offeringsSection.items.rejuvenation.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.rejuvenation.step1') },
+        { number: 2, description: t('offeringsSection.items.rejuvenation.step2') },
+        { number: 3, description: t('offeringsSection.items.rejuvenation.step3') },
+      ]
+    },
+    {
+      icon: Sun,
+      image: '/img/yoga.jpg',
+      title: t('offeringsSection.items.yoga.title'),
+      description: t('offeringsSection.items.yoga.description'),
+      duration: t('offeringsSection.items.yoga.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.yoga.step1') },
+        { number: 2, description: t('offeringsSection.items.yoga.step2') },
+        { number: 3, description: t('offeringsSection.items.yoga.step3') },
+      ]
+    },
+    {
+      icon: Flame,
+      image: '/img/weight-loss.jpg',
+      title: t('offeringsSection.items.weightLoss.title'),
+      description: t('offeringsSection.items.weightLoss.description'),
+      duration: t('offeringsSection.items.weightLoss.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.weightLoss.step1') },
+        { number: 2, description: t('offeringsSection.items.weightLoss.step2') },
+        { number: 3, description: t('offeringsSection.items.weightLoss.step3') },
+      ]
+    },
+    {
+      icon: Heart,
+      image: '/img/stress-relief.jpg',
+      title: t('offeringsSection.items.stressRelief.title'),
+      description: t('offeringsSection.items.stressRelief.description'),
+      duration: t('offeringsSection.items.stressRelief.duration'),
+      steps: [
+        { number: 1, description: t('offeringsSection.items.stressRelief.step1') },
+        { number: 2, description: t('offeringsSection.items.stressRelief.step2') },
+        { number: 3, description: t('offeringsSection.items.stressRelief.step3') },
+      ]
+    }
+  ];
+
+  const activeOffering = offerings[activeIndex] || offerings[0];
   const ActiveIcon = activeOffering.icon;
 
   return (

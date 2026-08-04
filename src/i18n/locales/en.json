@@ -29,13 +29,34 @@
     "description": "For over 25 years, Chamundi Hill Palace has welcomed guests from 50+ countries to experience the beauty of Kerala's hills. With a 4.9/5-star rating and 98% of guests returning, we are proud to offer warm hospitality and authentic Ayurvedic healthcare.",
     "videoButton": "Discover Chamundi Hill Palace: Video Walkthrough",
     "badges": {
-      "tripadvisor": { "highlight": "TripAdvisor", "text": "Certificate of Excellence for consistent 5-star ratings" },
-      "travellersChoice": { "highlight": "Travellers' Choice", "text": "Awarded to the top 10% of hotels globally in 2024" },
-      "greenLeaf": { "highlight": "Green Leaf", "text": "Certified Eco-Retreat by the Government of Kerala" },
-      "years": { "highlight": "25+ Years", "text": "Of delivering authentic, traditional Ayurvedic healthcare" },
-      "organic": { "highlight": "100% Organic", "text": "Farm-to-table dining sourced from our own organic gardens" },
-      "returnRate": { "highlight": "98% Return Rate", "text": "Of guests who return for their annual rejuvenation therapies" }
-    }
+      "tripadvisor": {
+        "highlight": "TripAdvisor",
+        "text": "Certificate of Excellence for consistent 5-star ratings"
+      },
+      "travellersChoice": {
+        "highlight": "Travellers' Choice",
+        "text": "Awarded to the top 10% of hotels globally in 2024"
+      },
+      "greenLeaf": {
+        "highlight": "Green Leaf",
+        "text": "Certified Eco-Retreat by the Government of Kerala"
+      },
+      "years": {
+        "highlight": "25+ Years",
+        "text": "Of delivering authentic, traditional Ayurvedic healthcare"
+      },
+      "organic": {
+        "highlight": "100% Organic",
+        "text": "Farm-to-table dining sourced from our own organic gardens"
+      },
+      "returnRate": {
+        "highlight": "98% Return Rate",
+        "text": "Of guests who return for their annual rejuvenation therapies"
+      }
+    },
+    "jeannieTag": "Visited Chamundi for Ayurveda for 18 Years",
+    "jeannieRetreatVisits": "18 Annual Retreat Visits",
+    "viewDetails": "View Details →"
   },
   "about": {
     "label": "Our Story",
@@ -85,7 +106,11 @@
         "description": "Beautifully appointed heritage rooms blending traditional Keralan wood craftsmanship with modern comforts. Perfect for a restful healing stay.",
         "size": "280 sq. ft.",
         "view": "Garden / Estate View",
-        "amenities": ["Twin/Double Bed", "Complimentary Wi-Fi", "Ensuite Bathroom"]
+        "amenities": [
+          "Twin/Double Bed",
+          "Complimentary Wi-Fi",
+          "Ensuite Bathroom"
+        ]
       },
       "balcony": {
         "name": "Room with Balcony",
@@ -93,7 +118,11 @@
         "description": "Spacious rooms featuring a private balcony that invites natural light, cool mountain air, and breathtaking panoramic views of the mist-clad hills.",
         "size": "340 sq. ft.",
         "view": "Stunning Hillside View",
-        "amenities": ["King Size Bed", "Complimentary Wi-Fi", "Private Balcony"]
+        "amenities": [
+          "King Size Bed",
+          "Complimentary Wi-Fi",
+          "Private Balcony"
+        ]
       },
       "cottage": {
         "name": "Garden Cottage",
@@ -101,7 +130,11 @@
         "description": "Charming standalone cottages tucked away in lush tropical foliage. Offers a private veranda, quiet rustic luxury, and deep connection to nature.",
         "size": "420 sq. ft.",
         "view": "Lush Forest View",
-        "amenities": ["King Size Bed", "Private Veranda", "Secluded Location"]
+        "amenities": [
+          "King Size Bed",
+          "Private Veranda",
+          "Secluded Location"
+        ]
       }
     }
   },
@@ -114,7 +147,11 @@
       "doctors": "Certified Ayurvedic Doctors",
       "program": "Full Panchakarma Program"
     },
-    "features": ["Personalized Treatment Plans", "Organic Ayurvedic Meals", "Hilltop Natural Setting"]
+    "features": [
+      "Personalized Treatment Plans",
+      "Organic Ayurvedic Meals",
+      "Hilltop Natural Setting"
+    ]
   },
   "cta": {
     "label": "Retreat Booking",
@@ -165,7 +202,7 @@
     "badge": "18-Time Returning Guest",
     "guestName": "Jeannie · United Kingdom 🇬🇧",
     "label": "A Lifetime of Trust & Healing",
-    "title": "18 Visits & Counting: Jeannie's Story",
+    "title": "18 visits, and Still Counting : Jeannine's Story",
     "subtitle": "Visiting from the United Kingdom for over two decades",
     "quote": "Chamundi Hill Palace isn't just a wellness retreat for me—it is my second home in Kerala. Returning 18 times over the years has kept my body revitalized, my mind at total peace, and my spirit deeply connected to authentic Ayurveda.",
     "profileLabel": "Guest Profile",
@@ -180,51 +217,254 @@
   },
   "history": {
     "label": "Our Heritage",
-    "title": "The Legacy of Chamundi Hill Palace",
-    "description": "From the initial vision in 1935 to our Silver Jubilee as a globally acclaimed destination for authentic Ayurveda, our journey has been defined by tradition, compassion, and pure dedication to holistic healing.",
+    "title": "The Chamundi Hill Palace Legacy",
+    "description": "From the seed of vision in 1935 to our Silver Jubilee as a global Ayurvedic destination, our journey has been defined by tradition, compassion, and dedication to holistic healing.",
     "exploreHistory": "Explore History",
-    "historicalNarrative": "Historical Narrative",
-    "foundingPrinciples": "Chamundi Hill Palace has maintained these founding principles, ensuring that medicinal oils are boiled on-site, therapies are strictly tailored, and the natural landscape remains pristine.",
-    "authenticLegacy": "Authentic Legacy Registered",
-    "closeView": "Close View",
     "retreatFocus": "Retreat Focus",
-    "retreatFocusVal": "100% Authentic Kerala Ayurveda"
+    "retreatFocusVal": "Authentic Kerala Heritage",
+    "historicalNarrative": "Historical Narrative",
+    "foundingPrinciples": "Founded on the principles of traditional Indian Ayurveda & Uncompromising Quality",
+    "authenticLegacy": "Certified Authentic Legacy",
+    "closeView": "Close View",
+    "timeline": {
+      "1935": {
+        "year": "1935",
+        "title": "Crafting tomorrow's Royalty",
+        "caption": "The foundation of vision, hard work and a legacy in the making.",
+        "description": "Nestled atop the Nadukani Hills, the visionaries of Chamundi Hill began surveying the pristine land. Laborers worked painstakingly to clear paths, discover indigenous herbs, and plan the estate. The fertile red soil and cooling hill breeze made this the perfect sanctuary for a healing legacy.",
+        "infographicLabel": "Acres Cleared",
+        "infographicValue": "15+",
+        "badge": "The Seed of Vision"
+      },
+      "1945": {
+        "year": "1945",
+        "title": "Where Dreams took root in",
+        "caption": "A vision takes shape and a dream begins to flourish.",
+        "description": "The foundations of the estate structures were laid using local timber, mountain stones, and traditional craftsmanship. The primary house construction began under the watchful eye of the family elders, symbolizing a dream taking deep structural roots in the soil.",
+        "infographicLabel": "Traditional Pillars",
+        "infographicValue": "24",
+        "badge": "Structural Roots"
+      },
+      "1963": {
+        "year": "1963",
+        "title": "A Divine Union, a Healing Legacy Begins",
+        "caption": "Tradition, compassion and care come together to serve humanity.",
+        "description": "A blessed marriage union brought together two prominent families with deep roots in traditional Kerala wellness and architecture. This merger synthesized centuries of herbal knowledge and established a dedicated family mission of healing and community care.",
+        "infographicLabel": "Combined Lineages",
+        "infographicValue": "2",
+        "badge": "A Sacred Merger"
+      },
+      "1990": {
+        "year": "1990",
+        "title": "Transformation in progress since",
+        "caption": "Evolving with time, staying true to purpose.",
+        "description": "As the legacy passed to the next generation, the estate underwent extensive renovation to adapt heritage facilities for guests while carefully preserving the authentic Nalukettu courtyard architecture, creating a perfect balance of heritage and wellness comfort.",
+        "infographicLabel": "Preserved Courtyards",
+        "infographicValue": "100%",
+        "badge": "Heritage Revival"
+      },
+      "1999": {
+        "year": "1999",
+        "title": "Chamundi's Legacy begins. Grand Inauguration",
+        "caption": "A legacy of healing and service officially begins.",
+        "description": "The formal inauguration of Chamundi Hill Palace as a dedicated heritage Ayurvedic retreat. The lighting of the traditional brass Nilavilakku lamp by community elders officially opened the sanctuary to seekers of physical and spiritual restoration.",
+        "infographicLabel": "Sacred Lamp Lit",
+        "infographicValue": "Nov '99",
+        "badge": "Grand Opening"
+      },
+      "2000": {
+        "year": "2000",
+        "title": "The Rise of a Healing Haven",
+        "caption": "A place where wellness grows and lives are transformed.",
+        "description": "The sanctuary expanded its organic herb and spice gardens, laying down structured Panchakarma courses supervised by resident Ayurvedic doctors. Seekers from surrounding states and abroad began arriving to experience authentic, natural cures.",
+        "infographicLabel": "Medicinal Species",
+        "infographicValue": "150+",
+        "badge": "Retreat Expansion"
+      },
+      "2024": {
+        "year": "25 Years",
+        "title": "25 Years of Ayurvedic Excellence",
+        "caption": "Om, Shanti, Shanti, Shanti. A journey of 25 years. A promise for generations.",
+        "description": "Celebrating 25 years of formal healing operations and a century-long foundational journey. Chamundi Hill Palace stands proud as an eco-conscious, strictly authentic sanctuary where ancient science meets tranquil nature, promising peace for generations to come.",
+        "infographicLabel": "Healing Years",
+        "infographicValue": "25+",
+        "badge": "Silver Jubilee"
+      },
+      "global-era": {
+        "year": "Global Era",
+        "title": "The Global Destination for Ayurveda",
+        "caption": "Where ancient wisdom heals and wellness knows no borders.",
+        "description": "Chamundi Hill Palace gained international recognition. Accredited for its absolute authenticity, the retreat welcomed guests from over 50 countries, spreading the therapeutic benefits of genuine Kerala Panchakarma and Hatha Yoga globally.",
+        "infographicLabel": "Global Guests From",
+        "infographicValue": "50+ Countries",
+        "badge": "Global Acclaim"
+      }
+    }
   },
   "dayAtChamundi": {
-    "label": "A Typical Day",
+    "label": "Daily Life & Inclusions",
     "title": "A Day at Chamundi Hill Palace",
-    "description": "Experience a perfectly structured routine that harmonizes traditional treatments, organic nutrition, healing yoga, and enriching activities on our sacred hill.",
+    "description": "Experience a balanced daily rhythm structured around authentic Ayurvedic healing, organic nutrition, guided yoga practices, and tranquil relaxation.",
     "tabs": {
       "schedule": "Daily Schedule",
-      "nourishment": "Organic Food",
+      "nourishment": "Organic Food & Nutrition",
       "rooms": "Accommodation",
-      "excursions": "Activities & Excursions"
+      "excursions": "Excursions & Inclusions"
     },
-    "nourishmentTitle": "Nourishment For Healing",
-    "nourishmentTag": "Organic Dining",
-    "nourishmentDesc": "Nourishment is a vital part of healing, and our cuisine is thoroughly and thoughtfully crafted to support your wellness journey. Sumptuous Keralan vegetarian food is served for all three meals, in addition to refreshing morning and evening tea or coffee.",
-    "nourishmentBullet1": "Freshly cooked vegetarian food made from organically grown vegetables and spices.",
-    "nourishmentBullet2": "Ayurvedic Herbal water is prepared fresh and available throughout the day.",
-    "nourishmentBullet3": "Food is served on a common dining table, offering a wonderful opportunity to mingle with fellow guests and class mates.",
-    "roomsTag": "Ensuite Living Spaces",
-    "roomsTitle": "Comfortable Ensuite Accommodation",
-    "roomsDesc1": "All rooms are spacious and comfortable, featuring private bathrooms and supporting deep rest. Some rooms are located within the heritage main palace building, while others are situated in quiet cottages with beautiful hillside views.",
-    "roomsDesc2": "As a luxury Ayurveda retreat, we ensure serene, peaceful living spaces that assist your recovery and rejuvenation. Chamundi Palace stands out as the best Ayurvedic retreat in Kerala and is widely recognized as the best Ayurvedic retreat in India.",
-    "roomsBullet1": "Spacious Suites",
-    "roomsBullet2": "Ensuite Bathrooms",
-    "roomsBullet3": "Main Palace or Cottages",
-    "roomsBullet4": "Stunning Hill Views",
-    "includedTitle": "What is Included in Your Stay",
-    "complimentary": "Complimentary",
-    "activity": "Activity"
+    "nourishmentTag": "Farm to Table",
+    "nourishmentTitle": "Fresh Organic Ayurvedic Meals",
+    "nourishmentDesc": "Enjoy delicious, wholesome Keralan vegetarian dishes prepared according to Ayurvedic principles using organic vegetables and spices grown on our estate.",
+    "nourishmentBullet1": "100% Organic vegetarian meals customized to your doctor-prescribed Dosha diet plan.",
+    "nourishmentBullet2": "Freshly harvested herbs, medicinal teas, and purified herbal water served throughout the day.",
+    "nourishmentBullet3": "Friendly communal dining environment encouraging calm eating habits and peaceful atmosphere.",
+    "roomsTag": "Restful Sanctuary",
+    "roomsTitle": "Heritage Comfort & Tranquility",
+    "roomsDesc1": "Relax in peaceful rooms designed with natural materials, cooling cross-breezes, and soothing views of tropical greenery.",
+    "roomsDesc2": "Choose between palace guest rooms or hillside view cottages equipped with modern private amenities.",
+    "roomsBullet1": "Ensuite private bathroom",
+    "roomsBullet2": "Daily housekeeping & fresh linens",
+    "roomsBullet3": "Scenic hill or garden balcony",
+    "roomsBullet4": "Quiet, serene atmosphere",
+    "activity": "Weekly Activity",
+    "complimentary": "Included with stay",
+    "includedTitle": "What is Included in Your Retreat Stay",
+    "schedule": [
+      {
+        "time": "07:00 AM – 08:00 AM",
+        "title": "Morning Yoga & Meditation",
+        "desc": "Start your day in our peaceful nature shala. Gentle Hatha yoga, pranayama, and guided meditation to prepare your body and mind for healing."
+      },
+      {
+        "time": "08:00 AM – 10:00 AM",
+        "title": "Fresh Organic Breakfast",
+        "desc": "A freshly cooked, organic vegetarian breakfast served in our communal dining area, fostering connections with fellow seekers."
+      },
+      {
+        "time": "09:00 AM – 12:00 PM",
+        "title": "Morning Treatment Session",
+        "desc": "Your first personalized Ayurvedic therapy of the day (e.g. Abhyanga or Body Detoxification), precisely prescribed by the resident doctor."
+      },
+      {
+        "time": "01:00 PM – 02:00 PM",
+        "title": "Ayurvedic Lunch & Herbal Water",
+        "desc": "Sumptuous Keralan vegetarian cuisine matched to your diet plan. Infused Ayurvedic herbal water is served throughout the day."
+      },
+      {
+        "time": "02:30 PM Onwards",
+        "title": "Doctor Consultation & Rest",
+        "desc": "Meet with our resident doctor, always available to monitor your progress and tailor your treatment plan."
+      },
+      {
+        "time": "03:00 PM – 06:00 PM",
+        "title": "Evening Treatment & Care",
+        "desc": "Your second daily therapy session, supporting deep biological purification. Cleanse your channels and release blockages."
+      },
+      {
+        "time": "06:15 PM – 07:15 PM",
+        "title": "Evening Meditation & Sunset Yoga",
+        "desc": "A restorative evening session to integrate the physical benefits of the day's treatments and quiet the nervous system."
+      },
+      {
+        "time": "07:30 PM – 08:30 PM",
+        "title": "Community Vegetarian Dinner",
+        "desc": "Wind down with a nourishing dinner. Share experiences and mingle with the regular clientele in our friendly dining space."
+      },
+      {
+        "time": "08:30 PM Onwards",
+        "title": "Medication & Night Rest",
+        "desc": "Administration of prescribed Ayurvedic evening herbal medications followed by quiet rest to promote overnight deep healing and restorative sleep."
+      }
+    ],
+    "inclusionsList": [
+      "Spacious ensuite room with private bathroom (in the main palace or quiet hillside view cottages)",
+      "All freshly cooked vegetarian meals sourced from our organic gardens and spice plantations",
+      "Tailored Ayurvedic diet plans supervised directly by our resident doctors",
+      "Daily Ayurvedic treatments twice a day, plus natural medicines included in your plan",
+      "Abdominal cleansing every 8th day of treatment (or as recommended by doctor)",
+      "Detailed Ayurvedic consultation upon arrival and 24/7 doctor availability",
+      "Specific take-home diet chart provided by the doctor on your departure day",
+      "Daily morning & evening Yoga sessions (6 days a week, free for all residents)",
+      "Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks stay)",
+      "Loving staff assistance 24 hours a day during your entire stay",
+      "Complimentary Wi-Fi access available 24/7 throughout the premises",
+      "Assistance with travel planning before and after your stay at the centre"
+    ],
+    "activitiesList": [
+      {
+        "title": "Spice Tour",
+        "desc": "Explore spice tours directly within our lush centre premises, discovering fresh cardamom, pepper, and local herbs."
+      },
+      {
+        "title": "Rubber Plantation Visit",
+        "desc": "Walk through the serene local rubber plantations, learning about the local agriculture and agricultural heritage."
+      },
+      {
+        "title": "Ancient Temple Excursion",
+        "desc": "Visit a historic, more than 100-year-old Hindu temple nearby to experience traditional spirituality and local culture."
+      },
+      {
+        "title": "Cooking Demonstration",
+        "desc": "Join our interactive Ayurvedic cooking classes held once every 15 days to learn how to prepare healthy meals back home."
+      }
+    ]
   },
   "offeringsSection": {
     "label": "What We Offer",
-    "title": "Our Signature Offerings",
+    "title": "Holistic Ayurvedic Programs",
     "duration": "Duration",
-    "flowTitle": "Therapy Energy Flow",
-    "supervised": "*Supervised by resident Ayurvedic doctors.",
-    "bookFlow": "Book Treatment Flow"
+    "flowTitle": "Treatment Flow",
+    "supervised": "*Supervised by certified Ayurvedic doctors",
+    "bookFlow": "Book Program",
+    "items": {
+      "panchakarma": {
+        "title": "28 Days' Panchakarma",
+        "description": "Experience authentic Kerala Panchakarma at Chamundi Hill Palace. This 28-day program balances the Doshas, detoxifies the body, and restores lasting vitality through customized traditional purification therapies, Ayurvedic diet, and daily yoga under expert guidance.",
+        "duration": "28 Days",
+        "step1": "Deep oil massage (Abhyanga) and steam therapy (Svedana) loosen deep-seated cellular toxins.",
+        "step2": "The five purification procedures safely eliminate metabolic waste from the biological channels.",
+        "step3": "Rejuvenating herbs and structured diet rebuild digestive fire and secure lasting immunity."
+      },
+      "detox": {
+        "title": "Body Detoxification",
+        "description": "A comprehensive purification program designed to eliminate deep-seated metabolic waste, cleanse the bodily channels, and restore overall vital energy.",
+        "duration": "14 - 20 Days",
+        "step1": "Preparation (Purvakarma) utilizing customized herbal steam baths and synchronized oil massages to liquefy toxins.",
+        "step2": "Eliminative therapies (Pradhanakarma) specifically tailored to flush metabolic waste from biological channels.",
+        "step3": "Rebuilding (Paschatkarma) using a restorative diet and specialized Ayurvedic herbs to lock in strength and immunity."
+      },
+      "rejuvenation": {
+        "title": "Rejuvenation Program",
+        "description": "Experience authentic Ayurvedic rejuvenation at Chamundi Hill Palace. Designed to restore energy and inner harmony, this program utilizes traditional Rasayana therapy, detoxifying oil massages, and custom nutrition to slow cellular aging and promote lasting wellness.",
+        "duration": "7 - 28 Days",
+        "step1": "Detailed diagnosis determines your native body constitution and specific biological imbalances.",
+        "step2": "Four-hand synchronized massages, herbal bags, and fresh organic meals revitalize tissues.",
+        "step3": "Guided breathwork, yoga, and rasayana herbs lock in energy, brightness, and deep stability."
+      },
+      "yoga": {
+        "title": "Yoga & Meditation",
+        "description": "Experience guided yoga and meditation sessions tailored to your fitness level and Ayurvedic needs. Held in a peaceful hall surrounded by nature, these daily practices enhance flexibility, balance breathing, and bring calm to the mind.",
+        "duration": "Daily Sessions",
+        "step1": "Conscious breathing practices calm the nervous system and sweep debris from spiritual channels.",
+        "step2": "Slow, customized physical postures stretch and tone lines in harmony with your doshic state.",
+        "step3": "Guided visual meditation and yoga nidra transition the consciousness into peace."
+      },
+      "weightLoss": {
+        "title": "Weight Loss Program",
+        "description": "Discover natural weight management through Ayurveda at Chamundi Hill Palace. This holistic program combines traditional therapies like Udvartana, a customized metabolic diet, and daily yoga for sustainable fat reduction and overall vitality.",
+        "duration": "14 - 28 Days",
+        "step1": "Dry herbal powders are massaged vigorously into the body to crack subcutaneous adipose deposits.",
+        "step2": "Sweat chamber therapy liquefies toxins, stimulates metabolic paths, and cleanses the pores.",
+        "step3": "A warming, light organic diet combined with detoxifying herbal decoctions sustains weight loss."
+      },
+      "stressRelief": {
+        "title": "Stress Relief Program",
+        "description": "Find calm and clarity with the Stress Relief Program at Chamundi Hill Palace. This holistic program combines traditional Ayurvedic therapies, gentle yoga, and a custom diet to ease tension, combat burnout, and restore mental peace.",
+        "duration": "14 - 21 Days",
+        "step1": "Localized warm steam and rhythmic herbal bundle massages release physical tension nodes.",
+        "step2": "Herbal paste is applied to the crown, followed by warm coconut milk dhara to soothe brainwaves.",
+        "step3": "Gentle, cooling aromatherapy, meditation, and nerve-strengthening nutrition complete the reset."
+      }
+    }
   },
   "contactSection": {
     "label": "Get in Touch",
@@ -254,21 +494,403 @@
   },
   "feedback": {
     "heroStats": {
-      "rated": "Rated",
-      "repeatGuests": "Repeat Guests",
-      "certifiedDoctors": "Certified Doctors",
-      "panchakarma": "Day Panchakarma"
+      "rated": "Average Guest Rating",
+      "repeatGuests": "Repeat Retreat Guests",
+      "certifiedDoctors": "Certified Ayurvedic Doctors",
+      "panchakarma": "Days Authentic Panchakarma"
     },
     "videoSectionLabel": "Video Reviews",
-    "videoSectionTitle": "Watch Guest Testimonials",
-    "videoSectionDesc": "Listen directly to our guests share their transformational experiences, wellness outcomes, and highlights of their stay at Chamundi Hill Palace.",
-    "reviewsLabel": "Reviews",
-    "reviewsTitle": "Feedback"
+    "videoSectionTitle": "Hear Directly from Our Guests",
+    "videoSectionDesc": "Watch authentic video testimonials recorded by guests during and after their healing stay at Chamundi Hill Palace.",
+    "reviewsLabel": "Written Reviews",
+    "reviewsTitle": "What Our Guests Say"
   },
   "testimonials": {
     "label": "Guest Stories",
     "title": "What Our Guests Say",
     "watchVideo": "Watch Video",
     "guestReview": "Guest Review"
+  },
+  "preloader": {
+    "celebrating": "Celebrating",
+    "yearsHealing": "25 Years of Healing & Excellence",
+    "trustedCare": "Trusted Ayurvedic Care",
+    "personalizedCare": "Personalized Ayurvedic Care",
+    "yogaMeditation": "Yoga & Meditation"
+  },
+  "pageHero": {
+    "home": "Home"
+  },
+  "videoTestimonialsComponent": {
+    "label": "Testimonials",
+    "title": "What Our Clients Say About Us"
+  },
+  "ayurvedaPage": {
+    "title": "Ayurvedic Treatments in Kerala",
+    "subtitle": "Ancient Wisdom · Modern Healing",
+    "breadcrumb": "Ayurveda",
+    "intro": "Welcome to Chamundi Hill Palace, where ancient Ayurvedic wisdom meets serene Kerala landscapes. Recognized as one of the best Ayurvedic retreats in Kerala, we offer a complete range of authentic Ayurvedic treatments designed to purify, rejuvenate, and restore the body's natural harmony. Every therapy begins with an individual Ayurvedic consultation led by our resident doctor, who carefully studies your body constitution (Dosha), health history, and lifestyle. Based on this, a personalized treatment plan is crafted — ensuring every guest receives care suited to their unique needs.",
+    "watchTestimonials": "Watch Guest Testimonials",
+    "stats": {
+      "years": "Years of Ayurveda",
+      "guests": "Repeat Guests",
+      "doctors": "Certified Doctors",
+      "panchakarma": "Day Panchakarma"
+    },
+    "programsLabel": "Programs",
+    "programsTitle": "Our Signature Ayurvedic Treatments",
+    "treatments": {
+      "rejuvenation": {
+        "title": "Rejuvenation Program",
+        "duration": "7, 14, 21 or 28 Days",
+        "body": "Experience authentic Ayurvedic rejuvenation in Kerala at Chamundi Hill Palace, where ancient healing meets serene natural beauty. Our programs are designed to restore energy, balance, and inner harmony through traditional Rasayana therapy. Each program begins with a doctor's consultation and includes detoxification, oil massages, herbal steam baths, Panchakarma, and Ayurvedic meals complemented by yoga and meditation. Treatments are personalized according to your body type (Prakriti) and health goals.",
+        "statNum": "3000+",
+        "statYears": "Years of",
+        "statSub": "Ayurvedic Science"
+      },
+      "stressRelief": {
+        "title": "Stress Relief Program",
+        "duration": "14 or 21 Days",
+        "body": "Find calm and clarity with the Stress Relief Program at Chamundi Hill Palace. Designed to ease tension, anxiety, and fatigue, this program blends time-tested Ayurvedic therapies with a holistic healing approach. Each treatment plan includes Abhyanga (herbal oil massage), Shirodhara (oil pouring therapy), herbal steam baths, and detoxification therapies — all tailored to restore balance to your body and mind. Guided yoga and meditation sessions, along with a nutritious Ayurvedic diet, support deep relaxation and better sleep.",
+        "statNum": "15+",
+        "statYears": "Repeat Guests",
+        "statSub": " Every Year"
+      },
+      "panchakarma": {
+        "title": "Panchakarma Treatment",
+        "duration": "28 Days",
+        "body": "Experience authentic Panchakarma treatment in Kerala at Chamundi Hill Palace, a renowned Ayurvedic wellness retreat dedicated to deep detoxification and rejuvenation. This 28-day program follows classical Ayurvedic purification therapies that cleanse the body, balance the Doshas, and restore lasting vitality. Your treatment plan may include Vamana (emesis), Virechana (purgation), Nasya (nasal therapy), Basti (medicated enemas), and Raktamokshana (blood purification).",
+        "statNum": "28",
+        "statYears": "Days Full",
+        "statSub": "Panchakarma Program"
+      },
+      "weightLoss": {
+        "title": "Weight Loss Program",
+        "duration": "28 Days",
+        "body": "Discover natural weight management through Ayurveda with the 28-Day Weight Loss Program. This holistic program combines Ayurvedic therapies, balanced nutrition, and mindful practices to promote sustainable fat reduction and overall vitality. Your personalized plan may include Udvartana (herbal powder massage) and Abhyanga (oil massage) to improve circulation and break down excess fat, along with herbal steam baths for detoxification and metabolism enhancement.",
+        "statNum": "100%",
+        "statYears": "Certified",
+        "statSub": "Ayurvedic Doctors"
+      }
+    },
+    "readMore": "Read More",
+    "consultationIncluded": "*Consultation included",
+    "inclusions": {
+      "label": "All-Inclusive Packages",
+      "title": "What is Included in Your Package",
+      "desc": "On arrival a free consultation for Kerala ayurvedic treatments will be arranged with our resident ayurveda doctor, who will patiently listen to you. Based on the consultation the best treatment will be discussed. The duration of the treatment will be 7 to 28 days.",
+      "treatmentsTitle": "Various Treatments",
+      "treatmentsDesc": "As discussed during consultation you will be given the opportunity to choose different ayurveda treatment programs that suits you. You will experience various ayurveda treatments that is suitable for you. Accommodation will be arranged to suit your treatment program.",
+      "foodTitle": "Food",
+      "foodDesc": "3 meals including morning and evening tea / coffee and the best organic food grown in the surrounding area.",
+      "highlights": "Package Highlights",
+      "dailyTreatments": "Daily Treatments",
+      "yogaMeditation": "Yoga & Meditation",
+      "ayurvedicDiet": "Ayurvedic Diet",
+      "medicalExams": "Medical Exams",
+      "doctorConsulting": "Doctor Consulting",
+      "stayDuration": "7-28 Days Stay",
+      "listBadge": "Treatments List",
+      "listTitle": "Kerala Ayurvedic Treatment Programs",
+      "item1": "7, 14, 28, days Rejuvanation Program",
+      "item2": "14 to 21 days stress Relief Program",
+      "item3": "28 Days Panchakarma Treatment Program",
+      "item4": "28 Days Weight Loss Program",
+      "listNote": "These are some of the Ayurvedic treatment programs that are being practiced at Chamundi Hill Palace"
+    },
+    "videoModalTitle": "Guest Video Testimonials"
+  },
+  "accommodationPage": {
+    "title": "Accommodation & Facilities",
+    "subtitle": "Heritage Rooms Designed for Peace, Comfort & Recovery",
+    "breadcrumb": "Accommodation",
+    "stats": {
+      "years": "Years",
+      "rated": "Rated",
+      "doctors": "Certified Doctors",
+      "guests": "Repeat Guests"
+    },
+    "facilitiesLabel": "Facilities",
+    "facilitiesTitle": "Everything You Need",
+    "items": {
+      "spacious": {
+        "title": "Spacious Rooms",
+        "desc": "All rooms are spacious and comfortable, with private bathrooms. Some rooms are within the main building and some are even more quietly located with beautiful views."
+      },
+      "cuisine": {
+        "title": "Ayurvedic Cuisine",
+        "desc": "Sumptuous Keralan vegetarian food served for all three meals, in addition to morning and evening tea/coffee. Ayurvedic Herbal water available throughout the day."
+      },
+      "amenities": {
+        "title": "Modern Amenities",
+        "desc": "Free Wi-Fi 24 hours. Assistance is assured by our loving staff all along your stay. Free Cooking Demonstration done once every 15 days."
+      },
+      "nature": {
+        "title": "Nature Experiences",
+        "desc": "Rubber Plantation Visit, 100+ years old Hindu temple visit, and spice tours within the centre premises."
+      },
+      "excursions": {
+        "title": "Excursions",
+        "desc": "Thekkady visit including Tea Plantation & factory, Elephant Ride, Boat ride, Spice garden visit. Kumarakom backwater half-day trip."
+      },
+      "farm": {
+        "title": "Organic Farm",
+        "desc": "Spices, vegetables, fruits sourced from our own organic farm. Five cows on-site producing fresh milk, ghee, curd, and paneer. Farm-to-table approach enhances purity."
+      }
+    },
+    "yogaHall": {
+      "label": "Yoga Hall",
+      "title": "Practice in a Peaceful Setting",
+      "rating": "Guest Rating",
+      "p1": "Yoga is a major element of our treatment programs. During the treatment period, our yoga teacher will set up personalized sessions based on your fitness level and the doctor's recommendation.",
+      "p2": "Daily yoga helps improve flexibility, reduce stress, and support the body's natural detoxification process. Breathing techniques and guided meditation are also included to enhance mental clarity and emotional calm. Whether you're a beginner or an advanced practitioner, our yoga retreats are tailored to elevate your overall wellness."
+    }
+  },
+  "panchakarmaPage": {
+    "title": "Panchakarma Treatment",
+    "subtitle": "28 Days of Authentic Purification & Renewal",
+    "breadcrumb": "Panchakarma",
+    "label": "28 Days Program",
+    "heading": "28 Days Panchakarma Treatment in Kerala",
+    "p1": "Chamundi Hill Palace is providing 28 days Panchakarma treatment in Kerala for purification of the body. This type of treatment is a purification process carried out by eliminating many toxins from the body. It includes five different types of therapies.",
+    "p2": "These five different purification therapies are carried out with the aim of improving the health condition to a great extent. By the end of the treatment process the body gets toned. The functions of sensory organs is greatly improved. This includes improvement in metabolism, mental relaxation and an overall feeling of well being.",
+    "fiveActions": "The Five Actions",
+    "fiveTherapiesTitle": "Five Purification Therapies",
+    "therapies": {
+      "vamana": {
+        "name": "Vamana",
+        "desc": "Therapeutic emesis for upper body cleansing and Kapha balancing"
+      },
+      "virechana": {
+        "name": "Virechana",
+        "desc": "Purgation therapy for detoxifying the liver, spleen and lower GI tract"
+      },
+      "nasya": {
+        "name": "Nasya",
+        "desc": "Nasal administration of herbal oils for head and sinus purification"
+      },
+      "basti": {
+        "name": "Basti",
+        "desc": "Medicated enema therapy — considered the most powerful of the five actions"
+      },
+      "raktamokshana": {
+        "name": "Raktamokshana",
+        "desc": "Blood purification therapy to address skin, blood and Pitta disorders"
+      }
+    }
+  },
+  "whatWeOfferPage": {
+    "title": "What We Offer",
+    "subtitle": "Authentic Ayurvedic Treatments & Healing Retreat",
+    "breadcrumb": "What We Offer",
+    "stats": {
+      "ayurvedicCare": "Ayurvedic Care",
+      "accommodation": "Accommodation",
+      "yogaWellness": "Yoga & Wellness",
+      "mealsDiet": "Meals & Diet"
+    },
+    "inclusions": "Inclusions",
+    "palaceTitle": "Chamundi Hill Palace Ayurveda Treatment Centre",
+    "palaceDesc": "Everything you need for a complete healing journey — included in your stay.",
+    "categoryPrefix": "Category",
+    "inclusionsSuffix": "Inclusions",
+    "categories": {
+      "ayurvedicCare": {
+        "title": "Ayurvedic Care",
+        "item1": "A detailed Ayurvedic consultation with our resident doctor upon arrival.",
+        "item2": "Our doctor is always available, attentive to every concern of yours, during your whole stay.",
+        "item3": "Ayurvedic treatments, twice a day, as prescribed by the doctor.",
+        "item4": "Ayurvedic medicines which are prescribed by the doctor as part of your treatment plan.",
+        "item5": "Abdominal cleansing every 8th day of treatment, or as recommended by doctor.",
+        "item6": "On the last day of your stay, Doctor will give you a specific diet chart for you to follow."
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "item1": "Accommodation inside our premises - Comfortable ensuite rooms at Ayurvedic Treatment Centre.",
+        "item2": "Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks).",
+        "item3": "Assistance with your travel needs before/after your stay in the centre."
+      },
+      "yogaWellness": {
+        "title": "Yoga & Wellness",
+        "item1": "Daily morning and evening Yoga sessions, 6 days a week, which are free for all who live in the centre.",
+        "item2": "Spice tours within the Centre."
+      },
+      "mealsDiet": {
+        "title": "Meals & Diet",
+        "item1": "All meals, vegetarian & freshly cooked, made from organically grown vegetables and spices.",
+        "item2": "During treatments, Ayurvedic diet is ensured."
+      }
+    }
+  },
+  "yogaCoursePage": {
+    "title": "Yoga Course in Kerala",
+    "subtitle": "Intensive Hatha Yoga Training at Chamundi Hill Palace",
+    "breadcrumb": "Yoga Course",
+    "p1": "Join us for an Intense Hatha Yoga Training Course in Kerala at Chamundi Hill Palace, where the true essence of Yoga is realized. This immersive course offers practical and theoretical knowledge, suitable for beginners and experienced practitioners. Learn core principles of Hatha Yoga, including asanas, pranayama, and mindfulness.",
+    "p2": "This Hatha Yoga course is the perfect starting point for advancing your practice and becoming a certified instructor. Upon completion, you'll be eligible for our Yoga Teacher Training Course (TTC) to further develop your skills.",
+    "detailsLabel": "Course Details",
+    "detailsTitle": "4-Week Immersive Experience",
+    "detailsSubtitle": "6 hours of lessons daily (Mon–Fri) and 2 hours on Saturdays. Sundays are free for rest and integration.",
+    "features": {
+      "yogaClasses": {
+        "title": "Yoga Classes",
+        "desc": "Traditional Hatha Yoga training with expert instructors in our dedicated yoga hall."
+      },
+      "smallGroups": {
+        "title": "Small Groups",
+        "desc": "Personalized attention with a maximum of 10 participants, ensuring high-quality training."
+      },
+      "holistic": {
+        "title": "Holistic Learning",
+        "desc": "Combine yoga practice with Ayurveda workshops, meditation sessions, and spiritual teachings."
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "desc": "Twin-sharing basis in ensuite double bed rooms in our new Villa, 250m from the yoga hall."
+      },
+      "meals": {
+        "title": "Meals Included",
+        "desc": "3 meals including morning and evening tea/coffee. Ayurvedic Herbal water available all day."
+      },
+      "workshops": {
+        "title": "Workshops",
+        "desc": "Additional workshops on Ayurveda awareness (4h), Carnatic Vocal Music breathing (4h), and Ayurvedic Cooking (4h)."
+      }
+    },
+    "curriculumLabel": "Curriculum",
+    "curriculumTitle": "Yoga Course Syllabus",
+    "syllabus": {
+      "item1": {
+        "title": "Yoga Philosophy",
+        "desc": "Introduction to Yoga Darshana of Patanjali — Chitta, Chitta Bhumis, Chitta Vrittis, Niropdhopaya, Samadhi, Sadhana, Vibhuti and Kaivalya pada."
+      },
+      "item2": {
+        "title": "Yogic Anatomy & Physiology",
+        "desc": "Understanding Chakras, Koshas, Pranas, Nadis, and the Vayus — how these elements work together to influence health and well-being."
+      },
+      "item3": {
+        "title": "Yoga Therapy",
+        "desc": "Learn how Yoga addresses common ailments, both physical and mental, promoting psychological healing through natural, holistic approaches."
+      },
+      "item4": {
+        "title": "Asanas",
+        "desc": "Seated, Backward bending, Forward bending, Twisting, Inverted, Balancing — minimum 40 asanas plus Surya Namaskar variations including Kalari Namaskaram."
+      },
+      "item5": {
+        "title": "Pranayama",
+        "desc": "Basic breathing, Kapalbhati, Nadi Shodhana, Bhastrika, Bhramari, Ujjai, Shitali, Shithkaari, and Nada pranayama — 30 minutes daily."
+      },
+      "item6": {
+        "title": "Meditation",
+        "desc": "Mantra, Breath watching, Visualization, Body scan, Walking, and Chakra awareness meditation — 30 minutes daily."
+      }
+    },
+    "pranayamaTitle": "Pranayama Practice",
+    "meditationTitle": "Meditation Practice",
+    "dailyRoutine": "Daily Routine",
+    "dailySchedule": "Daily Schedule",
+    "schedule": {
+      "pranayama": "Pranayama",
+      "asanas": "Asanas",
+      "breakfast": "Breakfast",
+      "theory": "Theory",
+      "lunch": "Lunch",
+      "meditation": "Meditation",
+      "chanting": "Chanting",
+      "dinner": "Dinner"
+    },
+    "locationLabel": "Location",
+    "sanctuaryTitle": "A Sanctuary for Yoga",
+    "locationP1": "Chamundi Hill Palace is quietly and beautifully nestled atop the Nadukani Hills, offering breathtaking views in every direction. The entire campus is adorned with lush greenery, medicinal plants, and vibrant flora — ideal for hosting even a complete spice garden tour within the premises.",
+    "locationP2": "The natural peace and silence in this blessed setting will serve as a powerful inspiration throughout your yoga journey. There are many walking trails around, and day visits can be made to the backwater heartland of Alleppey or Kumarakom, or excursions to Kuttikanam or Periyar."
+  },
+  "galleryPage": {
+    "title": "Photo & Video Gallery",
+    "subtitle": "Explore the Timeless Beauty and Healing Atmosphere of Chamundi Hill Palace",
+    "breadcrumb": "Gallery",
+    "highlightsLabel": "Highlights",
+    "highlightsTitle": "Featured Retreat Moments",
+    "photosLabel": "Photos",
+    "photosTitle": "Our Retreat Collection",
+    "photosDesc": "Browse through authentic moments of serene landscapes, classical Ayurveda treatments, yoga practices, and heritage accommodations.",
+    "videosLabel": "Videos",
+    "videosTitle": "Experience Chamundi Hill Palace",
+    "categories": {
+      "all": "All",
+      "nature": "Retreat & Nature",
+      "ayurveda": "Ayurveda & Wellness",
+      "yoga": "Yoga & Meditation",
+      "accommodation": "Accommodation",
+      "dining": "Dining & Organic"
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Your Journey to Wellness Begins Here",
+    "breadcrumb": "Contact",
+    "getInTouch": "Get in Touch",
+    "connectTitle": "Connect With Us",
+    "connectDesc": "Whether you have a question about our Ayurvedic treatments, want to plan your stay, or simply need more details about our packages, feel free to reach out. Our dedicated team is available to guide you through each step.",
+    "quickContact": "Quick Contact",
+    "fullName": "Full Name",
+    "namePlaceholder": "Your full name",
+    "emailAddress": "Email Address",
+    "phone": "Phone Number",
+    "interest": "Treatment Interest",
+    "selectTreatment": "Select a treatment",
+    "generalEnquiry": "General Enquiry",
+    "message": "Message",
+    "msgPlaceholder": "Tell us about your wellness goals...",
+    "send": "Send Enquiry",
+    "sent": "✓ Enquiry Sent!",
+    "centerTitle": "Chamundi Hill Palace Ayurveda Treatment Centre",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "availabilityLabel": "Availability",
+    "openYearRound": "Open year-round.",
+    "websiteLabel": "Website",
+    "chatWhatsapp": "Chat on WhatsApp"
+  },
+  "feedbackPage": {
+    "title": "Guest Experiences & Testimonials",
+    "subtitle": "Real Stories from Real Guests",
+    "breadcrumb": "Feedback",
+    "heroStats": {
+      "rated": "Average Guest Rating",
+      "repeatGuests": "Repeat Retreat Guests",
+      "certifiedDoctors": "Certified Ayurvedic Doctors",
+      "panchakarma": "Days Authentic Panchakarma"
+    },
+    "videoSectionLabel": "Video Reviews",
+    "videoSectionTitle": "Hear Directly from Our Guests",
+    "videoSectionDesc": "Watch authentic video testimonials recorded by guests during and after their healing stay at Chamundi Hill Palace.",
+    "reviewsLabel": "Written Reviews",
+    "reviewsTitle": "What Our Guests Say"
+  },
+  "leadership": {
+    "label": "Leadership & Visionaries",
+    "title": "The Pillars of Chamundi Hill Palace",
+    "subtitle": "Meet our founding visionary, renowned Chief Vaidya, and operational leadership guiding 25+ years of authentic Ayurvedic healing and excellence.",
+    "members": {
+      "saroja": {
+        "name": "Mrs. Saroja Thampi",
+        "role": "Founder & Visionary",
+        "badge": "Founding Visionary",
+        "desc": "The visionary founder who established Chamundi Hill Palace, laying down the foundation of authentic Kerala Ayurveda, warm hospitality, and timeless heritage care."
+      },
+      "sheela": {
+        "name": "Dr. Sheela V.G (BAMS)",
+        "role": "Chief Vaidya / Chief Doctor",
+        "badge": "23 Years of Excellence at Chamundi",
+        "desc": "Guiding our medical team with 23 years of dedicated Ayurvedic excellence at Chamundi, personalizing authentic Panchakarma & healing therapies for international guests."
+      },
+      "jibu": {
+        "name": "Jibu C Joseph",
+        "role": "General Manager / Leadership",
+        "badge": "25 Years of Dedicated Leadership at Chamundi",
+        "desc": "Directing retreat operations and guest experience with 25 years of steadfast leadership, ensuring every seeker receives royalty-grade care and seamless hospitality."
+      }
+    }
   }
 }

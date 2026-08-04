@@ -15,102 +15,21 @@ interface ActivityItem {
   desc: string;
 }
 
-const dailySchedule: TimelineItem[] = [
-  {
-    time: "07:00 AM – 08:00 AM",
-    title: "Morning Yoga & Meditation",
-    desc: "Start your day in our peaceful nature shala. Gentle Hatha yoga, pranayama, and guided meditation to prepare your body and mind for healing.",
-    icon: Coffee,
-  },
-  {
-    time: "08:00 AM – 10:00 AM",
-    title: "Fresh Organic Breakfast",
-    desc: "A freshly cooked, organic vegetarian breakfast served in our communal dining area, fostering connections with fellow seekers.",
-    icon: Utensils,
-  },
-  {
-    time: "09:00 AM – 12:00 PM",
-    title: "Morning Treatment Session",
-    desc: "Your first personalized Ayurvedic therapy of the day (e.g. Abhyanga or Body Detoxification), precisely prescribed by the resident doctor.",
-    icon: HeartPulse,
-  },
-  {
-    time: "01:00 PM – 02:00 PM",
-    title: "Ayurvedic Lunch & Herbal Water",
-    desc: "Sumptuous Keralan vegetarian cuisine matched to your diet plan. Infused Ayurvedic herbal water is served throughout the day.",
-    icon: Utensils,
-  },
-  {
-    time: "02:30 PM Onwards",
-    title: "Doctor Consultation & Rest",
-    desc: "Meet with our resident doctor, always available to monitor your progress and tailor your treatment plan.",
-    icon: ShieldCheck,
-  },
-  {
-    time: "03:00 PM – 06:00 PM",
-    title: "Evening Treatment & Care",
-    desc: "Your second daily therapy session, supporting deep biological purification. Cleanse your channels and release blockages.",
-    icon: HeartPulse,
-  },
-  {
-    time: "06:15 PM – 07:15 PM",
-    title: "Evening Meditation & Sunset Yoga",
-    desc: "A restorative evening session to integrate the physical benefits of the day's treatments and quiet the nervous system.",
-    icon: Coffee,
-  },
-  {
-    time: "07:30 PM – 08:30 PM",
-    title: "Community Vegetarian Dinner",
-    desc: "Wind down with a nourishing dinner. Share experiences and mingle with the regular clientele in our friendly dining space.",
-    icon: Utensils,
-  },
-  {
-    time: "08:30 PM Onwards",
-    title: "Medication & Night Rest",
-    desc: "Administration of prescribed Ayurvedic evening herbal medications followed by quiet rest to promote overnight deep healing and restorative sleep.",
-    icon: HeartPulse,
-  },
-];
-
-const inclusions = [
-  "Spacious ensuite room with private bathroom (in the main palace or quiet hillside view cottages)",
-  "All freshly cooked vegetarian meals sourced from our organic gardens and spice plantations",
-  "Tailored Ayurvedic diet plans supervised directly by our resident doctors",
-  "Daily Ayurvedic treatments twice a day, plus natural medicines included in your plan",
-  "Abdominal cleansing every 8th day of treatment (or as recommended by doctor)",
-  "Detailed Ayurvedic consultation upon arrival and 24/7 doctor availability",
-  "Specific take-home diet chart provided by the doctor on your departure day",
-  "Daily morning & evening Yoga sessions (6 days a week, free for all residents)",
-  "Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks stay)",
-  "Loving staff assistance 24 hours a day during your entire stay",
-  "Complimentary Wi-Fi access available 24/7 throughout the premises",
-  "Assistance with travel planning before and after your stay at the centre",
-];
-
-const weeklyActivities: ActivityItem[] = [
-  {
-    title: "Spice Tour",
-    desc: "Explore spice tours directly within our lush centre premises, discovering fresh cardamom, pepper, and local herbs."
-  },
-  {
-    title: "Rubber Plantation Visit",
-    desc: "Walk through the serene local rubber plantations, learning about the local agriculture and agricultural heritage."
-  },
-  {
-    title: "Ancient Temple Excursion",
-    desc: "Visit a historic, more than 100-year-old Hindu temple nearby to experience traditional spirituality and local culture."
-  },
-  {
-    title: "Cooking Demonstration",
-    desc: "Join our interactive Ayurvedic cooking classes held once every 15 days to learn how to prepare healthy meals back home."
-  }
-];
+const scheduleIcons = [Coffee, Utensils, HeartPulse, Utensils, ShieldCheck, HeartPulse, Coffee, Utensils, HeartPulse];
 
 export default function DayAtChamundi() {
   const { t } = useTranslation();
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal(0.15);
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal(0.15);
   const [activeTab, setActiveTab] = useState<'schedule' | 'nourishment' | 'rooms' | 'excursions'>('schedule');
+
+  const dailySchedule: TimelineItem[] = (t('dayAtChamundi.schedule', { returnObjects: true }) as any[] || []).map((item, idx) => ({
+    ...item,
+    icon: scheduleIcons[idx % scheduleIcons.length]
+  }));
+
+  const inclusions: string[] = t('dayAtChamundi.inclusionsList', { returnObjects: true }) as string[] || [];
+  const weeklyActivities: ActivityItem[] = t('dayAtChamundi.activitiesList', { returnObjects: true }) as ActivityItem[] || [];
 
   return (
     <section id="treatments" className="py-20 sm:py-28 bg-[#FAF7F2] text-dark relative overflow-hidden">

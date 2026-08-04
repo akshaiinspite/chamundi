@@ -4,73 +4,75 @@ import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { HeartPulse, BedDouble, Dumbbell, UtensilsCrossed, Check, Leaf } from 'lucide-react';
-
-const heroStats = [
-  {
-    icon: HeartPulse,
-    label: 'Ayurvedic Care',
-  },
-  {
-    icon: BedDouble,
-    label: 'Accommodation',
-  },
-  {
-    icon: Dumbbell,
-    label: 'Yoga & Wellness',
-  },
-  {
-    icon: UtensilsCrossed,
-    label: 'Meals & Diet',
-  },
-];
-
-const offerCategories = [
-  {
-    title: 'Ayurvedic Care',
-    image: '/img/rejuvenation.jpg',
-    video: '/img/videos/ayurveda2.mp4',
-    items: [
-      'A detailed Ayurvedic consultation with our resident doctor upon arrival.',
-      'Our doctor is always available, attentive to every concern of yours, during your whole stay.',
-      'Ayurvedic treatments, twice a day, as prescribed by the doctor.',
-      'Ayurvedic medicines which are prescribed by the doctor as part of your treatment plan.',
-      'Abdominal cleansing every 8th day of treatment, or as recommended by doctor.',
-      'On the last day of your stay, Doctor will give you a specific diet chart for you to follow.',
-    ],
-  },
-  {
-    title: 'Accommodation',
-    image: '/img/rooms.jpg',
-    video: '/img/videos/chamundiroomsnew.mp4',
-    items: [
-      'Accommodation inside our premises - Comfortable ensuite rooms at Ayurvedic Treatment Centre.',
-      'Airport pick up and drop (free one way for minimum 1 week, free both ways for min 2 weeks).',
-      'Assistance with your travel needs before/after your stay in the centre.',
-    ],
-  },
-  {
-    title: 'Yoga & Wellness',
-    image: '/img/yoga.jpg',
-    video: '/img/videos/yoganew.mp4',
-    items: [
-      'Daily morning and evening Yoga sessions, 6 days a week, which are free for all who live in the centre.',
-      'Spice tours within the Centre.',
-    ],
-  },
-  {
-    title: 'Meals & Diet',
-    image: '/img/meals.jpg',
-    video: '/img/videos/meals.mp4',
-    items: [
-      'All meals, vegetarian & freshly cooked, made from organically grown vegetables and spices.',
-      'During treatments, Ayurvedic diet is ensured.',
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function WhatWeOfferPage() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const heroStats = [
+    {
+      icon: HeartPulse,
+      label: t('whatWeOfferPage.stats.care'),
+    },
+    {
+      icon: BedDouble,
+      label: t('whatWeOfferPage.stats.accommodation'),
+    },
+    {
+      icon: Dumbbell,
+      label: t('whatWeOfferPage.stats.yoga'),
+    },
+    {
+      icon: UtensilsCrossed,
+      label: t('whatWeOfferPage.stats.meals'),
+    },
+  ];
+
+  const offerCategories = [
+    {
+      title: t('whatWeOfferPage.categories.ayurvedicCare.title'),
+      image: '/img/rejuvenation.jpg',
+      video: '/img/videos/ayurveda2.mp4',
+      items: [
+        t('whatWeOfferPage.categories.ayurvedicCare.items.0'),
+        t('whatWeOfferPage.categories.ayurvedicCare.items.1'),
+        t('whatWeOfferPage.categories.ayurvedicCare.items.2'),
+        t('whatWeOfferPage.categories.ayurvedicCare.items.3'),
+        t('whatWeOfferPage.categories.ayurvedicCare.items.4'),
+        t('whatWeOfferPage.categories.ayurvedicCare.items.5'),
+      ],
+    },
+    {
+      title: t('whatWeOfferPage.categories.accommodation.title'),
+      image: '/img/rooms.jpg',
+      video: '/img/videos/chamundiroomsnew.mp4',
+      items: [
+        t('whatWeOfferPage.categories.accommodation.items.0'),
+        t('whatWeOfferPage.categories.accommodation.items.1'),
+        t('whatWeOfferPage.categories.accommodation.items.2'),
+      ],
+    },
+    {
+      title: t('whatWeOfferPage.categories.yogaWellness.title'),
+      image: '/img/yoga.jpg',
+      video: '/img/videos/yoganew.mp4',
+      items: [
+        t('whatWeOfferPage.categories.yogaWellness.items.0'),
+        t('whatWeOfferPage.categories.yogaWellness.items.1'),
+      ],
+    },
+    {
+      title: t('whatWeOfferPage.categories.mealsDiet.title'),
+      image: '/img/meals.jpg',
+      video: '/img/videos/meals.mp4',
+      items: [
+        t('whatWeOfferPage.categories.mealsDiet.items.0'),
+        t('whatWeOfferPage.categories.mealsDiet.items.1'),
+      ],
+    },
+  ];
 
   const activeCategory = offerCategories[activeIndex] || offerCategories[0];
 
@@ -95,11 +97,11 @@ export default function WhatWeOfferPage() {
       `}</style>
 
       <PageHero
-        title="What We Offer"
-        subtitle="Authentic Ayurvedic Treatments & Healing Retreat"
+        title={t('whatWeOfferPage.title')}
+        subtitle={t('whatWeOfferPage.subtitle')}
         backgroundImage="/img/banner-3.jpg"
         backgroundVideo="/img/videos/chamundiroomsnew.mp4"
-        breadcrumb="What We Offer"
+        breadcrumb={t('whatWeOfferPage.breadcrumb')}
       />
       
       {/* Hero Stats Icons Row */}
@@ -153,12 +155,12 @@ export default function WhatWeOfferPage() {
           }`}
         >
           <div className="text-center mb-14">
-            <span className="section-label">Inclusions</span>
+            <span className="section-label">{t('whatWeOfferPage.inclusionsLabel')}</span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mt-3 leading-snug">
-              Chamundi Hill Palace Ayurveda Treatment Centre
+              {t('whatWeOfferPage.inclusionsTitle')}
             </h2>
             <p className="font-body text-base text-white/70 mt-4 max-w-2xl mx-auto leading-relaxed">
-              Everything you need for a complete healing journey — included in your stay.
+              {t('whatWeOfferPage.inclusionsSub')}
             </p>
           </div>
         </div>
@@ -184,7 +186,7 @@ export default function WhatWeOfferPage() {
                     }`}
                   >
                     <span className={`block text-xs uppercase tracking-widest font-semibold mb-1 ${isActive ? 'text-white/60' : 'text-accent'}`}>
-                      Category 0{idx + 1}
+                      {t('whatWeOfferPage.categoryLabel')} 0{idx + 1}
                     </span>
                     <h3 className="font-heading text-xl font-bold">
                       {category.title}
@@ -222,7 +224,7 @@ export default function WhatWeOfferPage() {
               <div className="flex-1 flex flex-col justify-between space-y-6">
                 <div>
                   <h4 className="font-heading text-2xl font-bold text-accent mb-6">
-                    {activeCategory.title} Inclusions
+                    {activeCategory.title} {t('whatWeOfferPage.inclusionsSuffix')}
                   </h4>
                   <div className="space-y-4">
                     {activeCategory.items.map((item, itemIndex) => (

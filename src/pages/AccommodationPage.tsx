@@ -5,6 +5,7 @@ import RoomsSection from '../components/RoomsSection';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Bed, UtensilsCrossed, Wifi, TreePine, MapPin, Sprout, Clock3, Star, BadgeCheck, Users, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const facilityGallery = [
   '/img/videos/chamundiroomsnew.mp4',
@@ -15,54 +16,55 @@ const facilityGallery = [
   '/img/videos/calmness.mp4',
 ];
 
-const heroStats = [
-  {
-    icon: Clock3,
-    value: '25+',
-    label: 'Years',
-  },
-  {
-    icon: Star,
-    value: '4.9/5',
-    label: 'Rated',
-  },
-  {
-    icon: BadgeCheck,
-    value: '100%',
-    label: 'Certified Doctors',
-  },
-  {
-    icon: Users,
-    value: '15+',
-    label: 'Repeat Guests',
-  },
-];
-
-const facilities = [
-  { icon: Bed, title: 'Spacious Rooms', desc: 'All rooms are spacious and comfortable, with private bathrooms. Some rooms are within the main building and some are even more quietly located with beautiful views.' },
-  { icon: UtensilsCrossed, title: 'Ayurvedic Cuisine', desc: 'Sumptuous Keralan vegetarian food served for all three meals, in addition to morning and evening tea/coffee. Ayurvedic Herbal water available throughout the day.' },
-  { icon: Wifi, title: 'Modern Amenities', desc: 'Free Wi-Fi 24 hours. Assistance is assured by our loving staff all along your stay. Free Cooking Demonstration done once every 15 days.' },
-  { icon: TreePine, title: 'Nature Experiences', desc: 'Rubber Plantation Visit, 100+ years old Hindu temple visit, and spice tours within the centre premises.' },
-  { icon: MapPin, title: 'Excursions', desc: 'Thekkady visit including Tea Plantation & factory, Elephant Ride, Boat ride, Spice garden visit. Kumarakom backwater half-day trip.' },
-  { icon: Sprout, title: 'Organic Farm', desc: 'Spices, vegetables, fruits sourced from our own organic farm. Five cows on-site producing fresh milk, ghee, curd, and paneer. Farm-to-table approach enhances purity.' },
-];
-
 export default function AccommodationPage() {
+  const { t } = useTranslation();
   const { ref: gridRef, isVisible: gridVis } = useScrollReveal(0.1);
   const { ref: yogaRef, isVisible: yogaVis } = useScrollReveal(0.1);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState('/img/videos/Accommadation.mp4');
 
-const nextSlide = () => {
-  setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
-};
+  const heroStats = [
+    {
+      icon: Clock3,
+      value: '25+',
+      label: t('accommodationPage.stats.years'),
+    },
+    {
+      icon: Star,
+      value: '4.9/5',
+      label: t('accommodationPage.stats.rated'),
+    },
+    {
+      icon: BadgeCheck,
+      value: '100%',
+      label: t('accommodationPage.stats.doctors'),
+    },
+    {
+      icon: Users,
+      value: '15+',
+      label: t('accommodationPage.stats.guests'),
+    },
+  ];
 
-const prevSlide = () => {
-  setCurrentSlide(
-    (prev) => (prev - 1 + facilityGallery.length) % facilityGallery.length
-  );
-};
+  const facilities = [
+    { icon: Bed, title: t('accommodationPage.items.spacious.title'), desc: t('accommodationPage.items.spacious.desc') },
+    { icon: UtensilsCrossed, title: t('accommodationPage.items.cuisine.title'), desc: t('accommodationPage.items.cuisine.desc') },
+    { icon: Wifi, title: t('accommodationPage.items.amenities.title'), desc: t('accommodationPage.items.amenities.desc') },
+    { icon: TreePine, title: t('accommodationPage.items.nature.title'), desc: t('accommodationPage.items.nature.desc') },
+    { icon: MapPin, title: t('accommodationPage.items.excursions.title'), desc: t('accommodationPage.items.excursions.desc') },
+    { icon: Sprout, title: t('accommodationPage.items.farm.title'), desc: t('accommodationPage.items.farm.desc') },
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % facilityGallery.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + facilityGallery.length) % facilityGallery.length
+    );
+  };
   useEffect(() => {
     const isVideo = facilityGallery[currentSlide].endsWith('.mp4');
     if (isVideo) return;
@@ -106,10 +108,10 @@ const prevSlide = () => {
         }
       `}</style>
       <PageHero
-        title="Accommodation & Facilities"
-        subtitle="Heritage Rooms Designed for Peace, Comfort & Recovery"
+        title={t('accommodationPage.title')}
+        subtitle={t('accommodationPage.subtitle')}
         backgroundImage="/img/accomodation-facilities.jpg"
-        breadcrumb="Accommodation"
+        breadcrumb={t('accommodationPage.breadcrumb')}
       />
       <section className="bg-primary py-12 md:py-20 px-4 sm:px-6 lg:px-20">
   <div className="max-w-7xl mx-auto">
@@ -142,8 +144,6 @@ const prevSlide = () => {
   </div>
 </section>
 
-
-
       {/* Room Showcase */}
       <RoomsSection />
 
@@ -151,8 +151,8 @@ const prevSlide = () => {
       <section className="py-20 bg-dark">
         <div ref={gridRef} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${gridVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-14">
-            <span className="section-label">Facilities</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">Everything You Need</h2>
+            <span className="section-label">{t('accommodationPage.facilitiesLabel')}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">{t('accommodationPage.facilitiesTitle')}</h2>
           </div>
           {/* carousel */}
           <div className="relative mb-16">
@@ -286,7 +286,7 @@ const prevSlide = () => {
                     </div>
 
                     <p className="text-[7px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.15em] text-text/60">
-                      Guest Rating
+                      {t('accommodationPage.yogaHall.rating')}
                     </p>
                   </div>
                 </div>
@@ -301,27 +301,19 @@ const prevSlide = () => {
             }`}>
 
               <span className="section-label">
-                Yoga Hall
+                {t('accommodationPage.yogaHall.label')}
               </span>
 
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark leading-tight mt-4 mb-6">
-                Practice in a Peaceful Setting
+                {t('accommodationPage.yogaHall.title')}
               </h2>
 
               <p className="font-body text-base text-text/80 leading-relaxed mb-5">
-                Yoga is a major element of our treatment programs. During the
-                treatment period, our yoga teacher will set up personalized
-                sessions based on your fitness level and the doctor's
-                recommendation.
+                {t('accommodationPage.yogaHall.p1')}
               </p>
 
               <p className="font-body text-base text-text/80 leading-relaxed">
-                Daily yoga helps improve flexibility, reduce stress, and support
-                the body's natural detoxification process. Breathing techniques
-                and guided meditation are also included to enhance mental clarity
-                and emotional calm. Whether you're a beginner or an advanced
-                practitioner, our yoga retreats are tailored to elevate your
-                overall wellness.
+                {t('accommodationPage.yogaHall.p2')}
               </p>
 
             </div>

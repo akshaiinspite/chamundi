@@ -15,6 +15,7 @@ interface Badge {
 }
 
 function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
+  const { t } = useTranslation();
   const Icon = badge.icon;
   const floatClass = idx % 3 === 0
     ? 'animate-gentle-float-1'
@@ -67,7 +68,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
 
           {badge.onClick && (
             <div className="text-[10px] uppercase tracking-widest text-accent/90 group-hover:text-accent font-bold transition-colors flex items-center justify-center gap-1">
-              View Details →
+              {t('trust.viewDetails')}
             </div>
           )}
         </div>
@@ -124,7 +125,7 @@ function BadgeCard({ badge, idx }: { badge: Badge; idx: number }) {
 
         {badge.onClick && (
           <div className="mt-4 text-[10px] uppercase tracking-widest text-accent/80 group-hover:text-accent transition-colors font-bold flex items-center justify-center gap-1">
-            View Details →
+            {t('trust.viewDetails')}
           </div>
         )}
       </div>
@@ -169,7 +170,7 @@ export default function TrustBadges() {
   const jeannieExtra = (
     <div className="inline-flex items-center justify-center gap-2 bg-accent/20 border border-accent/40 rounded-full py-1.5 px-4 shadow-sm">
       <Award size={15} className="text-accent shrink-0" />
-      <span className="text-sm text-white font-bold font-body">18 Annual Retreat Visits</span>
+      <span className="text-sm text-white font-bold font-body">{t('trust.jeannieRetreatVisits')}</span>
     </div>
   );
 
@@ -178,7 +179,7 @@ export default function TrustBadges() {
       icon: Award,
       badgeTag: 'TripAdvisor Excellence',
       highlight: 'Jeannie · UK 🇬🇧',
-      text: 'Visited Chamundi for Ayurveda for 18 Years',
+      text: t('trust.jeannieTag'),
       bgImage: '/img/clinet.jpeg',
       extraContent: jeannieExtra,
       onClick: () => scrollTo('jeannie-spotlight'),

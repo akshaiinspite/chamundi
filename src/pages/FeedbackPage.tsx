@@ -119,10 +119,10 @@ export default function FeedbackPage() {
       `}</style>
 
       <PageHero
-        title="Guest Experiences & Testimonials"
-        subtitle="Real Stories from Real Guests"
+        title={t('feedbackPage.title')}
+        subtitle={t('feedbackPage.subtitle')}
         backgroundImage="/img/banner-2.jpg"
-        breadcrumb="Feedback"
+        breadcrumb={t('feedbackPage.breadcrumb')}
       />
       
       {/* Stats row */}

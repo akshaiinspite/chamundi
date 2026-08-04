@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { MapPin, Phone, Mail, MessageCircle, Leaf, Loader2 } from 'lucide-react';
 import SocialLinks from './SocialLinks';
+import LeadershipSection from './LeadershipSection';
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -27,6 +28,7 @@ export default function ContactSection() {
   };
 
   return (
+    <>
     <section id="contact" className="py-20 sm:py-28 bg-background relative overflow-hidden">
       {/* Encapsulated animations block */}
       <style>{`
@@ -280,5 +282,9 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
+
+    {/* Leadership & Owners Showcase */}
+    <LeadershipSection />
+    </>
   );
 }

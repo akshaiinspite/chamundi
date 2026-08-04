@@ -4,6 +4,7 @@ import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { X, Plus, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface PhotoItem {
   src: string;
@@ -184,14 +185,6 @@ const photos: PhotoItem[] = [
   }
 ];
 
-const categories = [
-  'All',
-  'Retreat & Nature',
-  'Ayurveda & Wellness',
-  'Yoga & Meditation',
-  'Accommodation',
-  'Dining & Organic'
-];
 
 const videos = [
   { title: 'Chamundi Hill Palace Experience', url: 'https://www.youtube.com/watch?v=pfIWKk6vBTQ', thumb: '/img/020.jpg' },
@@ -214,11 +207,21 @@ const facilityGallery = [
 ];
 
 export default function GalleryPage() {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState('All');
   const [lightbox, setLightbox] = useState<number | null>(null);
   const { ref: photoRef, isVisible: photoVis } = useScrollReveal(0.1);
   const { ref: videoRef, isVisible: videoVis } = useScrollReveal(0.1);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const categoryList = [
+    { key: 'All', label: t('galleryPage.categories.all') },
+    { key: 'Retreat & Nature', label: t('galleryPage.categories.nature') },
+    { key: 'Ayurveda & Wellness', label: t('galleryPage.categories.ayurveda') },
+    { key: 'Yoga & Meditation', label: t('galleryPage.categories.yoga') },
+    { key: 'Accommodation', label: t('galleryPage.categories.accommodation') },
+    { key: 'Dining & Organic', label: t('galleryPage.categories.dining') },
+  ];
 
   const filteredPhotos = activeCategory === 'All' 
     ? photos 
@@ -265,19 +268,19 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
-        title="Photo & Video Gallery"
-        subtitle="Explore the Timeless Beauty and Healing Atmosphere of Chamundi Hill Palace"
+        title={t('galleryPage.title')}
+        subtitle={t('galleryPage.subtitle')}
         backgroundImage="/img/020.jpg"
-        breadcrumb="Gallery"
+        breadcrumb={t('galleryPage.breadcrumb')}
       />
 
       {/* Featured Carousel */}
       <section className="py-16 bg-surface border-b border-border/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <span className="section-label">Highlights</span>
+            <span className="section-label">{t('galleryPage.highlightsLabel')}</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-2">
-              Featured Retreat Moments
+              {t('galleryPage.highlightsTitle')}
             </h2>
           </div>
 
@@ -339,24 +342,24 @@ export default function GalleryPage() {
           }`}
         >
           <div className="text-center mb-10">
-            <span className="section-label">Photos</span>
+            <span className="section-label">{t('galleryPage.photosLabel')}</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-2">
-              Our Retreat Collection
+              {t('galleryPage.photosTitle')}
             </h2>
             <p className="text-text/80 max-w-xl mx-auto mt-3 text-sm sm:text-base">
-              Browse through authentic moments of serene landscapes, classical Ayurveda treatments, yoga practices, and heritage accommodations.
+              {t('galleryPage.photosDesc')}
             </p>
           </div>
 
           {/* Category Filter Tabs */}
           <div className="flex justify-center flex-wrap gap-2 mb-12">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat;
+            {categoryList.map((cat) => {
+              const isActive = activeCategory === cat.key;
               return (
                 <button
-                  key={cat}
+                  key={cat.key}
                   onClick={() => {
-                    setActiveCategory(cat);
+                    setActiveCategory(cat.key);
                     setLightbox(null);
                   }}
                   className={`px-5 py-2 rounded-full font-body text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer ${
@@ -365,7 +368,7 @@ export default function GalleryPage() {
                       : 'bg-white border-border text-text/80 hover:bg-surface hover:text-dark hover:border-accent/40'
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               );
             })}
@@ -426,9 +429,9 @@ export default function GalleryPage() {
           }`}
         >
           <div className="text-center mb-14">
-            <span className="section-label">Videos</span>
+            <span className="section-label">{t('galleryPage.videosLabel')}</span>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">
-              Experience Chamundi Hill Palace
+              {t('galleryPage.videosTitle')}
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

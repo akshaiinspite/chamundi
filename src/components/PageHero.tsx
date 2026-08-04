@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import {ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface PageHeroProps {
   title: string;
@@ -11,6 +12,7 @@ interface PageHeroProps {
 }
 
 export default function PageHero({ title, subtitle, backgroundImage, backgroundVideo, breadcrumb }: PageHeroProps) {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
@@ -43,7 +45,7 @@ export default function PageHero({ title, subtitle, backgroundImage, backgroundV
           }`}
         >
           <div className="flex items-center justify-center gap-2 text-white/60 font-body text-sm mb-4">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <a href="/" className="hover:text-white transition-colors">{t('pageHero.home')}</a>
             <ArrowRight size={12} />
             <span className="text-accent">{breadcrumb}</span>
           </div>

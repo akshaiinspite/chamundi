@@ -1,5 +1,6 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Star, Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const videoTestimonials = [
   { title: 'Ayurveda Experience', url: 'https://www.youtube.com/watch?v=pfIWKk6vBTQ', thumb: '/img/banner-1.jpg' },
@@ -28,6 +29,7 @@ const textTestimonials = [
 ];
 
 export default function VideoTestimonials() {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
@@ -39,9 +41,9 @@ export default function VideoTestimonials() {
         }`}
       >
         <div className="text-center mb-16">
-          <span className="section-label">Testimonials</span>
+          <span className="section-label">{t('videoTestimonialsComponent.label')}</span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-semibold text-dark mt-3">
-            What Our Clients Say About Us
+            {t('videoTestimonialsComponent.title')}
           </h2>
         </div>
 

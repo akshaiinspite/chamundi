@@ -3,37 +3,66 @@ import VideoTestimonials from '../components/VideoTestimonials';
 import CTABanner from '../components/CTABanner';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { BookOpen, Users, Clock, Home, UtensilsCrossed, MapPin, Leaf, Sparkles } from 'lucide-react';
-
-const schedule = [
-  { time: '06:00 – 06:30', activity: 'Pranayama' },
-  { time: '06:30 – 08:00', activity: 'Asanas' },
-  { time: '08:00', activity: 'Breakfast' },
-  { time: '10:00 – 12:00', activity: 'Theory' },
-  { time: '12:30', activity: 'Lunch' },
-  { time: '15:30 – 17:30', activity: 'Asanas' },
-  { time: '18:30 – 19:00', activity: 'Meditation' },
-  { time: '19:00 – 19:30', activity: 'Chanting' },
-  { time: '19:30', activity: 'Dinner' },
-];
-
-const syllabusItems = [
-  { title: 'Yoga Philosophy', desc: 'Introduction to Yoga Darshana of Patanjali — Chitta, Chitta Bhumis, Chitta Vrittis, Niropdhopaya, Samadhi, Sadhana, Vibhuti and Kaivalya pada.' },
-  { title: 'Yogic Anatomy & Physiology', desc: 'Understanding Chakras, Koshas, Pranas, Nadis, and the Vayus — how these elements work together to influence health and well-being.' },
-  { title: 'Yoga Therapy', desc: 'Learn how Yoga addresses common ailments, both physical and mental, promoting psychological healing through natural, holistic approaches.' },
-  { title: 'Asanas', desc: 'Seated, Backward bending, Forward bending, Twisting, Inverted, Balancing — minimum 40 asanas plus Surya Namaskar variations including Kalari Namaskaram.' },
-  { title: 'Pranayama', desc: 'Basic breathing, Kapalbhati, Nadi Shodhana, Bhastrika, Bhramari, Ujjai, Shitali, Shithkaari, and Nada pranayama — 30 minutes daily.' },
-  { title: 'Meditation', desc: 'Mantra, Breath watching, Visualization, Body scan, Walking, and Chakra awareness meditation — 30 minutes daily.' },
-];
-
-const pranayamaList = ['Basic breathing practice', 'Kapalbhati', 'Nadi Shodhana', 'Bhastrika', 'Bhramari', 'Ujjai', 'Shitali', 'Shithkaari', 'Nada Pranayama'];
-const meditationList = ['Mantra meditation', 'Breath watching', 'Visualization', 'Body scan', 'Walking meditation', 'Chakra awareness'];
+import { useTranslation } from 'react-i18next';
 
 export default function YogaCoursePage() {
+  const { t } = useTranslation();
   const { ref: introRef, isVisible: introVis } = useScrollReveal(0.1);
   const { ref: detailRef, isVisible: detailVis } = useScrollReveal(0.1);
   const { ref: syllRef, isVisible: syllVis } = useScrollReveal(0.1);
   const { ref: schedRef, isVisible: schedVis } = useScrollReveal(0.1);
   const { ref: locRef, isVisible: locVis } = useScrollReveal(0.1);
+
+  const schedule = [
+    { time: '06:00 – 06:30', activity: t('yogaCoursePage.schedule.pranayama') },
+    { time: '06:30 – 08:00', activity: t('yogaCoursePage.schedule.asanas') },
+    { time: '08:00', activity: t('yogaCoursePage.schedule.breakfast') },
+    { time: '10:00 – 12:00', activity: t('yogaCoursePage.schedule.theory') },
+    { time: '12:30', activity: t('yogaCoursePage.schedule.lunch') },
+    { time: '15:30 – 17:30', activity: t('yogaCoursePage.schedule.asanas2') },
+    { time: '18:30 – 19:00', activity: t('yogaCoursePage.schedule.meditation') },
+    { time: '19:00 – 19:30', activity: t('yogaCoursePage.schedule.chanting') },
+    { time: '19:30', activity: t('yogaCoursePage.schedule.dinner') },
+  ];
+
+  const syllabusItems = [
+    { title: t('yogaCoursePage.syllabus.philosophy.title'), desc: t('yogaCoursePage.syllabus.philosophy.desc') },
+    { title: t('yogaCoursePage.syllabus.anatomy.title'), desc: t('yogaCoursePage.syllabus.anatomy.desc') },
+    { title: t('yogaCoursePage.syllabus.therapy.title'), desc: t('yogaCoursePage.syllabus.therapy.desc') },
+    { title: t('yogaCoursePage.syllabus.asanas.title'), desc: t('yogaCoursePage.syllabus.asanas.desc') },
+    { title: t('yogaCoursePage.syllabus.pranayama.title'), desc: t('yogaCoursePage.syllabus.pranayama.desc') },
+    { title: t('yogaCoursePage.syllabus.meditation.title'), desc: t('yogaCoursePage.syllabus.meditation.desc') },
+  ];
+
+  const pranayamaList = [
+    t('yogaCoursePage.pranayamaList.0'),
+    t('yogaCoursePage.pranayamaList.1'),
+    t('yogaCoursePage.pranayamaList.2'),
+    t('yogaCoursePage.pranayamaList.3'),
+    t('yogaCoursePage.pranayamaList.4'),
+    t('yogaCoursePage.pranayamaList.5'),
+    t('yogaCoursePage.pranayamaList.6'),
+    t('yogaCoursePage.pranayamaList.7'),
+    t('yogaCoursePage.pranayamaList.8'),
+  ];
+
+  const meditationList = [
+    t('yogaCoursePage.meditationList.0'),
+    t('yogaCoursePage.meditationList.1'),
+    t('yogaCoursePage.meditationList.2'),
+    t('yogaCoursePage.meditationList.3'),
+    t('yogaCoursePage.meditationList.4'),
+    t('yogaCoursePage.meditationList.5'),
+  ];
+
+  const detailItems = [
+    { icon: BookOpen, title: t('yogaCoursePage.items.classesTitle'), desc: t('yogaCoursePage.items.classesDesc') },
+    { icon: Users, title: t('yogaCoursePage.items.smallGroupsTitle'), desc: t('yogaCoursePage.items.smallGroupsDesc') },
+    { icon: Clock, title: t('yogaCoursePage.items.holisticTitle'), desc: t('yogaCoursePage.items.holisticDesc') },
+    { icon: Home, title: t('yogaCoursePage.items.accommodationTitle'), desc: t('yogaCoursePage.items.accommodationDesc') },
+    { icon: UtensilsCrossed, title: t('yogaCoursePage.items.mealsTitle'), desc: t('yogaCoursePage.items.mealsDesc') },
+    { icon: MapPin, title: t('yogaCoursePage.items.workshopsTitle'), desc: t('yogaCoursePage.items.workshopsDesc') },
+  ];
 
   return (
     <>
@@ -63,11 +92,11 @@ export default function YogaCoursePage() {
       `}</style>
 
       <PageHero
-        title="Yoga Course in Kerala"
-        subtitle="Intensive Hatha Yoga Training at Chamundi Hill Palace"
+        title={t('yogaCoursePage.title')}
+        subtitle={t('yogaCoursePage.subtitle')}
         backgroundImage="/img/yoga.jpg"
         backgroundVideo="/img/videos/yoganew.mp4"
-        breadcrumb="Yoga Course"
+        breadcrumb={t('yogaCoursePage.breadcrumb')}
       />
 
       {/* Intro */}
@@ -88,13 +117,10 @@ export default function YogaCoursePage() {
 
         <div ref={introRef} className={`max-w-4xl mx-auto px-4 sm:px-6 text-center transition-all duration-700 relative z-10 ${introVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-body text-base sm:text-lg text-text/80 leading-relaxed mb-6">
-            Join us for an Intense Hatha Yoga Training Course in Kerala at Chamundi Hill Palace, where the true essence
-            of Yoga is realized. This immersive course offers practical and theoretical knowledge, suitable for beginners
-            and experienced practitioners. Learn core principles of Hatha Yoga, including asanas, pranayama, and mindfulness.
+            {t('yogaCoursePage.intro1')}
           </p>
           <p className="font-body text-base sm:text-lg text-text/80 leading-relaxed">
-            This Hatha Yoga course is the perfect starting point for advancing your practice and becoming a certified instructor.
-            Upon completion, you'll be eligible for our Yoga Teacher Training Course (TTC) to further develop your skills.
+            {t('yogaCoursePage.intro2')}
           </p>
         </div>
       </section>
@@ -117,21 +143,14 @@ export default function YogaCoursePage() {
 
         <div ref={detailRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className={`text-center mb-14 transition-all duration-700 ${detailVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="section-label">Course Details</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">4-Week Immersive Experience</h2>
+            <span className="section-label">{t('yogaCoursePage.detailsLabel')}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">{t('yogaCoursePage.detailsTitle')}</h2>
             <p className="font-body text-base text-white mt-4 max-w-2xl mx-auto">
-              6 hours of lessons daily (Mon–Fri) and 2 hours on Saturdays. Sundays are free for rest and integration.
+              {t('yogaCoursePage.detailsDesc')}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: BookOpen, title: 'Yoga Classes', desc: 'Traditional Hatha Yoga training with expert instructors in our dedicated yoga hall.' },
-              { icon: Users, title: 'Small Groups', desc: 'Personalized attention with a maximum of 10 participants, ensuring high-quality training.' },
-              { icon: Clock, title: 'Holistic Learning', desc: 'Combine yoga practice with Ayurveda workshops, meditation sessions, and spiritual teachings.' },
-              { icon: Home, title: 'Accommodation', desc: 'Twin-sharing basis in ensuite double bed rooms in our new Villa, 250m from the yoga hall.' },
-              { icon: UtensilsCrossed, title: 'Meals Included', desc: '3 meals including morning and evening tea/coffee. Ayurvedic Herbal water available all day.' },
-              { icon: MapPin, title: 'Workshops', desc: 'Additional workshops on Ayurveda awareness (4h), Carnatic Vocal Music breathing (4h), and Ayurvedic Cooking (4h).' },
-            ].map((item, i) => {
+            {detailItems.map((item, i) => {
               const Icon = item.icon;
               return (
                 <div 
@@ -159,8 +178,8 @@ export default function YogaCoursePage() {
       <section className="py-20 bg-background">
         <div ref={syllRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-14 transition-all duration-700 ${syllVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="section-label">Curriculum</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">Yoga Course Syllabus</h2>
+            <span className="section-label">{t('yogaCoursePage.curriculumLabel')}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-dark mt-3">{t('yogaCoursePage.curriculumTitle')}</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-10 items-start mb-20">
             {/* Left Image */}
@@ -195,7 +214,7 @@ export default function YogaCoursePage() {
           {/* Pranayama & Meditation Lists */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-surface rounded-xl p-8">
-              <h3 className="font-heading text-xl font-bold text-dark mb-5">Pranayama Practice</h3>
+              <h3 className="font-heading text-xl font-bold text-dark mb-5">{t('yogaCoursePage.pranayamaTitle')}</h3>
               <ul className="space-y-2">
                 {pranayamaList.map((p, i) => (
                   <li key={i} className="flex items-center gap-3 font-body text-sm text-text/80">
@@ -205,7 +224,7 @@ export default function YogaCoursePage() {
               </ul>
             </div>
             <div className="bg-surface rounded-xl p-8">
-              <h3 className="font-heading text-xl font-bold text-dark mb-5">Meditation Practice</h3>
+              <h3 className="font-heading text-xl font-bold text-dark mb-5">{t('yogaCoursePage.meditationTitle')}</h3>
               <ul className="space-y-2">
                 {meditationList.map((m, i) => (
                   <li key={i} className="flex items-center gap-3 font-body text-sm text-text/80">
@@ -222,8 +241,8 @@ export default function YogaCoursePage() {
       <section className="py-20 bg-dark">
         <div ref={schedRef} className={`max-w-3xl mx-auto px-4 sm:px-6 transition-all duration-700 ${schedVis ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-12">
-            <span className="text-accent font-body text-xs font-semibold tracking-[0.15em] uppercase">Daily Routine</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">Daily Schedule</h2>
+            <span className="text-accent font-body text-xs font-semibold tracking-[0.15em] uppercase">{t('yogaCoursePage.dailyRoutineLabel')}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mt-3">{t('yogaCoursePage.dailyScheduleTitle')}</h2>
           </div>
           <div className="space-y-3">
             {schedule.map((s, i) => (
@@ -267,19 +286,15 @@ export default function YogaCoursePage() {
             
             {/* Left-aligned Glassmorphism Content Card */}
             <div className="bg-white/5 backdrop-blur-md rounded-[32px] p-6 sm:p-10 lg:p-12 border border-white/10 text-white space-y-5 shadow-2xl lg:max-w-xl lg:bg-black/40">
-              <span className="section-label text-accent font-semibold tracking-wider block">Location</span>
+              <span className="section-label text-accent font-semibold tracking-wider block">{t('yogaCoursePage.locationLabel')}</span>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
-                A Sanctuary for Yoga
+                {t('yogaCoursePage.locationTitle')}
               </h2>
               <p className="font-body text-sm sm:text-base text-white/90 leading-relaxed">
-                Chamundi Hill Palace is quietly and beautifully nestled atop the Nadukani Hills, offering breathtaking
-                views in every direction. The entire campus is adorned with lush greenery, medicinal plants, and vibrant
-                flora — ideal for hosting even a complete spice garden tour within the premises.
+                {t('yogaCoursePage.locationP1')}
               </p>
               <p className="font-body text-sm sm:text-base text-white/80 leading-relaxed">
-                The natural peace and silence in this blessed setting will serve as a powerful inspiration throughout
-                your yoga journey. There are many walking trails around, and day visits can be made to the backwater
-                heartland of Alleppey or Kumarakom, or excursions to Kuttikanam or Periyar.
+                {t('yogaCoursePage.locationP2')}
               </p>
             </div>
 

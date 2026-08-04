@@ -16,105 +16,6 @@ interface TimelineEvent {
   timelineImage: string;
 }
 
-const timelineData: TimelineEvent[] = [
-  {
-    id: '1935',
-    year: '1935',
-    title: "Crafting tomorrow's Royalty",
-    caption: "The foundation of vision, hard work and a legacy in the making.",
-    description: "Nestled atop the Nadukani Hills, the visionaries of Chamundi Hill began surveying the pristine land. Laborers worked painstakingly to clear paths, discover indigenous herbs, and plan the estate. The fertile red soil and cooling hill breeze made this the perfect sanctuary for a healing legacy.",
-    infographicLabel: "Acres Cleared",
-    infographicValue: "15+",
-    badge: "The Seed of Vision",
-    image: "/img/banner-1.jpg",
-    timelineImage: "/img/historyline/img193.jpeg"
-  },
-  {
-    id: '1945',
-    year: '1945',
-    title: "Where Dreams took root in",
-    caption: "A vision takes shape and a dream begins to flourish.",
-    description: "The foundations of the estate structures were laid using local timber, mountain stones, and traditional craftsmanship. The primary house construction began under the watchful eye of the family elders, symbolizing a dream taking deep structural roots in the soil.",
-    infographicLabel: "Traditional Pillars",
-    infographicValue: "24",
-    badge: "Structural Roots",
-    image: "/img/banner-2.jpg",
-    timelineImage: "/img/historyline/img194.png"
-  },
-  {
-    id: '1963',
-    year: '1963',
-    title: "A Divine Union, a Healing Legacy Begins",
-    caption: "Tradition, compassion and care come together to serve humanity.",
-    description: "A blessed marriage union brought together two prominent families with deep roots in traditional Kerala wellness and architecture. This merger synthesized centuries of herbal knowledge and established a dedicated family mission of healing and community care.",
-    infographicLabel: "Combined Lineages",
-    infographicValue: "2",
-    badge: "A Sacred Merger",
-    image: "/img/kerala-ayurveda-2.jpg",
-    timelineImage: "/img/historyline/img19six.png"
-  },
-  {
-    id: '1990',
-    year: '1990',
-    title: "Transformation in progress since",
-    caption: "Evolving with time, staying true to purpose.",
-    description: "As the legacy passed to the next generation, the estate underwent extensive renovation to adapt heritage facilities for guests while carefully preserving the authentic Nalukettu courtyard architecture, creating a perfect balance of heritage and wellness comfort.",
-    infographicLabel: "Preserved Courtyards",
-    infographicValue: "100%",
-    badge: "Heritage Revival",
-    image: "/img/rooms.jpg",
-    timelineImage: "/img/historyline/img1990.jpeg"
-  },
-  {
-    id: '1999',
-    year: '1999',
-    title: "Chamundi's Legacy begins. Grand Inauguration",
-    caption: "A legacy of healing and service officially begins.",
-    description: "The formal inauguration of Chamundi Hill Palace as a dedicated heritage Ayurvedic retreat. The lighting of the traditional brass Nilavilakku lamp by community elders officially opened the sanctuary to seekers of physical and spiritual restoration.",
-    infographicLabel: "Sacred Lamp Lit",
-    infographicValue: "Nov '99",
-    badge: "Grand Opening",
-    image: "/img/banner-3.jpg",
-    timelineImage: "/img/historyline/1999.jpeg"
-  },
-  {
-    id: '2000',
-    year: '2000',
-    title: "The Rise of a Healing Haven",
-    caption: "A place where wellness grows and lives are transformed.",
-    description: "The sanctuary expanded its organic herb and spice gardens, laying down structured Panchakarma courses supervised by resident Ayurvedic doctors. Seekers from surrounding states and abroad began arriving to experience authentic, natural cures.",
-    infographicLabel: "Medicinal Species",
-    infographicValue: "150+",
-    badge: "Retreat Expansion",
-    image: "/img/organic.jpg",
-    timelineImage: "/img/historyline/img2000.jpeg"
-  },
-  {
-    id: 'global-era',
-    year: 'Global Era',
-    title: "The Global Destination for Ayurveda",
-    caption: "Where ancient wisdom heals and wellness knows no borders.",
-    description: "Chamundi Hill Palace gained international recognition. Accredited for its absolute authenticity, the retreat welcomed guests from over 50 countries, spreading the therapeutic benefits of genuine Kerala Panchakarma and Hatha Yoga globally.",
-    infographicLabel: "Global Guests From",
-    infographicValue: "50+ Countries",
-    badge: "Global Acclaim",
-    image: "/img/rejuvenation.jpg",
-    timelineImage: "/img/historyline/imglobalera.jpeg"
-  },
-  {
-    id: '2024',
-    year: '25 Years',
-    title: "25 Years of Ayurvedic Excellence",
-    caption: "Om, Shanti, Shanti, Shanti. A journey of 25 years. A promise for generations.",
-    description: "Celebrating 25 years of formal healing operations and a century-long foundational journey. Chamundi Hill Palace stands proud as an eco-conscious, strictly authentic sanctuary where ancient science meets tranquil nature, promising peace for generations to come.",
-    infographicLabel: "Healing Years",
-    infographicValue: "25+",
-    badge: "Silver Jubilee",
-    image: "/img/yoga.jpg",
-    timelineImage: "/img/historyline/imgyears.jpeg"
-  }
-];
-
 export default function HistoryTimeline() {
   const { t } = useTranslation();
   const { ref: timelineRef } = useScrollReveal(0.15);
@@ -123,6 +24,105 @@ export default function HistoryTimeline() {
   const [activeYear, setActiveYear] = useState<string>('1935');
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null);
+
+  const timelineData: TimelineEvent[] = [
+    {
+      id: '1935',
+      year: t('history.timeline.1935.year'),
+      title: t('history.timeline.1935.title'),
+      caption: t('history.timeline.1935.caption'),
+      description: t('history.timeline.1935.description'),
+      infographicLabel: t('history.timeline.1935.infographicLabel'),
+      infographicValue: t('history.timeline.1935.infographicValue'),
+      badge: t('history.timeline.1935.badge'),
+      image: '/img/banner-1.jpg',
+      timelineImage: '/img/historyline/img193.jpeg'
+    },
+    {
+      id: '1945',
+      year: t('history.timeline.1945.year'),
+      title: t('history.timeline.1945.title'),
+      caption: t('history.timeline.1945.caption'),
+      description: t('history.timeline.1945.description'),
+      infographicLabel: t('history.timeline.1945.infographicLabel'),
+      infographicValue: t('history.timeline.1945.infographicValue'),
+      badge: t('history.timeline.1945.badge'),
+      image: '/img/banner-2.jpg',
+      timelineImage: '/img/historyline/img194.png'
+    },
+    {
+      id: '1963',
+      year: t('history.timeline.1963.year'),
+      title: t('history.timeline.1963.title'),
+      caption: t('history.timeline.1963.caption'),
+      description: t('history.timeline.1963.description'),
+      infographicLabel: t('history.timeline.1963.infographicLabel'),
+      infographicValue: t('history.timeline.1963.infographicValue'),
+      badge: t('history.timeline.1963.badge'),
+      image: '/img/kerala-ayurveda-2.jpg',
+      timelineImage: '/img/historyline/img19six.png'
+    },
+    {
+      id: '1990',
+      year: t('history.timeline.1990.year'),
+      title: t('history.timeline.1990.title'),
+      caption: t('history.timeline.1990.caption'),
+      description: t('history.timeline.1990.description'),
+      infographicLabel: t('history.timeline.1990.infographicLabel'),
+      infographicValue: t('history.timeline.1990.infographicValue'),
+      badge: t('history.timeline.1990.badge'),
+      image: '/img/rooms.jpg',
+      timelineImage: '/img/historyline/img1990.jpeg'
+    },
+    {
+      id: '1999',
+      year: t('history.timeline.1999.year'),
+      title: t('history.timeline.1999.title'),
+      caption: t('history.timeline.1999.caption'),
+      description: t('history.timeline.1999.description'),
+      infographicLabel: t('history.timeline.1999.infographicLabel'),
+      infographicValue: t('history.timeline.1999.infographicValue'),
+      badge: t('history.timeline.1999.badge'),
+      image: '/img/banner-3.jpg',
+      timelineImage: '/img/historyline/1999.jpeg'
+    },
+    {
+      id: '2000',
+      year: t('history.timeline.2000.year'),
+      title: t('history.timeline.2000.title'),
+      caption: t('history.timeline.2000.caption'),
+      description: t('history.timeline.2000.description'),
+      infographicLabel: t('history.timeline.2000.infographicLabel'),
+      infographicValue: t('history.timeline.2000.infographicValue'),
+      badge: t('history.timeline.2000.badge'),
+      image: '/img/organic.jpg',
+      timelineImage: '/img/historyline/img2000.jpeg'
+    },
+    {
+      id: 'global-era',
+      year: t('history.timeline.global-era.year'),
+      title: t('history.timeline.global-era.title'),
+      caption: t('history.timeline.global-era.caption'),
+      description: t('history.timeline.global-era.description'),
+      infographicLabel: t('history.timeline.global-era.infographicLabel'),
+      infographicValue: t('history.timeline.global-era.infographicValue'),
+      badge: t('history.timeline.global-era.badge'),
+      image: '/img/rejuvenation.jpg',
+      timelineImage: '/img/historyline/imglobalera.jpeg'
+    },
+    {
+      id: '2024',
+      year: t('history.timeline.2024.year'),
+      title: t('history.timeline.2024.title'),
+      caption: t('history.timeline.2024.caption'),
+      description: t('history.timeline.2024.description'),
+      infographicLabel: t('history.timeline.2024.infographicLabel'),
+      infographicValue: t('history.timeline.2024.infographicValue'),
+      badge: t('history.timeline.2024.badge'),
+      image: '/img/yoga.jpg',
+      timelineImage: '/img/historyline/imgyears.jpeg'
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {

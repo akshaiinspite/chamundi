@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Preloader() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -66,19 +68,19 @@ export default function Preloader() {
 
           {/* Heading */}
           <h1 className="text-3xl md:text-5xl font-heading font-semibold text-accent">
-            Celebrating
+            {t('preloader.celebrating')}
           </h1>
 
           <h2 className="mt-2 text-xl md:text-3xl font-light text-white">
-            25 Years of Healing & Excellence
+            {t('preloader.yearsHealing')}
           </h2>
 
           <p className="mt-4 text-white/70 max-w-2xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed flex flex-wrap justify-center gap-x-2 gap-y-1">
-            <span className="whitespace-nowrap">Trusted Ayurvedic Care</span>
+            <span className="whitespace-nowrap">{t('preloader.trustedCare')}</span>
             <span className="text-white/40">•</span>
-            <span className="whitespace-nowrap">Personalized Ayurvedic Care</span>
+            <span className="whitespace-nowrap">{t('preloader.personalizedCare')}</span>
             <span className="text-white/40">•</span>
-            <span className="whitespace-nowrap">Yoga & Meditation</span>
+            <span className="whitespace-nowrap">{t('preloader.yogaMeditation')}</span>
           </p>
 
           {/* Loader */}
