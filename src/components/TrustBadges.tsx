@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Award, Star, Leaf, HeartPulse, Soup, Smile, Play, X, Trophy, Sparkles, Home, Sun, GraduationCap, UserCheck, Stethoscope, Compass, CheckCircle2 } from 'lucide-react';
+import { Award, Star, Leaf, HeartPulse, Soup, Smile, Play, X, Trophy, Sparkles, Home, GraduationCap, UserCheck, Stethoscope } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface Badge {
@@ -143,17 +143,6 @@ export default function TrustBadges() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const inclusionIcons = [
-    Home,
-    Soup,
-    HeartPulse,
-    Sun,
-    GraduationCap,
-    UserCheck,
-    Stethoscope,
-    Compass
-  ];
-
   const travellersChoiceExtra = (
     <div className="flex flex-col items-center gap-3 pt-2 w-full">
       {/* Large TripAdvisor Logo */}
@@ -185,6 +174,23 @@ export default function TrustBadges() {
     </div>
   );
 
+  const cureCardExtra = (
+    <div className="flex flex-col gap-1.5 pt-2 text-left w-full text-xs text-white/90 font-body">
+      {[
+        { icon: Home, text: 'Palace Stay & In-House Organic Diet' },
+        { icon: HeartPulse, text: 'Daily 2 4-Hand Therapies & 2 Yoga' },
+        { icon: GraduationCap, text: 'Ayurvedic Lectures & Cooking Class' },
+        { icon: UserCheck, text: 'Prakruti (Vata, Pitta, Kapha) Analysis' },
+        { icon: Stethoscope, text: '24/7 Doctor Care, Temple & Nature Walks' },
+      ].map((item, i) => (
+        <div key={i} className="flex items-center gap-2 font-medium text-accent/90">
+          <item.icon size={13} className="shrink-0 text-accent" />
+          <span className="text-[11px] leading-tight text-white/90">{item.text}</span>
+        </div>
+      ))}
+    </div>
+  );
+
   const badges: Badge[] = [
     {
       icon: Award,
@@ -201,6 +207,13 @@ export default function TrustBadges() {
       text: t('trust.badges.travellersChoice.text'),
       extraContent: travellersChoiceExtra,
       onClick: () => scrollTo('award-section'),
+    },
+    {
+      icon: Sparkles,
+      badgeTag: t('trust.cureInclusions.badge'),
+      highlight: 'Personalized Ayurvedic Cure',
+      text: 'All-inclusive authentic healing retreat in Kerala',
+      extraContent: cureCardExtra,
     },
     { icon: Leaf,       highlight: t('trust.badges.greenLeaf.highlight'),   text: t('trust.badges.greenLeaf.text') },
     { icon: HeartPulse, highlight: t('trust.badges.years.highlight'),       text: t('trust.badges.years.text') },
@@ -254,53 +267,6 @@ export default function TrustBadges() {
             {badges.map((badge, idx) => (
               <BadgeCard key={`item-2-${idx}`} badge={badge} idx={idx} />
             ))}
-          </div>
-        </div>
-
-        {/* All-Inclusive Personalized Ayurvedic Cure Marquee Section */}
-        <div className="mt-16 pt-10 border-t border-accent/20">
-          <div className="text-center mb-8 px-4">
-            <span className="inline-flex items-center gap-1.5 bg-accent/15 border border-accent/40 text-accent uppercase tracking-[0.2em] text-[11px] font-bold px-3.5 py-1 rounded-full">
-              <Sparkles size={13} className="text-accent" />
-              {t('trust.cureInclusions.badge')}
-            </span>
-            <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white font-bold mt-3">
-              {t('trust.cureInclusions.title')}
-            </h3>
-            <div className="w-16 h-0.5 bg-accent/60 mx-auto mt-3 rounded-full" />
-          </div>
-
-          <div className="relative w-full overflow-hidden py-2">
-            <div className="absolute inset-y-0 left-0 w-8 sm:w-20 bg-gradient-to-r from-primary via-primary/40 to-transparent z-20 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-8 sm:w-20 bg-gradient-to-l from-primary via-primary/40 to-transparent z-20 pointer-events-none" />
-
-            <div className="flex w-max gap-4 sm:gap-6 animate-marquee-scroll hover:[animation-play-state:paused] py-3">
-              {[1, 2].map((loop) => (
-                <div key={`cure-loop-${loop}`} className="flex items-center gap-4 sm:gap-6 shrink-0">
-                  {((t('trust.cureInclusions.items', { returnObjects: true }) as Array<{ title: string; subtitle: string }>) || []).map((item, idx) => {
-                    const ItemIcon = inclusionIcons[idx % inclusionIcons.length] || CheckCircle2;
-                    return (
-                      <div
-                        key={`cure-item-${loop}-${idx}`}
-                        className="flex items-center gap-3.5 bg-gradient-to-r from-[#1E1810]/90 to-[#2A2015]/90 border border-accent/30 hover:border-accent/80 rounded-2xl px-5 py-3.5 shadow-lg backdrop-blur-md shrink-0 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(196,135,59,0.25)] select-none group"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-accent/15 border border-accent/40 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-dark transition-all duration-300 shadow-inner">
-                          <ItemIcon size={19} strokeWidth={1.8} />
-                        </div>
-                        <div className="font-body">
-                          <h4 className="font-heading text-sm sm:text-base font-bold text-white tracking-wide leading-snug group-hover:text-accent transition-colors">
-                            {item.title}
-                          </h4>
-                          <p className="text-xs text-white/70 font-medium leading-tight mt-0.5">
-                            {item.subtitle}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
