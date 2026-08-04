@@ -87,24 +87,6 @@ export default function TestimonialsCarousel({ showGermanVideo = false }: Testim
         }
       `}</style>
 
-      {/* Swaying decorative leaves in the background */}
-      <div className="absolute inset-0 pointer-events-none select-none opacity-25 overflow-hidden">
-        {/* Top Left Leaf */}
-        <div className="absolute top-12 left-12 w-20 h-20 animate-leaf-sway-slow">
-          <svg viewBox="0 0 64 64" fill="none" className="w-full h-full text-primary">
-            <path d="M12 48 C 24 36 36 24 48 12 M48 12 C 36 28 24 40 12 48 Z" fill="currentColor" opacity="0.15" />
-            <path d="M12 48 Q 28 42 48 12" stroke="currentColor" strokeWidth="1" />
-          </svg>
-        </div>
-        {/* Bottom Right Leaf */}
-        <div className="absolute bottom-16 right-16 w-24 h-24 animate-leaf-sway-slow" style={{ animationDelay: '-4s' }}>
-          <svg viewBox="0 0 64 64" fill="none" className="w-full h-full text-accent">
-            <path d="M16 48 C 28 36 40 24 48 16 M48 16 C 36 32 28 44 16 48 Z" fill="currentColor" opacity="0.15" />
-            <path d="M16 48 Q 30 42 48 16" stroke="currentColor" strokeWidth="1" />
-          </svg>
-        </div>
-      </div>
-
       <div
         ref={ref}
         className={`max-w-5xl mx-auto px-4 sm:px-6 transition-all duration-700 relative z-10 ${
